@@ -158,5 +158,1886 @@
       "equipment": "מחפרון",
       "symptom": "בעיות משאבה"
     }
+  },
+  {
+    "id": "komatsu_excavator_hydraulic_001_0",
+    "text": "תקלות הידראוליקה במחפרוני Komatsu PC300/PC360/PC390\n\nמחפרוני סדרת PC300 של Komatsu משתמשים במשאבה כפולה ממושכנת (Tandem Piston Pump) עם בקר אלקטרוני מסוג CLSS (Closed-center Load Sensing System).\n\nתסמינים נפוצים ופתרונות:\n\n1. אין כוח בבום (Boom) או בזרוע (Arm) — ביצועים חלשים\n   הסבר: מערכת CLSS תלויה בלחץ חישה (Sensing Pressure) שמועבר מה-Control Valve חזרה למשאבה.\n   אבחון: מד לחץ בכניסת Control Valve — לחץ עבודה צריך להיות 315–350 bar ב-PC300.\n   בדוק גם לחץ Pilot: 35–40 bar. אם נמוך, בדוק Pilot Pump ומסנן Pilot.\n   קוד שגיאה: E03-1 (Low Pilot Pressure) — מופיע בלוח המחשב של Komatsu.\n   פתרון: בדוק Pilot Filter, שסתום ההפחתה של Pilot (Pilot Relief Valve).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "PC300,PC360,PC390",
+      "symptom": "ביצועים חלשים,דליפה הידראולית",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_excavator_hydraulic_001_1",
+    "text": "2. דליפה פנימית בגלינדרים — הבום \"נופל\"\n   בדיקה: הרם בום לגובה מרבי, כבה מנוע, המתן 10 דקות.\n   ירידה מעל 30mm/10 דקות = דליפה פנימית בגלינדר (Boom Cylinder).\n   פתרון: פרק גלינדר, החלף ערכת חותמות (Seal Kit) — כולל Piston Seal, Rod Seal, Wiper Seal.\n\n3. Pump Regulator לא מגיב\n   תסמין: מנוע נטען מעל הנדרש, או משאבה נשארת בלחץ גבוה גם ללא עומס.\n   אבחון: בדוק חוטי Solenoid Valve של Regulator — תקלת חוט פתוח (Open Circuit).\n   פתרון: החלף Solenoid Valve של משאבה, בדוק בקר EPC (Electronic Pump Control).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "PC300,PC360,PC390",
+      "symptom": "ביצועים חלשים,דליפה הידראולית",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_excavator_engine_001_0",
+    "text": "תקלות מנוע Komatsu PC360 — מנוע SAA6D114E\n\nה-PC360LC-11 מצויד במנוע Komatsu SAA6D114E-5 עם טכנולוגיית Common Rail ועמידה בתקן פליטה Tier 4 Final.\n\nקודי שגיאת מנוע נפוצים:\n\n1. קוד CA2185 — לחץ Common Rail גבוה מהנדרש\n   תסמין: מנוע מגיע ל-Limp Mode, הספק נפגע.\n   גורמים: Pressure Limiter פגום, IMV (Inlet Metering Valve) תקוע.\n   אבחון: בדוק עם Komatsu KDIAG לקריאת ערכי Common Rail בזמן אמת.\n   פתרון: נקה IMV בממיס. אם הלחץ עדיין חורג — החלף Pressure Limiter.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע",
+      "equipment": "PC360,PC390",
+      "symptom": "קוד שגיאה,ביצועים נמוכים",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_excavator_engine_001_1",
+    "text": "2. קוד CA271 — חיישן טמפרטורת פליטה (Exhaust Gas Temperature Sensor)\n   מאפיין: קשור למערכת DPF (Diesel Particulate Filter) ב-Tier 4.\n   תסמין: אינדיקטור DPF כבוי/דולק, כוח מנוע מוגבל.\n   פתרון: בדוק חיבורי חיישן EGT, החלף חיישן אם פגום. וודא שה-DPF לא סתום.\n\n3. קוד CA111 — ECM כשל פנימי (Internal ECM Fault)\n   פתרון: עדכן Firmware דרך KDIAG, אם חוזר — החלף ECM.\n\n4. רעידות מנוע / Misfiring\n   גורם נפוץ: Injector פגום (Piezo Injector או Solenoid Injector).\n   אבחון: הרץ Injector Compensation Test דרך KDIAG.\n   פתרון: ניקוי אולטרסוניקה, כיול מחדש (Coding), או החלפה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע",
+      "equipment": "PC360,PC390",
+      "symptom": "קוד שגיאה,ביצועים נמוכים",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_mini_excavator_001_0",
+    "text": "תקלות מיני-מחפרון Komatsu PC30/PC55/PC88\n\nמיני-מחפרוני Komatsu מסדרה זו מצוידים במנועי 3 ו-4 צילינדר (Yanmar/Komatsu) עם מערכת הידראוליקה Fixed Displacement.\n\n1. PC30 — הידראולי לא מגיב / ג'ויסטיק לא פועל\n   אבחון: בדוק לחץ Pilot — ב-PC30 צריך להיות 27–32 bar.\n   אם Pilot Pump (Charge Pump) לא בונה לחץ — ג'ויסטיק לא פועל.\n   פתרון: החלף Pilot Pump (חלף קטן בגב המשאבה הראשית).\n\n2. PC55 — רעש מאזור Swing ב-PC55MR\n   תסמין: קריאה חריפה בסיבוב שמאלה/ימינה.\n   גורם: Swing Bearing חסר שימון — מרווח שימון: כל 100 שעות.\n   פתרון: מלא גריז ב-Swing Bearing Grease Fitting על טבעת הסיבוב.\n   אם הרעש ממשיך — בדוק שחיקת Swing Pinion (שיניים).",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,הידראוליקה,נסיעה",
+      "equipment": "PC30,PC55,PC88",
+      "symptom": "לא מגיב,רעש,לא נוסע",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_mini_excavator_001_1",
+    "text": "3. PC88 — כלי לא נוסע / Travel לא מגיב\n   מאפיין: ה-PC88MR-10 מצויד ב-2-Speed Travel Motor.\n   בדוק: שסתום בחירת מהירות (Hi/Lo Travel) — Solenoid יכול להיות תקוע.\n   קוד שגיאה: E03 (Travel Pressure Fault).\n   פתרון: בדוק Solenoid Valve Hi-Lo Travel, בדוק Travel Motor לדליפות פנימיות.\n\n4. כלל הסדרה — מנוע לא עולה בקור\n   בדוק Glow Plugs (נרות להט): במנועי 3 צילינדר — 3 נרות.\n   בדיקה: מד אמפר — כל נר צריך למשוך 8–15A. אם לא — נר פגום.\n   פתרון: החלף נרות להט לפני עונת הסתיו.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,הידראוליקה,נסיעה",
+      "equipment": "PC30,PC55,PC88",
+      "symptom": "לא מגיב,רעש,לא נוסע",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_wheel_loader_001_0",
+    "text": "תקלות שופל גלגלים Komatsu WA380/WA470\n\nה-WA380-8 וה-WA470-8 הם שופלים כבדים עם מנוע Komatsu SAA6D140 ותיבת הילוכים אוטומטית (Powershift Transmission).\n\n1. תיבת הילוכים לא מחליפת הילוך\n   קוד שגיאה: T/M Fault E03 — נפוץ ב-WA470.\n   גורמים:\n   א. שמן Transmission נמוך — בדוק Dipstick כשהמנוע פועל ב-NEUTRAL.\n   ב. Solenoid Shift Valve תקוע — תיבה נשארת בהילוך אחד.\n   ג. Torque Converter לחץ נמוך.\n   אבחון: חבר Komatsu VHMS (Vehicle Health Monitoring System).\n   פתרון: בדוק מסנן Transmission, החלף Solenoid Valve הרלוונטי.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הילוכים,היגוי,בלמים",
+      "equipment": "WA380,WA470",
+      "symptom": "תיבת הילוכים,היגוי כבד,בלמים",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_wheel_loader_001_1",
+    "text": "2. היגוי כבד / לחץ Steering נמוך\n   בדוק: Steering Pump לחץ — WA470 צריך 175–210 bar.\n   בדוק מסנן היגוי (Steering Filter) — סתום = ירידת לחץ.\n   פתרון: נקה/החלף מסנן. אם לחץ עדיין נמוך — בדוק Steering Pump.\n\n3. בלמים לא עוצרים / Brake Fade\n   מערכת: בלמי דיסקים רטובים (Wet Disc Brakes) בתוך צירי ההנעה.\n   אבחון: בדוק לחץ Brake Accumulator — צריך להיות 16–22 bar.\n   בדוק שמן בלמים — אם מזוהם = החלף, כלול בדיקת Brake Disc.\n   תסמין: בלמים \"רכים\", עצירה ארוכה מהרגיל.\n\n4. שמן קצף בתיבת ההילוכים\n   גורם: מים חדרו לשמן Transmission (Coolant Contamination).\n   בדיקה: שמן ורוד ומקציף = מים.\n   פתרון: פרק תיבה, נקה, בדוק Oil Cooler — כשל Heat Exchanger נפוץ.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הילוכים,היגוי,בלמים",
+      "equipment": "WA380,WA470",
+      "symptom": "תיבת הילוכים,היגוי כבד,בלמים",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_compact_track_loader_001_0",
+    "text": "תקלות Komatsu SK820 — מטען זחלים קומפקטי (Compact Track Loader)\n\nה-SK820-7 מצויד במנוע Kubota V3307 ומערכת הנעה Hydrostatic Drive (שני מנועי הידראוליקה לשני הזחלים).\n\n1. כלי לא נוסע / Hydrostatic Drive תקוע\n   מאפיין: Tandem Hydrostatic Pump — משאבה אקסיאלית כפולה לכל זחל בנפרד.\n   תסמין: הכלי נסחף לצד אחד, או זחל אחד לא מסתובב.\n   אבחון: בדוק לחץ Drive Loop בכל צד — צריך להיות זהה (350–420 bar בעומס).\n   גורם נפוץ: Charge Pressure נמוך (Charge Pump שחוק) = Cavitation.\n   פתרון: בדוק Charge Pressure (20–30 bar), החלף Charge Filter.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,נסיעה,חשמל",
+      "equipment": "SK820",
+      "symptom": "לא נוסע,זרועות חלשות,Aux לא עובד",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_compact_track_loader_001_1",
+    "text": "2. זרועות הרמה (Lift Arms) לא עולות / חלשות\n   בדוק: לחץ Loader Circuit — צריך 240–260 bar.\n   גורם: Control Valve שחוק, או Relief Valve כוונון שגוי.\n   פתרון: בדוק וכוון Relief Valve. החלף Control Valve אם שחוק.\n\n3. Aux Hydraulics לא פועל (לאביזרים: Bucket Tilt, Hammer)\n   בדוק: Solenoid Valve Aux (מאחורי הכסא, בבלוק הוולוים).\n   לוח: מוצג \"AUX FAULT\" — בדוק Joystick Aux Switch.\n   פתרון: החלף Solenoid Aux Valve, בדוק חיבורי חשמל.\n\n4. Safety Interlock — ג'ויסטיק לא מגיב\n   מאפיין: ה-SK820 מצויד ב-Interlock Safety System — דלת/Safety Bar לא סגורים = מנגנוני עבודה מנוטרלים.\n   תסמין: ג'ויסטיק לא מגיב למרות שהמנוע פועל.\n   בדוק: מיקרוסוויץ' של דלת/Safety Bar.\n   פתרון: התאם/החלף מיקרוסוויץ'.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,נסיעה,חשמל",
+      "equipment": "SK820",
+      "symptom": "לא נוסע,זרועות חלשות,Aux לא עובד",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_e_codes_001_0",
+    "text": "קודי שגיאה (E-Codes / CA-Codes) נפוצים — מחפרוני Komatsu PC\n\nKomatsu מחלקת קודי שגיאה לקטגוריות לפי תחום. קריאה דרך KDIAG או SA-2 Checker.\n\nקודי מנוע (CA-codes — J1939):\n• CA111 — ECM כשל פנימי. פתרון: עדכן Firmware, אם חוזר — החלף ECM.\n• CA122 — לחץ Boost נמוך (Boost Pressure Sensor Low). בדוק Turbocharger, Intercooler.\n• CA234 — מהירות מנוע גבוהה מהגבול (Engine Overspeed). בדוק Governor.\n• CA271 — EGR Valve תקוע (מנועי Tier 4). נקה EGR Valve.\n• CA2185 — לחץ Common Rail גבוה. בדוק IMV, Pressure Limiter.",
+    "metadata": {
+      "source": "seed",
+      "topic": "קודי שגיאה",
+      "equipment": "PC300,PC360,PC390,PC30,PC55,PC88",
+      "symptom": "קוד שגיאה E-code CA-code",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_e_codes_001_1",
+    "text": "קודי הידראוליקה ומכונה (E-codes):\n• E03-1 — לחץ Pilot נמוך. בדוק Pilot Pump, Pilot Filter, Pilot Relief Valve.\n• E03-3 — לחץ הידראולי ראשי נמוך. בדוק משאבה ראשית, Relief Valve.\n• E10-1 — טמפרטורת שמן הידראולי גבוהה (מעל 102C). בדוק Oil Cooler, מאוורר, רמת שמן.\n• E15-1 — שגיאת Pump Control Solenoid. בדוק Solenoid ו-EPC Valve.\n• E19-1 — שגיאת חיישן Swing. בדוק Swing Sensor ו-Swing Parking Brake.\n\nקודי חשמל ותקשורת:\n• E30-1 — תקשורת CAN Bus נותקה. מד התנגדות CAN — צריך 60 אוהם.\n• DTC P0190 — חיישן לחץ Common Rail פגום. החלף Rail Pressure Sensor.\n• E30-1 — שגיאת Monitor Controller. בדוק חיבורי חשמל ל-Monitor Panel.",
+    "metadata": {
+      "source": "seed",
+      "topic": "קודי שגיאה",
+      "equipment": "PC300,PC360,PC390,PC30,PC55,PC88",
+      "symptom": "קוד שגיאה E-code CA-code",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_travel_undercarriage_001_0",
+    "text": "מערכת נסיעה ותשתית תחתית — Komatsu PC300/PC360\n\nUndercarriage של PC300/PC360 כולל: Travel Motor, Final Drive, Track Roller, Carrier Roller, Idler, Sprocket, וזחלים (Track Shoes).\n\n1. PC300 — לא נוסע לכיוון ספציפי (אסימטריה)\n   אבחון: בדוק לחץ Travel Circuit בכל צד עם T-fitting.\n   לחץ נורמלי PC300: 350–420 bar בנסיעה עם עומס.\n   פתרון: החלף Travel Motor (Orbital Hydraulic Motor) של הצד החלש.\n\n2. זחל נופל תכופות — PC360\n   כוונון נכון: מדוד Sag בזחל בין Carrier Roller ל-Idler.\n   PC360: 10–30mm Sag תלוי בתנאי קרקע.\n   כוונון: הוסף גריז ל-Track Tension Cylinder דרך Grease Fitting על Idler Adjuster.\n   שחרור: Breather Valve אם מתח יתר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "נסיעה,תשתית תחתית",
+      "equipment": "PC300,PC360",
+      "symptom": "לא נוסע,זחל נופל,Final Drive",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_travel_undercarriage_001_1",
+    "text": "3. Carrier Roller שבור — PC300\n   תסמין: קצה הזחל \"מתרומם\", רטט חריג.\n   פתרון: החלף Roller. לפני החלפה — שחרר מתח זחל לגמרי.\n\n4. Sprocket שחוק — PC360LC\n   מדידה: עובי שן — אם פחות מ-12mm (מ-18mm מקורי) = החלף.\n   המלצה: החלף Sprocket ו-Track Chain ביחד.\n\n5. Final Drive Oil — PC300/PC360\n   מרווח בדיקה: כל 500 שעות (לפי מדריך Komatsu).\n   שמן מפרט: SAE 80W-90 GL-5 (2.1 ליטר לכל Final Drive ב-PC300).\n   סימן כשל: שמן חלבי = מים נכנסו דרך Floating Seal פגום.",
+    "metadata": {
+      "source": "seed",
+      "topic": "נסיעה,תשתית תחתית",
+      "equipment": "PC300,PC360",
+      "symptom": "לא נוסע,זחל נופל,Final Drive",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_can_electrical_001_0",
+    "text": "תקלות CAN Bus וחשמל — Komatsu PC390/PC360 Generation 11\n\nארכיטקטורת CAN ב-Gen-11:\n• Engine CAN (J1939) — בין ECM לבקר מכונה\n• Machine CAN — בין Monitor, Pump Controller, Valve Controller\n• Komtrax CAN — יחידת טלמטריה לאינטרנט\n\n1. קוד E30 — תקשורת CAN נותקה בין Monitor לבקר\n   תסמין: מסך Monitor מכבה/מאפס, נתונים נעלמים.\n   אבחון: בדוק קונקטורים CN-S01/CN-S02 ב-Monitor Panel.\n   מדוד התנגדות: CAN-H לCAN-L = 120 אוהם בכל קצה (60 אוהם במקביל).\n   פתרון: בדוק כבל CAN לפציעה. אם Terminator פגום — החלף.\n\n2. קודים מרובים בו זמנית — False Codes\n   גורם: קצר לקרקע (Short to Ground) בכבל CAN משותף.\n   אבחון: נתק בקרים אחד אחד — כשהקודים נעלמים זיהית הכשל.\n   פתרון: תיקון בידוד כבל, Wire Harness Repair.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,CAN Bus",
+      "equipment": "PC360,PC390",
+      "symptom": "תקשורת CAN,קודי שגיאה,Monitor כבוי",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_can_electrical_001_1",
+    "text": "3. Monitor Panel מת — PC390\n   בדוק נתיך F-1 (לוח נתיכים תחתון שמאל) — לעיתים שרוף.\n   בדוק מתח 24V ב-Monitor Connector Pin-1.\n   פתרון: החלף נתיך, אם חוזר — חפש Short Circuit בכבל.\n\n4. קוד E15 — EPC Solenoid Fault (Electronic Pump Control)\n   תסמין: משאבה תקועה על לחץ גבוה — מנוע עומס יתר.\n   אבחון: מד התנגדות Solenoid — צריך 10–15 אוהם. אם OL = כשל.\n   פתרון: החלף EPC Solenoid Valve על המשאבה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,CAN Bus",
+      "equipment": "PC360,PC390",
+      "symptom": "תקשורת CAN,קודי שגיאה,Monitor כבוי",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_swing_pump_001_0",
+    "text": "מנגנון סיבוב ומשאבה — Komatsu PC300/PC390\n\nמנגנון Swing כולל: Swing Motor, Swing Gearbox, Swing Bearing, Swing Lock (Parking Brake).\n\n1. סיבוב חלש — PC300-8\n   אבחון: בדוק לחץ Swing Relief — צריך 230–250 bar.\n   כוונון Swing Relief Valve: מפתח 27mm + מד לחץ, כוונן ב-5 bar בכל פעם.\n   גורם נוסף: Swing Motor פגום — דליפה פנימית מפחיתה מומנט.\n   בדיקת Motor: Drain Flow מעל 10 L/min = החלף Swing Motor.\n\n2. Swing Gearbox — שמן ומפלס\n   שמן: SAE 90 Gear Oil (כ-3.5 ליטר ב-PC300).\n   מרווח: בדיקה כל 500 שעות, החלפה כל 2000 שעות.\n   תסמין לכשל: ריח חרוך מאזור Gearbox, רעש טחינה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנגנון סיבוב,משאבה",
+      "equipment": "PC300,PC390,PC360",
+      "symptom": "סיבוב חלש,בלם סיבוב,Swing Bearing",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_swing_pump_001_1",
+    "text": "3. Swing Brake לא משתחרר\n   מאפיין: Negative Brake — פעיל כברירת מחדל, משתחרר בלחץ Pilot.\n   תסמין: כלי לא יכול להסתובב, רעש חיכוך.\n   אבחון: בדוק לחץ Pilot ל-Swing Brake Release — צריך 30–35 bar.\n   פתרון: בדוק Solenoid Valve של Swing Brake.\n\n4. Swing Bearing — בדיקת שחיקה ב-PC360\n   מתודה: מדידת Clearance עם Dial Gauge.\n   גבול שחיקה: מעל 3.0mm Radial Play = החלף Bearing.\n   שימון: Grease Nipples על הטבעת — כל 100 שעות (Komatsu Grease G2).",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנגנון סיבוב,משאבה",
+      "equipment": "PC300,PC390,PC360",
+      "symptom": "סיבוב חלש,בלם סיבוב,Swing Bearing",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_maintenance_schedule_001_0",
+    "text": "לוח תחזוקה מפורט — Komatsu PC300-8 / PC360-11\n\nתחזוקה יומית (Daily — לפני כל משמרת):\n• בדוק מפלס שמן מנוע — Dipstick בין MIN ל-MAX\n• בדוק מפלס קירור — Coolant Reservoir\n• בדוק מפלס שמן הידראולי — Sight Glass בצד מיכל\n• נקה Water Separator מדי בוקר\n• בדוק Pre-cleaner (מוציא אבק ראשוני)\n• בדוק מתח זחלים — 10–30mm Sag לפי PC300/PC360\n• שמן יומי: Bucket Pin, Stick-to-Bucket Link Pin\n\nתחזוקה כל 50 שעות:\n• שמן: Boom Foot Pin, Boom/Arm/Bucket Cylinder Pins\n• בדוק Swing Bearing Grease Level\n\nתחזוקה כל 250 שעות:\n• החלף שמן מנוע: Komatsu EO15W-40 (כ-28 ליטר ב-PC300)\n• החלף Engine Oil Filter + Fuel Filter Primary ו-Secondary\n• בדוק Drive Belt למתח ושחיקה",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "PC300,PC360",
+      "symptom": "תחזוקה,מרווחים",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_maintenance_schedule_001_1",
+    "text": "תחזוקה כל 500 שעות:\n• החלף Hydraulic Oil Filter (Return Filter + Pilot Filter)\n• בדוק/החלף Air Cleaner Element\n• בדוק Final Drive Oil Level\n\nתחזוקה כל 1000 שעות:\n• החלף שמן הידראולי מלא (Komatsu HPDO46)\n• בדוק Fuel Injectors — Injector Compensation Test ב-KDIAG\n• החלף Swing Gearbox Oil\n\nתחזוקה כל 2000 שעות:\n• החלף Final Drive Oil (SAE 80W-90)\n• בדוק Swing Bearing — Radial Play Test\n• בדוק Coolant — PH ועמידות קפיאה",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "PC300,PC360",
+      "symptom": "תחזוקה,מרווחים",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_wa470_transmission_001_0",
+    "text": "מערכת הנעה וגיר — Komatsu WA470-8 (שופל גלגלים)\n\nה-WA470-8 מצויד ב-Powershift Transmission עם Torque Converter, 4 הילוכים קדימה ו-3 אחורה, ומערכת KMX (Komatsu Modulated Clutch).\n\n1. Lock-Up לא פועל\n   תסמין: סיבובי מנוע גבוהים גם בנסיעה יציבה — Lock-Up לא נכנס.\n   קוד: T/M E-04 — בדוק עם Komatsu VHMS.\n   גורם: Solenoid Lock-Up Valve פגום, לחץ נמוך.\n   פתרון: בדוק Solenoid (חשמל + לחץ), בדוק T/M Filter.\n\n2. החלקת גיר (Clutch Slipping) — WA470\n   תסמין: מנוע עולה אך כלי לא מאיץ.\n   אבחון: בדוק T/M Clutch Pressure בכל הילוך — צריך 1300–1500 kPa (13–15 bar).\n   גורם: Clutch Disc Pack שחוק.\n   פתרון: פרק T/M, מדוד עובי Disc Pack, החלף אם מתחת ל-Minimum Thickness.",
+    "metadata": {
+      "source": "seed",
+      "topic": "גיר,הנעה,צירים",
+      "equipment": "WA470,WA380",
+      "symptom": "גיר לא עובד,Clutch,Diff Lock",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_wa470_transmission_001_1",
+    "text": "3. טמפרטורת T/M גבוהה\n   בדוק: שמן T/M — Dexron-3 ATF (כ-25 ליטר ב-WA470).\n   בדוק T/M Oil Cooler (Heat Exchanger) לסתימות.\n\n4. Differential Lock לא נכנס — WA380/WA470\n   תסמין: לחיצה על Diff Lock — לא מרגיש נעילה.\n   אבחון: בדוק Solenoid Valve Diff Lock, בדוק לחץ אוויר/הידראולי.\n   פתרון: בדוק Solenoid, Shift Fork פנימי ב-Axle.",
+    "metadata": {
+      "source": "seed",
+      "topic": "גיר,הנעה,צירים",
+      "equipment": "WA470,WA380",
+      "symptom": "גיר לא עובד,Clutch,Diff Lock",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_dpf_tier4_001_0",
+    "text": "מערכת טיפול בפליטה DPF/SCR — Komatsu PC360-11 / PC390-11 (Tier 4 Final)\n\nמחפרוני Komatsu Gen-11 עומדים בתקני Tier 4 Final/Stage V באמצעות:\n• EGR (Exhaust Gas Recirculation)\n• DPF (Diesel Particulate Filter)\n• SCR עם DEF/AdBlue (בחלק מהדגמים)\n\n1. DPF סתום — אינדיקטור DPF דולק\n   קוד: CA3719 (DPF High Soot Level).\n   פתרון מיידי: Passive Regeneration — הרץ מנוע ב-1800+ RPM ללא עומס 30–60 דקות.\n   אם לא עוזר: Active Forced Regeneration דרך KDIAG (מחמם DPF ל-600C+).\n   אם DPF עדיין סתום: שטיפה מקצועית או החלפה.\n\n2. קוד CA2795 — EGR Valve תקוע\n   תסמין ב-Closed: עשן שחור, טמפרטורת פליטה גבוהה.\n   תסמין ב-Open: מנוע מתקשה, עשן לבן/אפור בסרלנטי.\n   פתרון: ניקוי EGR Valve מפיח, אם לא — החלפה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "פליטה,DPF,Tier4",
+      "equipment": "PC360,PC390",
+      "symptom": "DPF סתום,EGR תקוע,AdBlue",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "komatsu_dpf_tier4_001_1",
+    "text": "3. DEF/AdBlue — קוד CA4364 (DEF Quality Fault)\n   גורם: AdBlue מזוהם או ריכוז לא תקין (צריך 32.5% Urea).\n   פתרון: רוקן מיכל, שטוף, מלא AdBlue חדש מאריזה מקורית.\n\nהערה: אל תכבה מנוע מיד לאחר עבודה כבדה — תן Cooldown של 3–5 דקות בסרלנטי, במיוחד לאחר Regeneration.",
+    "metadata": {
+      "source": "seed",
+      "topic": "פליטה,DPF,Tier4",
+      "equipment": "PC360,PC390",
+      "symptom": "DPF סתום,EGR תקוע,AdBlue",
+      "brand": "Komatsu"
+    }
+  },
+  {
+    "id": "jcb_excavator_hydraulic_001_0",
+    "text": "תקלות הידראוליקה במחפרון JCB JS300 / JS370\n\nמחפרוני JCB JS300 ו-JS370 משתמשים במערכת הידראולית Load Sensing עם משאבת בוכנה משתנה (Variable Displacement Piston Pump).\n\nקוד שגיאה JCB LiveLink נפוץ: H-001 — לחץ הידראולי ראשי נמוך מתחת ל-280 bar.\n\n1. כל הפונקציות איטיות או חלשות\n   בדיקה: חבר מד לחץ ל-Test Port ליד הבלוק הראשי. ערך תקין: 320–350 bar בעומס מלא.\n   אם נמוך מ-280 bar: בדוק Main Relief Valve לכיוון נכון (350 bar).\n   פתרון: אם Relief תקין — בדוק Pump Flow Test — ירידה מ-15% = משאבה שחוקה.\n\n2. זרוע/בום יורדים כשמנוע כבוי (Cylinder Drift)\n   גורם: דליפה פנימית בגלינדרי הבום או ב-Load Hold Check Valve.\n   בדיקה: הצב בום גבוה, כבה מנוע — מד ירידה לאחר 5 דקות. מעל 20mm: החלף אטמי גלינדר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "לחץ הידראולי נמוך,תנועה איטית",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_excavator_hydraulic_001_1",
+    "text": "3. תנועה לא סמטרית בזרוע\n   גורם: Flow Divider פגום.\n   פתרון: ניקוי ובדיקת Flow Divider Block.\n\nתחזוקה מניעתית:\nשמן הידראולי (Shell Tellus S2 MX 46) — כל 2,000 שעות.\nפילטר הידראולי: כל 500 שעות. נקה Oil Cooler כל 250 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "לחץ הידראולי נמוך,תנועה איטית",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_powershift_001_0",
+    "text": "תיבת הילוכים Powershift במחפרת-טרקטור JCB 3CX / 4CX\n\nה-JCB 3CX ו-4CX מצוידים בתיבת הילוכים Powershift אוטומטית.\nקוד שגיאה JCB LiveLink נפוץ: T-003 — לחץ Powershift Clutch נמוך.\n\n1. החלפת הילוך לא חלקה / 'בעיטה' בהחלפה\n   גורם: לחץ Clutch Pack נמוך מ-14 bar.\n   בדיקה: מד לחץ בפורט ה-Clutch Pack — ערך תקין: 16–18 bar.\n   פתרון: בדוק Transmission Filter — סתום = לחץ נמוך. החלף כל 500 שעות.\n\n2. כלי לא זז בהילוך קדימה/אחורה (No Drive)\n   בדוק: Neutral Start Switch — אם פגום, הבקר חושב שהגיר בניטרל.\n   בדוק: Solenoid Forward/Reverse עם וולטמטר (12V בהפעלה).\n   בדוק: Inching Pedal — אם תקוע = מנתק הנעה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "תיבת הילוכים,Powershift",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "החלפת הילוך לא חלקה,כלי לא זז",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_powershift_001_1",
+    "text": "3. שמן תיבת הילוכים מחומם יתר\n   קוד LiveLink: T-007.\n   פתרון: נקה Transmission Oil Cooler, בדוק זרימת קירור.\n\n4. רעש גריסה מתיבת ההילוכים\n   גורם: מחסור שמן ATF Dexron III/JCB HP Fluid.\n   המלצה: החלפת שמן כל 1,000 שעות.\nשמן Powershift: JCB HP Fluid — 18 ליטר ל-3CX, 22 ליטר ל-4CX.",
+    "metadata": {
+      "source": "seed",
+      "topic": "תיבת הילוכים,Powershift",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "החלפת הילוך לא חלקה,כלי לא זז",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_stabilizer_001_0",
+    "text": "תקלות מייצבים (Stabilizers) ב-JCB 3CX / 4CX\n\nה-JCB 3CX ו-4CX מצוידים בארבעה מייצבים — שניים קדמיים (Slew) ושניים אחוריים.\n\n1. מייצב יורד לאט מאוד\n   גורם: Flow Control Valve מכוון נמוך, או דליפה בגלינדר.\n   פתרון: כיוון, או החלפת אטמי גלינדר (Stabilizer Cylinder Seal Kit).\n\n2. מייצב 'יורד מעצמו' תחת עומס — סכנה!\n   גורם: Counterbalance Valve פגום.\n   בדיקה: הרם מייצב, המתן 5 דקות — ירידה מעל 5mm = תקלה.\n   פתרון: החלף Counterbalance Valve.\n\n3. מייצב קדמי נטוי (Slew Stabilizer) לא מסתובב\n   גורם: Pivot Pin תקוע מחוסר שימון.\n   פתרון: שמן + גריז, אם עדיין תקוע — פרק ונקה ציר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מייצבים,הידראוליקה",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "מייצב איטי,מייצב יורד",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_stabilizer_001_1",
+    "text": "4. נורת אזהרה מייצב דולקת\n   קוד LiveLink: S-011. גורם: חיישן מיקום (Position Sensor) לא מכוון.\n   פתרון: בדוק חיישן, כיוון, החלף אם נדרש.\n\nזיכרון בטיחות: לעולם אל תחפור ב-3CX/4CX כשהמייצבים לא נעולים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מייצבים,הידראוליקה",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "מייצב איטי,מייצב יורד",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_loader_arm_001_0",
+    "text": "תקלות זרוע מטען קדמי (Loader Arm) ב-JCB 3CX / 4CX\n\n1. זרוע מטען יורדת כשמנוע כבוי (Loader Arm Drift)\n   גורם: דליפה פנימית בגלינדרי ההרמה (Lift Cylinder Internal Leak).\n   בדיקה: הרם זרוע, כבה מנוע — ירידה מעל 25mm ב-5 דקות = החלפת אטמי גלינדר.\n\n2. כף מטען לא נועלת בזווית (Bucket Not Self-Leveling)\n   גורם: Self-Level Valve פגום.\n   פתרון: כיוון מחדש של Mechanical Self-Level Link, או תיקון שסתום.\n\n3. זרוע מטען לא מגיעה לגובה מלא\n   גורם: שסתום Relief של גלינדרי ההרמה מכוון נמוך מדי.\n   ערך תקין: 240–260 bar.\n\n4. רעש פטישים בירידת זרוע\n   גורם: Lowering Control / Regeneration Valve לא מכוון.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע מטען,הידראוליקה",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "זרוע יורדת,כף לא נועלת",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_loader_arm_001_1",
+    "text": "5. כף מטען לא נפתחת/נסגרת\n   בדוק Bucket Tilt Cylinder לאטמים שחוקים.\n   בדוק שסתום Bucket Relief — 200–220 bar.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע מטען,הידראוליקה",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "זרוע יורדת,כף לא נועלת",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_boom_001_0",
+    "text": "תקלות זרוע טלסקופית (Boom Extension) ב-JCB 540-170 / 535-125 / 531-70\n\nJCB 540-170: גובה הרמה 17 מטר. JCB 535-125: 12.5 מטר. JCB 531-70: 7 מטר.\n\n1. זרוע לא פותחת / פותחת לאט (Slow Telescope Extension)\n   גורם: שסתום Telescope Relief מכוון נמוך, או Slider Pads שחוקים.\n   בדיקה: לחץ Telescope — ערך תקין: 180–200 bar.\n   פתרון: בדוק ושנן Slider Pads, החלף אם שחוקים.\n\n2. זרוע 'נופלת' בסיום פתיחה\n   גורם: Telescope End Cushion Valve פגום.\n\n3. Carriage Tilt לא פועל בגובה מלא\n   קוד LiveLink: L-004 — Overload Warning. מערכת SCS/LMS חסמה.\n   פתרון: הורד גובה, בדוק Load Indicator.\n\n4. רעש חריקה בפתיחת זרוע\n   גורם: Slider Pads יבשים.\n   פתרון: שמן ב-JCB High Pressure Grease — כל 50 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע טלסקופית,הידראוליקה",
+      "equipment": "JCB 540-170,JCB 535-125,JCB 531-70",
+      "symptom": "זרוע איטית,זרוע לא פותחת",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_boom_001_1",
+    "text": "תחזוקה: שמן Slide Pads כל 50 שעות, Pivot Pins כל 250 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע טלסקופית,הידראוליקה",
+      "equipment": "JCB 540-170,JCB 535-125,JCB 531-70",
+      "symptom": "זרוע איטית,זרוע לא פותחת",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_load_management_001_0",
+    "text": "מערכת ניהול עומסים (SCS / LMS) ב-Telehandler JCB\n\nמכונות JCB Telehandler מצוידות במערכת SCS (Stability Control System) למניעת פיכוח.\n\nקודי LiveLink:\n• L-001: עומס על גבול (Near Overload) — אזהרה.\n• L-002: עומס עבר גבול (Overload) — חסימת תנועת זרוע.\n• L-005: חיישן עומס (Load Cell) פגום.\n• L-008: חיישן זווית זרוע (Boom Angle Sensor) פגום.\n\n1. נורת עומס דולקת אדום ללא עומס\n   גורם: Load Cell מכוון לא נכון.\n   פתרון: כיול מחדש (Calibration) לפי הוראות JCB.\n\n2. מערכת חוסמת תנועה למרות עומס בטוח\n   גורם: Boom Angle Sensor שגוי.\n   פתרון: כיול Angle Sensor דרך JCB ServiceMaster 4.\n\n3. אזהרות SCS לא מופיעות\n   קוד: L-009. גורם: תקלת CAN Bus.",
+    "metadata": {
+      "source": "seed",
+      "topic": "ניהול עומסים,SCS",
+      "equipment": "JCB 540-170,JCB 535-125,JCB 531-70",
+      "symptom": "עומס יתר,חסימת זרוע",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_load_management_001_1",
+    "text": "בטיחות: לעולם לא לבטל SCS בעת עבודה.\nטבלת עומסים JCB 540-170: 0–5m: עד 4,000 ק\"ג. 5–10m: 2,500 ק\"ג. 10–17m: 1,000 ק\"ג.",
+    "metadata": {
+      "source": "seed",
+      "topic": "ניהול עומסים,SCS",
+      "equipment": "JCB 540-170,JCB 535-125,JCB 531-70",
+      "symptom": "עומס יתר,חסימת זרוע",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_mini_excavator_001_0",
+    "text": "תקלות מחפרון מיני JCB 8018 / 8055 / 8085\n\nמחפרוני המיני JCB (סדרת 8000) — ה-8018 (1.8 טון), 8055 (5.5 טון), 8085 (8.5 טון) — עם מנוע יאנמאר (Yanmar) ומערכת Gear Pump.\n\n1. כלי לא נוסע בכיוון אחד\n   גורם: Travel Motor אוטמים פגומים, או Travel Spool תקוע.\n   בדיקה: לחץ נסיעה שני הצדדים — צריך להיות שווה (~250 bar).\n\n2. Boom/Arm חלשים אחרי התחממות\n   גורם: Gear Pump שחוקה — יעילות יורדת עם טמפרטורה.\n   בדיקה: לחץ לאחר 30 דקות — אם יורד מ-200 bar = משאבה שחוקה.\n\n3. מנוע יאנמאר (Yanmar) לא עולה בקור\n   גורם: Glow Plugs שחוקים.\n   בדיקה: מד התנגדות — צריך 0.4–0.6 אוהם לכל נר.\n   פתרון: החלף Glow Plugs כל 2,000 שעות.\n\n4. Swing חלש ב-8018/8055\n   גורם: Swing Motor Seal שחוק.\n   פתרון: Swing Motor Seal Kit.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע,נסיעה",
+      "equipment": "JCB 8018,JCB 8055,JCB 8085",
+      "symptom": "נסיעה חד צדדית,סיבוב חלש",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_mini_excavator_001_1",
+    "text": "דגשים: שמן מנוע Yanmar 15W-40 — כל 250 שעות. שמן הידראולי ISO VG 46.\nבדוק Rubber Track Tension — רצועות גומי!",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע,נסיעה",
+      "equipment": "JCB 8018,JCB 8055,JCB 8085",
+      "symptom": "נסיעה חד צדדית,סיבוב חלש",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js_swing_travel_001_0",
+    "text": "תקלות סיבוב (Swing) ונסיעה (Travel) ב-JCB JS300 / JS370\n\nמנגנון סיבוב JCB JS:\n\n1. סיבוב איטי מצד אחד\n   בדיקה: לחץ בפורטים L ו-R של Swing Motor — ערך תקין: 240–260 bar בשני הצדדים.\n   פתרון: כיוון Swing Relief Valves ל-250 bar.\n\n2. עצירה לא חלקה (Swing Doesn't Stop Smoothly)\n   גורם: Swing Anti-Reaction Valve פגום.\n   פתרון: החלף Anti-Reaction Valve על גוף Swing Motor.\n\n3. Swing Bearing רועש / רפוי\n   JS300/JS370: Swing Bearing קוטר ~1.2 מטר.\n   בדיקה: הנח זרוע על הקרקע, נסה להרים הבית — רפיון מעל 2mm = בדוק.\n   שימון: כל 250 שעות (LiveLink: SR-001).\n\nנסיעה:",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה,הידראוליקה",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "סיבוב איטי,כלי לא הולך ישר",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js_swing_travel_001_1",
+    "text": "4. כלי לא הולך ישר (Steering Drift)\n   בדיקה: נסיעה 20 מטר — חריגה מעל 30cm = תקלה ב-Travel Motor.\n   לחץ Travel Left vs Right — שוני מעל 30 bar = תקלה.\n\n5. Parking Brake לא משתחרר\n   גורם: לחץ Pilot לא מגיע לשסתום — צריך 30–35 bar.\n\n6. רטט בנסיעה\n   בדוק: מתח זחל JS300: רפיון 25–35mm. בדוק שחיקת Sprocket ו-Track Links.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה,הידראוליקה",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "סיבוב איטי,כלי לא הולך ישר",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_444_dieselmax_engine_001_0",
+    "text": "מנוע JCB 444 ו-Dieselmax — תקלות ואבחון\n\nJCB מייצרת מנועיה בעצמה — מנוע JCB 444 (4 צילינדרים, 4.4 ליטר) ו-JCB Dieselmax (6 צילינדרים).\n\n1. עשן שחור בהאצה\n   קוד LiveLink: E-037 — Injector Balance Fault.\n   גורם: Fuel Injectors עמידה לא אחידה, מסנן אוויר סתום, Turbocharger ירוד.\n   פתרון: ניקוי Injectors, כיול דרך JCB ServiceMaster 4.\n\n2. תאורת 'Engine Fault' (CEL) דולקת\n   קוד: E-044 — EGR Valve Stuck.\n   פתרון: נקה EGR Valve בממס מיוחד. אם פגום — החלף.\n\n3. לחץ שמן מנוע נמוך\n   קוד LiveLink: E-001 — Oil Pressure Critical. כבה מנוע מיד!\n   בדיקה: מפלס שמן תחילה. לחץ תקין: 3.5–4.5 bar בסרלנטי.\n\n4. רעש 'נקישה' מהמנוע\n   גורם: Injector Timing לא נכון, או Piston Pin Bearing שחוק.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע JCB 444",
+      "equipment": "JCB 3CX,JCB 4CX,JCB JS300,JCB 540-170",
+      "symptom": "עשן שחור,לחץ שמן נמוך,נקישה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_444_dieselmax_engine_001_1",
+    "text": "תחזוקה JCB 444:\n• שמן מנוע: JCB 10W-30 ACEA E9 — 13 ליטר. כל 500 שעות (Tier 4).\n• Timing Belt: החלפה כל 2,000 שעות — קריטי!",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע JCB 444",
+      "equipment": "JCB 3CX,JCB 4CX,JCB JS300,JCB 540-170",
+      "symptom": "עשן שחור,לחץ שמן נמוך,נקישה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_livelink_fault_codes_001_0",
+    "text": "קודי שגיאה JCB LiveLink — מדריך שטח\n\nJCB LiveLink — מערכת ניטור ואבחון מובנית. כלי אבחון: JCB ServiceMaster 4.\n\nקודי שגיאה נפוצים:\n• E-037: Injector Balance Fault — ניקוי/החלפת Injector.\n• H-001: Main Hydraulic Pressure Low — בדוק Main Relief Valve, ספיקת משאבה.\n• T-003: Powershift Clutch Pressure Low (3CX/4CX) — בדוק Transmission Filter.\n• T-007: Transmission Oil Overheating — נקה Transmission Oil Cooler.\n• L-002: Telehandler Overload — הפחת עומס, בדוק Load Cell Calibration.\n• S-011: Stabilizer Sensor Fault (3CX/4CX) — בדוק חיישן, כיוון, החלף.\n• E-044: EGR Valve Position Fault — נקה EGR Valve.\n• SR-001: Swing Bearing Grease Low — הכנס גריז ל-Swing Bearing.",
+    "metadata": {
+      "source": "seed",
+      "topic": "LiveLink,קודי שגיאה,אבחון",
+      "equipment": "JCB 3CX,JCB 4CX,JCB JS300,JCB 540-170",
+      "symptom": "קוד שגיאה,אבחון כללי",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_livelink_fault_codes_001_1",
+    "text": "שימוש ב-ServiceMaster 4:\n• חבר למחבר OBD-J בתא הנהג.\n• בחר Model ו-Year.\n• קרא Fault Codes → מחק לאחר תיקון.\n• בצע Actuator Tests לאימות תיקון.\n\nרמות חומרה: צהוב = אזהרה. כתום = הגבלת ביצועים (Derate). אדום = כיבוי קרוב — עצור מיידית!",
+    "metadata": {
+      "source": "seed",
+      "topic": "LiveLink,קודי שגיאה,אבחון",
+      "equipment": "JCB 3CX,JCB 4CX,JCB JS300,JCB 540-170",
+      "symptom": "קוד שגיאה,אבחון כללי",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_wheel_loader_427_457_001_0",
+    "text": "תקלות מעמיס גלגלים (Wheel Loader) JCB 427 / 437 / 457\n\n427 (7.5 טון), 437 (11 טון), 457 (17 טון) — תיבת הילוכים ZF Powershift, הגה ארטיקולציה.\n\n1. הגה כבד / לא מגיב\n   גורם: שמן הגה נמוך, Steering Pump שחוקה, Steering Cylinder אטמים פגומים.\n   בדיקה: לחץ הגה — ערך תקין: 200–220 bar.\n\n2. Articulation Joint רועש / רפוי\n   גורם: King Pin / Articulation Pin שחוק.\n   בדיקה: נסה להזיז הגוף הקדמי — רפיון מעל 3mm = בדוק.\n   פתרון: החלפת King Pin + Bush.\n\n3. תיבת הילוכים ZF לא מחליפה\n   קוד: T-012 — Transmission Neutral Safety.\n   פתרון: בדוק Neutral Switch, Fuses TCU.\n\n4. זרוע מטען רועשת בהרמה\n   גורם: Lift Arm Pin + Bushing שחוקים.\n   פתרון: שמן Zerck Fittings כל 50 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הגה,תיבת הילוכים,זרוע",
+      "equipment": "JCB 427,JCB 437,JCB 457",
+      "symptom": "הגה כבד,לא מחליף הילוך",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_wheel_loader_427_457_001_1",
+    "text": "תחזוקה:\n• שמן ZF Powershift: ZF Lifeguard Fluid 6 — כל 1,000 שעות.\n• שמן גשר (Axle Oil): SAE 80W-90 — כל 2,000 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הגה,תיבת הילוכים,זרוע",
+      "equipment": "JCB 427,JCB 437,JCB 457",
+      "symptom": "הגה כבד,לא מחליף הילוך",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_compactor_vm115_vm146_001_0",
+    "text": "תקלות קומפקטור/רולר JCB VM115 / VM146\n\nרולרים כפולים (Tandem Rollers) — VM115 (11.5 טון), VM146 (14.6 טון) — עם מערכת ויברציה הידראולית.\n\n1. ויברציה לא עובדת\n   קוד LiveLink: V-001.\n   גורם: Vibration Solenoid פגום, Vibration Pump לא בונה לחץ.\n   בדיקה: לחץ ויברציה — ערך תקין: 250–300 bar.\n   פתרון: בדוק Solenoid → Pump → Vibration Motor.\n\n2. ויברציה חלשה / תדר נמוך\n   גורם: שמן הידראולי ויסקוזיות שגויה, Eccentric Weight שחוק.\n   בדיקה: מד תדר — VM115: 30–33 Hz בתדר גבוה.\n\n3. גליל (Drum) לא מסתובב\n   גורם: Drum Drive Motor פגום, Drum Drive Valve תקוע.\n   בדיקה: לחץ Drum Drive — 300–350 bar.\n\n4. רולר מסתובב רק לכיוון אחד\n   גורם: Directional Solenoid Valve פגום.",
+    "metadata": {
+      "source": "seed",
+      "topic": "ויברציה,הידראוליקה,קומפקטור",
+      "equipment": "JCB VM115,JCB VM146",
+      "symptom": "ויברציה לא עובדת,גליל לא מסתובב",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_compactor_vm115_vm146_001_1",
+    "text": "5. מים (Water Sprinkler) לא עובד\n   גורם: Water Pump פגומה, Nozzles סתומות.\n\nתחזוקה: שמן הידראולי ISO VG 46 — כל 1,000 שעות. בדוק Scraper Blade כל 250 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "ויברציה,הידראוליקה,קומפקטור",
+      "equipment": "JCB VM115,JCB VM146",
+      "symptom": "ויברציה לא עובדת,גליל לא מסתובב",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_maintenance_livelink_001_0",
+    "text": "תחזוקה מניעתית JCB — לפי לוח LiveLink\n\nLiveLink שולח התראות תחזוקה (Service Reminders) לפי שעות מד.\n\nתחזוקה יומית:\n• מפלס שמן מנוע (Engine Oil Level) — Dipstick.\n• מפלס קירור (Coolant Level) — מיכל Coolant.\n• שמן הידראולי — Sight Glass.\n• Water Separator — נקה מים.\n• מסנן אוויר — בדוק אינדיקטור.\n• שמן Zerck Fittings קריטיים (Bucket, Boom, Stick).\n\nכל 50 שעות (תחזוקה A):\n• שמן כל Pivot Pins.\n• בדוק מתח זחל.\n\nכל 500 שעות (תחזוקה B):\n• שמן מנוע JCB 444 + פילטר שמן.\n• מסנן דלק ראשי (Primary Fuel Filter).\n• פילטר הידראולי (Return Filter + Pilot Filter).\n• פילטר Powershift Transmission (3CX/4CX).",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,LiveLink,מניעתי",
+      "equipment": "JCB 3CX,JCB 4CX,JCB JS300,JCB 540-170,JCB VM115",
+      "symptom": "תחזוקה מניעתית,לוח שרות",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_maintenance_livelink_001_1",
+    "text": "כל 1,000 שעות (תחזוקה C):\n• שמן תיבת הילוכים (Powershift ATF).\n• שמן Swing Gear Box (JS Series).\n• V-Belt + Alternator Belt.\n\nכל 2,000 שעות (תחזוקה D):\n• שמן הידראולי מלא (Full Flush).\n• Final Drive Oil.\n• Timing Belt — קריטי!",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,LiveLink,מניעתי",
+      "equipment": "JCB 3CX,JCB 4CX,JCB JS300,JCB 540-170,JCB VM115",
+      "symptom": "תחזוקה מניעתית,לוח שרות",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_backhoe_hoe_001_0",
+    "text": "תקלות זרוע חפירה אחורית (Backhoe) ב-JCB 3CX / 4CX\n\nהזרוע האחורית מורכבת מבום (Boom), זרוע (Dipper Arm), וכף (Bucket).\n\n1. Dipper Arm יורד לאחר עצירה (Arm Drift)\n   גורם: דליפה פנימית בגלינדר ה-Dipper.\n   בדיקה: הצב זרוע אופקית, כבה מנוע — ירידה מ-10mm ב-5 דקות = החלפת Seals.\n\n2. Boom לא מגיע לגובה מלא\n   גורם: שסתום Boom Relief מכוון נמוך.\n   ערך תקין JCB 3CX: 260–280 bar.\n\n3. כף חפירה לא נסגרת/נפתחת\n   גורם: Bucket Cylinder אטמים פגומים, Bucket Pin שחוק.\n   פתרון: Seal Kit, שמן ו/או החלפת Bucket Pin + Bushing.\n\n4. Sideshift Boom (JCB 4CX בלבד) זז מעצמו\n   גורם: Sideshift Cylinder Counterbalance Valve פגום.\n   פתרון: החלף Counterbalance Valve.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע חפירה,הידראוליקה",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "זרוע יורדת,כף לא מגיבה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_backhoe_hoe_001_1",
+    "text": "5. Joystick לא מגיב לתנועה אחת\n   גורם מכני: כבל פיילוט לשסתום סתום.\n   גורם חשמלי: Hall Sensor פגום ב-Joystick.\n   פתרון: בדוק Joystick Sensor ב-ServiceMaster 4.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע חפירה,הידראוליקה",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "זרוע יורדת,כף לא מגיבה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_mini_excavator_rubber_track_001_0",
+    "text": "רצועות גומי (Rubber Tracks) ב-JCB 8018 / 8055 / 8085\n\nמחפרוני מיני JCB (סדרת 8000) משתמשים ברצועות גומי.\n\n1. רצועה יורדת מהגלגלים (Track De-Rail)\n   גורם: מתח רצועה נמוך.\n   בדיקה: מתח נכון JCB 8055: רפיון מרכזי 10–20mm.\n   כיוון: הוסף גריז ל-Idler Grease Cylinder.\n\n2. רצועה קרועה / פגומה\n   גורם: חפצים חדים, גיל מתקדם.\n   פתרון: החלפת רצועה שלמה — 4–6 שעות ב-8085.\n   טיפ: בדוק Core Links (קישורי פלדה פנימיים) — שבירה = החלפה דחופה.\n\n3. רצועה 'קופצת' בנסיעה\n   גורם: Sprocket שחוק — שיניים מחליקות.\n   פתרון: החלפת Sprocket ורצועה ביחד.\n\n4. כלי לא הולך ישר\n   גורם: מתח שונה בין שתי הרצועות, או Travel Motor לא שווים בלחץ.\n   פתרון: כיוון מתח רצועה שתי הצדדים שווה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "רצועות גומי,Idler,Sprocket",
+      "equipment": "JCB 8018,JCB 8055,JCB 8085",
+      "symptom": "רצועה יורדת,רצועה קרועה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_mini_excavator_rubber_track_001_1",
+    "text": "טיפים: הימנע מפניות חדות על אספלט. הסר חול שנלכד מתחת לרצועה מדי יום.",
+    "metadata": {
+      "source": "seed",
+      "topic": "רצועות גומי,Idler,Sprocket",
+      "equipment": "JCB 8018,JCB 8055,JCB 8085",
+      "symptom": "רצועה יורדת,רצועה קרועה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_transmission_001_0",
+    "text": "תקלת שידור (Transmission Fault) ב-JCB 3CX — מכונה לא מתקדמת\n\nסימפטומים:\n- מכונה מסרבת לנוע למרות שהמנוע פועל תקין\n- נסיעה רק בהילוך אחד (Forward בלבד)\n- קוד שגיאה: E0910 (חיישן מהירות שידור) או E0920 (לחץ הידראולי נמוך בשידור)\n- שמן שידור עם ריח שרוף או גוון כהה\n\nסיבות אפשריות:\n1. מפלס שמן שידור נמוך — הסיבה הנפוצה ביותר.\n2. מסנן שמן שידור סתום (Transmission Oil Filter) — החלף כל 500 שעות.\n3. חיישן מהירות (Speed Sensor) בקופסת השידור תקוע.\n4. בלאי לחצנים (Clutch Packs) פנימיים.\n5. בקר אלקטרוני (TCU — Transmission Control Unit) פגום.",
+    "metadata": {
+      "source": "seed",
+      "topic": "שידור",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "מכונה לא מתקדמת,שידור",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_transmission_001_1",
+    "text": "שלבי אבחון:\nשלב 1: בדוק מפלס שמן שידור — Dipstick, בדוק על קרקע ישרה עם מנוע פועל.\nשלב 2: חבר JCB ServiceMaster 4 ובדוק קודי שגיאה פעילים ב-TCU.\nשלב 3: מדוד לחץ שמן שידור — לחץ תקין: 14–17 בר (200–250 PSI).\nשלב 4: בדוק חיישן מהירות — מד-אוהם: 200–1000 אוהם, ללא קצר.\n\nאזהרות: אל תפעיל ללא שמן תקין — נזק בלתי-הפיך לשידור.",
+    "metadata": {
+      "source": "seed",
+      "topic": "שידור",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "מכונה לא מתקדמת,שידור",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js300_swing_003_0",
+    "text": "תקלת מנוע סיבוב (Swing Motor Fault) ב-JCB JS300/JS370\n\nסימפטומים:\n- סיבוב איטי לכיוון אחד, רעש טחינה ממנוע הסיבוב\n- קוד שגיאה: F2250 (לחץ נמוך במעגל סיבוב), F2260 (טמפרטורה גבוהה)\n- דלף שמן ממנוע הסיבוב לשלדה\n\nסיבות אפשריות:\n1. בלאי מנוע הסיבוב (Swing Motor) — דגם JS300: Kawasaki M2X170.\n2. Counter Balance Valve/Brake Valve של מעגל הסיבוב תקוע.\n3. בלאי יחידת גלגל פלנטרי (Swing Gearbox Planetary).\n4. שבירת שן Swing Ring Gear או Pinion.\n5. Swing Brake לא משתחרר כראוי.\n6. חוסר סיכה ב-Swing Bearing.\n\nאבחון:\n- מדוד לחץ בקווי Swing Motor (A ו-B) — לחץ פיק: 260–280 בר.\n- בדוק שחרור בלם הסיבוב: לחץ שחרור 35–40 בר.\n- בדוק מפלס שמן תיבת הסיבוב (EP90).",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע סיבוב",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "תקלת סיבוב,Swing Motor",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js300_swing_003_1",
+    "text": "תחזוקה: שימון Swing Bearing — כל 10 שעות! Swing Gearbox Oil כל 2,000 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע סיבוב",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "תקלת סיבוב,Swing Motor",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_8055_mini_hydraulic_004_0",
+    "text": "תקלות מחפרון מיני JCB 8055/8085 — לחץ הידראולי נמוך ונסיעה\n\nסימפטומים ב-JCB 8055:\n- הזרוע (Boom) לא עולה לגובה המירבי\n- אחד הזחלים נוסע לאט מהשני\n- רעש Cavitation בתנועת זרוע מהירה\n- קוד: 1-2 (תקלת לחץ שמן מנוע), 3-1 (תקלת טמפרטורת קירור)\n\nסיבות:\n1. מפלס שמן הידראולי — מכלים קטנים, בדיקה יומית חיונית.\n2. מסנן הידראולי סתום — החלפה כל 250 שעות (לא 500 כמו במכונות גדולות!).\n3. בלאי משאבת הידראוליקה הכפולה (Dual Gear Pump): ספיקה גדולה 30 ל\"ד, קטנה 15 ל\"ד.\n4. Travel Motor (Poclain MS02) — דלף פנימי.\n\nאבחון:\n- לחץ מערכת ראשי ב-8055: 205 בר (2975 PSI).\n- לחץ נסיעה (Travel Circuit): 310 בר (4500 PSI).\n- בדיקת נסיעה: 10 מטר ישר — חריגה = בעיה ב-Travel Motor.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,נסיעה",
+      "equipment": "JCB 8055,JCB 8085",
+      "symptom": "לחץ נמוך,נסיעה לקויה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_8055_mini_hydraulic_004_1",
+    "text": "תיקון:\n- מסנן סתום: מק\"ט JCB 32/925682.\n- Gear Pump שחוקה: JCB 20/925710.\n- Travel Motor: JCB 20/925420.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,נסיעה",
+      "equipment": "JCB 8055,JCB 8085",
+      "symptom": "לחץ נמוך,נסיעה לקויה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_457_wheel_loader_hydraulic_005_0",
+    "text": "תקלות מעמיס גלגלים JCB 457/437 — הגה והידראוליקה\n\nסימפטומים ב-JCB 457:\n- הגה כבד, מפרק ההגה הארטיקולרי מגיב לאט\n- קצב הרמת הכף (Bucket) ירד\n- קוד: E2150 (לחץ הגה נמוך), E2160 (טמפרטורת שמן הגה גבוהה)\n- דלף שמן ממפרק ההגה המרכזי\n\nסיבות:\n1. בלאי אטמים בגלגלי ההגה (Steering Cylinder) — נפוץ לאחר 3,000 שעות.\n2. בלאי Steering Pump (Bosch-Rexroth ב-JCB 457).\n3. Priority Valve (שסתום עדיפות להגה) סתום.\n4. בלאי ציר מפרק ההגה (Articulation Pin/Bushing).\n\nאבחון:\n- לחץ מערכת ההגה (TP-Steer): 175–195 בר.\n- בדוק Priority Valve — פתח ונקה.\n- בדוק ציר מפרק: נדנוד מעל 5 מ\"מ = בלאי.\n\nתיקון:\n- Seal Kit גלגלי הגה: JCB 992/12800.\n- ציר מפרק: דורש Puller + Press Tooling.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,הגה",
+      "equipment": "JCB 457,JCB 437",
+      "symptom": "הגה כבד,חימום שמן",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_457_wheel_loader_hydraulic_005_1",
+    "text": "בטיחות: חסום Safety Bar (כלול בערכת הכלים של JCB 457) לפני עבודה על המפרק!",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,הגה",
+      "equipment": "JCB 457,JCB 437",
+      "symptom": "הגה כבד,חימום שמן",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_engine_overheating_008_0",
+    "text": "התחממות יתר מנוע (Engine Overheating) ב-JCB 3CX/4CX\n\nסימפטומים:\n- מד-טמפרטורה עולה לאזור האדום לאחר 30–60 דקות\n- אדים מאזור הרדיאטור\n- קוד: E0310 (טמפרטורת מנוע גבוהה), E0320 (חיישן טמפרטורה פגום)\n- שמן מנוע בגוון חלבי = מים נכנסו (ראש גלינדרים פגום)\n\nסיבות אפשריות:\n1. רדיאטור סתום חיצונית — הסיבה הנפוצה ביותר.\n2. מפלס נוזל קירור נמוך.\n3. תרמוסטט (Thermostat) תקוע סגור.\n4. בלאי משאבת מים (Water Pump Impeller שחוק, דלף מאטם).\n5. ראש גלינדרים (Head Gasket) פגום.\n6. Viscous Fan Clutch בלוי.\n\nאבחון:\n- בדוק ניקיון רדיאטור — שטוף עם מים בלחץ נמוך מבפנים כלפי חוץ.\n- בדוק תרמוסטט: אם צינור עליון לא מתחמם = תרמוסטט תקוע.\n- Block Test Kit: נוזל משנה צבע לירוק = גזי בעירה נכנסו = ראש פגום.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,קירור",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "התחממות יתר מנוע",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_engine_overheating_008_1",
+    "text": "תיקון: תרמוסטט JCB 02/800483 — שעה. משאבת מים JCB 02/201338 — 2–3 שעות.\n\nאזהרות: אל תפתח מכסה רדיאטור חם! אל תוסיף מים קרים למנוע חם — סדקים בגוש!",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,קירור",
+      "equipment": "JCB 3CX,JCB 4CX",
+      "symptom": "התחממות יתר מנוע",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js300_track_010_0",
+    "text": "מערכת הנסיעה (Undercarriage / Track) ב-JCB JS300/JS370\n\nסימפטומים:\n- זחל 'יוצא מהמסילה' (Track Derailment) — בפניות חדות\n- רעש מתכתי מאזור הזחל\n- קוד: F3100 (תקלת Travel Motor שמאל), F3110 (ימין)\n\nסיבות:\n1. מתיחת זחל שגויה — ירידת לחץ ב-Tensioner Cylinder.\n2. בלאי גלגלי-רגל (Bottom Rollers) וגלגלי-עליון (Carrier Rollers).\n3. בלאי Sprocket וחוליות השרשרת (Track Link Bushings).\n4. Travel Motor (Kawasaki MX500) תקוע.\n5. בלאי אטם ציר (Floating Ring Seal / Duo-Cone Seal) — דלף שמן.\n\nבדיקת מתיחת זחל:\nהרחף גלגל אמצעי 10 ס\"מ. מדוד שמיטה (Sag) — תקין: 10–20 מ\"מ. מעל 30 מ\"מ = כיוון.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מערכת זחל,נסיעה",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "זחל יורד,נסיעה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js300_track_010_1",
+    "text": "תיקון: מלא גריז ל-Tensioner Greaser Cylinder. Sprocket — ניתן להפוך (Reverse).\nFinal Drive Oil: EP90 Gear Oil (1.5–2 ליטר לצד) — כל 2,000 שעות.\n\nתחזוקה: מתיחת זחל כל 50 שעות. בדיקת גלגלים כל 250 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מערכת זחל,נסיעה",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "זחל יורד,נסיעה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_paver_htd5_011_0",
+    "text": "תקלות מפסד אספלט (Asphalt Paver) JCB HTD5 / Vibromax\n\nסימפטומים:\n- פריסה לא אחידה — פסים ועביות לא שוות\n- Screed לא מתחמם לטמפרטורה הנדרשת (150–180°C)\n- קונבייר (Conveyor) עצר\n- Auger (בורג ספירלה) נסתם — אספלט קפוא\n\nסיבות:\n1. חיישן טמפרטורת Screed פגום.\n2. Screed Heater (גוף חימום) שרוף — עצמאי לכל חצי.\n3. סתימת Auger — אספלט מצונן.\n4. Drive Motor לקונבייר — מנוע הידראולי פגום.\n5. Grade Control Sensor (חיישן שיפוע) כפוף/שגוי.\n\nאבחון:\n- בדוק עלייה בטמפרטורת Screed: קצב תקין 5–8°C לדקה.\n- לחץ קונבייר (TP-Conveyor): 180–220 בר.\n- מדוד עובי שכבה ב-3 נקודות לרוחב.\n\nאזהרות: Screed חם 180°C! לבוש כפפות חסינות חום.\nאסור להניח ידיים ב-Auger בסיבוב — סכנת כריתת אצבעות!",
+    "metadata": {
+      "source": "seed",
+      "topic": "פייבר,אספלט,Screed",
+      "equipment": "JCB HTD5,JCB Vibromax",
+      "symptom": "פריסה לא אחידה,Screed לא מתחמם",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_dpf_coldstart_012_0",
+    "text": "תקלות הפעלה בקור ו-DPF ב-JCB 3CX Stage IV\n\nסימפטומים:\n- קושי בהפעלה מתחת ל-5°C\n- נורת DPF מהבהבת — מסנן מלא\n- קוד: E0610 (EGR), E0710 (DPF Regeneration Failed)\n- ירידת הספק (Engine Derate) עקב DPF מלא\n\nסיבות לקשיי קור:\n1. Glow Plugs בלויים — JCB 3CX Stage IV: 4 גלואים.\n2. מצבר חלש (מתח נמוך מ-12V).\n3. דלק קיץ בחורף (Waxed Fuel).\n\nסיבות ל-DPF מלא:\n1. עבודה ממושכת בסרלנטי (Idling) — DPF לא מגיע ל-600°C לניקוי.\n2. EGR Valve פגום — פחמן עודף.\n\nאבחון ל-DPF:\n- קרא רמת עומס DPF ב-ServiceMaster 4 — מעל 80% = נדרש Regeneration.\n- בצע Active Regeneration: 20–40 דקות בסרלנטי גבוה.\n- אם נכשל: Off-Machine Regen במוסך.",
+    "metadata": {
+      "source": "seed",
+      "topic": "DPF,הפעלה בקור,מנוע",
+      "equipment": "JCB 3CX Stage IV",
+      "symptom": "קשיי הפעלה בקור,DPF מלא",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_3cx_dpf_coldstart_012_1",
+    "text": "תיקון: גלואים JCB 02/201543 — שעה. Active Regen = מחמם פליטה!\nאל תבצע Regen במרחב סגור — פליטה מרובה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "DPF,הפעלה בקור,מנוע",
+      "equipment": "JCB 3CX Stage IV",
+      "symptom": "קשיי הפעלה בקור,DPF מלא",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_540_boom_013_0",
+    "text": "תקלת זרוע טלסקופית ב-JCB 540-170 / 540-200\n\nסימפטומים:\n- הזרוע עוצרת ב-60–70% מהאורך המירבי\n- שמן דולף מתפרי הזרוע בהרחבה מלאה\n- קוד: T2010 (חיישן אורך זרוע פגום), T2020 (ולוו טלסקופי)\n\nסיבות:\n1. בלאי Wear Pads (רפידות שחיקה) — גורם לחיכוך ועצירה.\n2. חיישן אורך (Boom Length Sensor / Linear Potentiometer) שגוי.\n3. בלאי אטמי גליל הרחבה (Telescope Cylinder Seals) — דלף פנימי.\n4. Cylinder Rod כפוף (Bent Telescope Rod) עקב עומס-יתר.\n5. הגבלת SRS — לא מאפשר הרחבה בזווית הנוכחית עם העומס.\n\nאבחון:\n- בדוק Wear Pads: עובי מינימלי 3 מ\"מ.\n- ServiceMaster: עקוב Boom Length בזמן אמת — ערך 'קופץ' = חיישן פגום.\n\nתיקון:\n- Wear Pads: JCB 331/38697. חיישן: JCB 701/80189.\n- Cylinder Seals: 8–10 שעות עבודה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע טלסקופית",
+      "equipment": "JCB 540-170,JCB 540-200",
+      "symptom": "זרוע לא מתארכת",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_540_boom_013_1",
+    "text": "תחזוקה: שמן Wear Pads ב-Molybdenum Grease כל 250 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע טלסקופית",
+      "equipment": "JCB 540-170,JCB 540-200",
+      "symptom": "זרוע לא מתארכת",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_8018_bucket_014_0",
+    "text": "תקלת כף ושסתום עומס ב-JCB 8018/8008 מחפרון מיני\n\nסימפטומים:\n- הדלי (Bucket) לא מסתובב לסיגור מלא\n- הזרוע 'נקפאת' בעמדה אמצעית\n- שמן הידראולי מתחמם גם בעבודה קלה\n- Auxiliary (כלים נוספים) לא עובד\n\nסיבות:\n1. Overload Relief Valve עבור מעגל ה-Bucket תקוע פתוח.\n2. בלאי Gear Pump ב-8008 — ספיקה 6–8 ל\"ד בלבד.\n3. בלוק שסתומים (Control Valve Block) — ב-8008/8018 בלוק אחד לכל מנגנוני השסתומים.\n4. בלאי גליל ה-Bucket (Bucket Cylinder) — דלף פנימי.\n\nאבחון:\n- לחץ ראשי ב-8008: 180–200 בר.\n- בדוק Overload Relief Valve — נגיש בבלוק הראשי.\n\nהערות חשובות:\n- ב-JCB 8008/8018 כל הרכיבים קטנים מאוד — שחיקה זעירה = ירידה גדולה בביצועים.\n- השתמש בשמן JCB HP32 — לא HP46 כמו במכונות גדולות!",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,כף",
+      "equipment": "JCB 8008,JCB 8018",
+      "symptom": "כף לא מגיבה,שסתום עומס",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js300_final_drive_015_0",
+    "text": "תקלת Final Drive (כונן סופי) ב-JCB JS300 — שמן דולף וקול טחינה\n\nFinal Drive = מנגנון גלגל-פלנטרי (Planetary Gearbox) + מנוע נסיעה (Travel Motor) → Sprocket.\n\nסימפטומים:\n- שמן דולף מאזור ה-Sprocket\n- קול טחינה (Grinding) מ-Final Drive בנסיעה\n- קוד: F3150 (Final Drive שמאל), F3160 (Final Drive ימין)\n- Final Drive חם מאוד למגע\n\nסיבות:\n1. מפלס שמן Final Drive נמוך.\n2. בלאי מסב פלנטרי (Planetary Bearing).\n3. שבירת שן גלגל (Gear Tooth Breakage) עקב עומס-יתר.\n4. בלאי Duo-Cone Seal (Floating Ring Seal) — דלף שמן.\n\nאבחון:\n- פתח ברגי מדידה ב-9 ו-3 שעות — שמן צריך לזרום מהפקק ב-9 שעון.\n- שמן שחור עם שבבי מתכת = בלאי פנימי חמור.",
+    "metadata": {
+      "source": "seed",
+      "topic": "כונן סופי,Final Drive",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "דלף שמן Final Drive,קול טחינה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_js300_final_drive_015_1",
+    "text": "תיקון:\n- מלא EP90 Gear Oil (1.5–2 ליטר לצד).\n- Duo-Cone Seal: תמיד החלף זוג!\n- Final Drive Assembly: JCB 333/H5832.\n\nתחזוקה: בדיקת שמן כל 500 שעות. החלפת שמן כל 2,000 שעות.\nDuo-Cone Seals = אטמים פלדה — ידיים נקיות בלבד, אסור שמן על פני האטם!",
+    "metadata": {
+      "source": "seed",
+      "topic": "כונן סופי,Final Drive",
+      "equipment": "JCB JS300,JCB JS370",
+      "symptom": "דלף שמן Final Drive,קול טחינה",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_srs_007_0",
+    "text": "תקלות מערכת SRS ויציבות ב-JCB 535/540 Telehandler\n\nJCB LiveLink סימפטומים:\n- מערכת SRS (Stability Reference System) עוצרת הרמה ומאירה אדום\n- Load Sensing לא עובד — לא מזהה כמה משקל על הכף\n- הגה ארבע-גלגלים (4WS) לא מתחלף בין מצבים\n- קוד: T1010 (תקלת SRS), T1020 (חיישן עומס פגום), T1030 (תקלת 4WS)\n\nסיבות:\n1. חיישן עומס (Load Moment Indicator / LMI) פגום.\n2. SRS ECU פגום.\n3. כיול שגוי — נדרש Calibration מחדש.\n4. חיישן זווית גלגל (Rear Axle Steering Sensor) לבקרת 4WS.\n\nאבחון:\n- בדוק חיישן עומס (LMI): ניוטרל 0.5V, עומס מקסימלי ~4.5V.\n- SRS Calibration: קרקע שטוחה, זרוע בכלים ריקים.\n- בדוק ב-ServiceMaster 4: SRS ו-4WS נפרדים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "SRS,יציבות,Telehandler",
+      "equipment": "JCB 535-95,JCB 540-170",
+      "symptom": "תקלת SRS,עומס יתר",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "jcb_telehandler_srs_007_1",
+    "text": "בטיחות: לעולם לא לנטרל SRS.\nבדיקת כיול SRS דורשת מישור מוחלט — שיפוע מעל 2° = כיול שגוי!",
+    "metadata": {
+      "source": "seed",
+      "topic": "SRS,יציבות,Telehandler",
+      "equipment": "JCB 535-95,JCB 540-170",
+      "symptom": "תקלת SRS,עומס יתר",
+      "brand": "JCB"
+    }
+  },
+  {
+    "id": "doosan_excavator_hydraulic_001_0",
+    "text": "תקלות מערכת הידראוליקה במחפרוני דוסאן/דוולון DX300 / DX340 / DX380\n\nדגמים: DX300LC-7, DX340LC-7, DX380LC-7 (מנועי D-Series)\n\nמערכת ההידראוליקה מורכבת ממשאבה כפולה (Tandem Piston Pump), בלוק שסתומים ראשי (Main Control Valve), מנועי נסיעה (Travel Motors), מנועי סיבוב (Swing Motor) וגלינדרים (Boom/Stick/Bucket Cylinders).\n\n1. אובדן כוח כללי בכל תנועות ה-Boom/Stick/Bucket\n   סיבה: לחץ הידראולי ראשי (Main Relief Pressure) ירד. ב-DX300 הלחץ הנומינלי הוא 350 bar.\n   בדיקה: חבר מד לחץ לנקודת בדיקה P1/P2 בגוף המשאבה. אם לחץ מתחת ל-300 bar = בעיה.\n   פתרון: כוונן Main Relief Valve. אם לא מגיע ללחץ לאחר כוונון = החלף שסתום.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "DX300,DX340,DX380",
+      "symptom": "בעיות לחץ הידראולי",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_excavator_hydraulic_001_1",
+    "text": "2. Boom יורד לבד (Boom Drift)\n   סיבה: Boom Hold Valve (Anti-Drift Valve) דולף.\n   בדיקה: הרם Boom לגובה מקסימלי, כבה מנוע. מדד ירידה לאחר 5 דקות. יותר מ-10mm = בעיה.\n   פתרון: פרק ונקה את ה-Boom Hold Valve, בדוק O-rings, החלף אם נדרש.\n\n3. תגובה איטית של הג'ויסטיקים\n   סיבה: לחץ Pilot נמוך (Pilot Pressure). ב-DX300 הלחץ הנדרש: 38 bar.\n   בדיקה: חבר מד לחץ לנקודת Pilot Port על גבי בלוק הג'ויסטיקים.\n   פתרון: בדוק משאבת Pilot (Pilot Pump), בדוק פילטר Pilot (לרוב 10 מיקרון), החלף אם סתום.\n\n4. שמן הידראולי חם מדי (Overheating) — אזעקה מעל 95°C\n   נקה את ה-Oil Cooler מאבק ולכלוך (לחץ אוויר נגד כיוון זרימה).\n   בדוק מאוורר (Fan Motor) ותרמוסטט שמן (Oil Thermostat Valve).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "DX300,DX340,DX380",
+      "symptom": "בעיות לחץ הידראולי",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_excavator_hydraulic_001_2",
+    "text": "5. רעש גבוה מהמשאבה — Cavitation\n   בדיקה: בדוק כל חיבורי היניקה לשמן. בדוק O-rings בתקע כניסת השמן.\n   פתרון: הדק חיבורים, החלף O-rings. אם הרעש נמשך = בדוק מסנן שאיבה (Suction Strainer).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "DX300,DX340,DX380",
+      "symptom": "בעיות לחץ הידראולי",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_net_diagnostics_001_0",
+    "text": "אבחון עם מערכת DOOSAN-Net / Hi-MATE במחפרוני דוסאן ודוולון\n\nDOOSAN-Net (Hi-MATE Remote Management) מאפשר ניטור מרחוק ואבחון מקצועי.\n\nגישה לקודי שגיאה דרך לוח המכשירים:\n1. כבה את הכלי לחלוטין.\n2. החזק את כפתור ה-MODE על גבי לוח הבקרה.\n3. הפעל גורם הנעה (Key On) תוך כדי החזקת כפתור.\n4. קודי שגיאה פעילים יוצגו בפורמט E + מספר (למשל E0302).\n\nקודי שגיאה נפוצים:\nE0302 — תקלת חיישן טמפרטורת שמן הידראולי (Hydraulic Oil Temp Sensor)\n   פתרון: החלף חיישן טמפרטורה שמן הידראולי (NTC Sensor). מיקום: על גבי ה-Hydraulic Tank.\n\nE0410 — תקלת חיישן לחץ Pilot (Pilot Pressure Sensor Fault)\n   פתרון: בדוק חיישן לחץ Pilot, בדוק חיבורי חשמל לחיישן.",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון,קודי שגיאה",
+      "equipment": "DX300,DX340,DX380,DX27,DX35,DX62",
+      "symptom": "קודי שגיאה DOOSAN-Net",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_net_diagnostics_001_1",
+    "text": "E0601 — תקלת תקשורת CAN Bus בין ECM למסוף (ECM-Monitor CAN Fault)\n   תסמין: מסך לוח שחור, קודי שגיאה מרובים בו זמנית.\n   פתרון: בדוק כבל CAN (שני חוטים: CAN Hi / CAN Lo), בדוק מסיים CAN (120 אוהם בין קצוות).\n\nE0204 — תקלת מנוע: לחץ שמן נמוך (Engine Oil Pressure Low) — עצור מנוע מיד!\n   בדוק מפלס שמן מנוע. בדוק חיישן לחץ שמן. בדוק משאבת שמן מנוע.\n\nE0901 — אזעקת מסנן הידראולי (Hydraulic Filter Clogged)\n   פתרון: החלף מסנן הידראולי (Return Filter). ב-DX300 = Doosan חלק 400404-00241.\n\nחיבור DOOSAN-Net Scanner:\n   יציאת OBD: ממוקמת בתא המפעיל, מתחת ללוח שמאל.\n   תוכנה: Doosan Diagnostic Tool (DDT) או Hi-MATE Diagnostics.\n   פרוטוקול: CAN-ISO 11898 ב-250 kbps.",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון,קודי שגיאה",
+      "equipment": "DX300,DX340,DX380,DX27,DX35,DX62",
+      "symptom": "קודי שגיאה DOOSAN-Net",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_mini_excavator_001_0",
+    "text": "מחפרוני מיני דוסאן — DX27Z / DX35Z / DX62R — תקלות נפוצות\n\nמאפיינים כלליים:\n• DX27Z: מנוע Yanmar 3TNV88 (18.8 kW), Zero Tail Swing\n• DX35Z: מנוע Yanmar 3TNV88C (24.4 kW), Zero Tail Swing\n• DX62R: מנוע Doosan D24 (33.8 kW), Reduced Tail Swing\n\n1. מחפרון לא נוסע (No Travel)\n   סיבה שכיחה: לחץ Pilot לא מגיע לשסתומי הנסיעה.\n   בדיקה: בדוק שסתום Pilot Safety (Safety Lever Lock Valve) — רוב הדגמים דורשים שמוט הבטיחות יורד.\n   בדיקה נוספת: בדוק פילטר Pilot (ב-DX35Z נמצא מאחורי לוח השמאלי).\n   פתרון: החלף פילטר Pilot כל 500 שעות.\n\n2. Dozer Blade לא מרים (ב-DX35Z ו-DX62R)\n   סיבה: שסתום גלינדר ה-Blade תקוע.\n   בדיקה: בדוק לחץ על קו הגלינדר — צריך ~200 bar לפחות.\n   פתרון: נקה שסתום, בדוק O-rings בגלינדר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע",
+      "equipment": "DX27,DX35,DX62",
+      "symptom": "תקלות מיני מחפרון",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_mini_excavator_001_1",
+    "text": "3. רעש גבוה ממנוע Yanmar\n   DX27/DX35 מצוידים ב-Yanmar — רעש גבוה = מסנן אוויר סתום.\n   בדוק AIR CLEANER — ב-DX27 נמצא מתחת ל-Hood ימין.\n\n4. כוח מופחת בזרוע (Arm / Stick Weak)\n   ב-DX62R: בדוק שסתום Arm Relief (מוגדר ל-280 bar).\n   בדוק שחיקת גלינדר Arm — פרק ובדוק אטמים (Seals).\n\n5. דליפת שמן ממפרק (Pin Seal Leak)\n   מיני מחפרונים רגישים לדליפות ב-Pin Seals בגלל עבודה קרובה לאדמה.\n   בדוק ושמן כל Grease Point כל 50 שעות.\n   Grease Points: Boom Foot Pin, Boom Cylinder Rod Pin, Arm Cylinder, Bucket Pins.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע",
+      "equipment": "DX27,DX35,DX62",
+      "symptom": "תקלות מיני מחפרון",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_wheel_loader_001_0",
+    "text": "מעמיסי גלגלים דוסאן — DL300 / DL380 / DL420 — מערכת הנעה ותיבת הילוכים\n\nדגמים ומנועים:\n• DL300: מנוע Doosan DL06K (120 kW)\n• DL380: מנוע Doosan DL06P (153 kW)\n• DL420: מנוע Doosan DL08 (186 kW)\nתיבת הילוכים: ZF Powershift 4-speed automatic\n\n1. תיבת הילוכים לא עוברת הילוך (Transmission Shift Failure)\n   קוד שגיאה טיפוסי: TC fault / ZF Transmission Fault\n   בדיקה: בדוק מפלס שמן תיבת הילוכים (Dip Stick — מנוע סרק).\n   בדיקה: חבר סורק ZF TestMan לאיתור קוד שגיאה מדויק.\n   פתרון: אם שמן נמוך — מלא שמן ZF Ecofluid M. אם TCU fault — איפוס ובדיקה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "תיבת הילוכים,הנעה,היגוי",
+      "equipment": "DL300,DL380,DL420",
+      "symptom": "תקלות מעמיס גלגלים",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_wheel_loader_001_1",
+    "text": "2. מעמיס לא מרים זרוע (Lift Arm Weak)\n   ב-DL420 עם שסתום עומס (Load Sensing Valve):\n   בדיקה: בדוק לחץ Lift Relief — נומינלי 250 bar.\n   בדוק: מסנן הידראולי (החלף כל 500 שעות).\n\n3. היגוי כבד (Steering Heavy)\n   מעמיסי גלגלים עם היגוי אורביטרולי (Orbitrol Steering).\n   בדיקה: לחץ משאבת היגוי — צריך ~170–200 bar בתפוקה מלאה.\n   פתרון: כוונן שסתום Relief היגוי. אם לא עוזר — החלף משאבת היגוי.\n\n4. בלמים חלשים (Wet Disc Brake Wear)\n   DL380/DL420 מצוידים בבלמי דיסק רטובים (Wet Disc Brakes) בציר.\n   סיבה: שמן בלמים (Axle Oil) מזוהם או מפלס נמוך.\n   בדיקה: פרק בורג בדיקה בציר — שמן צריך לצאת נקי.\n   פתרון: החלף שמן ציר (SAE 80W-90 GL-5) כל 1000 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "תיבת הילוכים,הנעה,היגוי",
+      "equipment": "DL300,DL380,DL420",
+      "symptom": "תקלות מעמיס גלגלים",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_engine_dseries_001_0",
+    "text": "מנועי D-Series של דוסאן/דוולון — תחזוקה ותקלות\n\nסדרת מנועי D-Series: D18, D24, DL06, DL08, DB58\nשימוש: מחפרוני DX180–DX800, מעמיסי DL200–DL550\n\nמאפיינים כלליים: Common Rail Injection (CRI) — Bosch, Turbocharger עם Intercooler, EGR (Exhaust Gas Recirculation) ב-Stage V, DPF (Diesel Particulate Filter) ב-Stage V\n\n1. מנוע מאבד הספק (Power Loss) — Derate Mode\n   סיבה שכיחה: DPF סתום (Soot Level High).\n   פתרון: בצע Regeneration אוטומטית — הפעל בגז גבוה (High Idle) לפחות 45 דקות ללא עומס.\n   אם לא עוזר: ריג'נרציה פורסת בסדנה (Forced DPF Regen) עם סורק אבחון.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,D-Series,DPF,EGR",
+      "equipment": "DX300,DX380,DL380,DL420",
+      "symptom": "תקלות מנוע D-Series",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_engine_dseries_001_1",
+    "text": "2. עשן שחור (Black Smoke) ממנוע D-Series\n   סיבה: Injector פגום, מסנן אוויר סתום, Turbo לא עובד.\n   בדיקה: בדוק Boost Pressure ב-Intercooler Outlet — ב-DL06 צריך ~1.8 bar בעומס.\n   פתרון: בדוק צינורות Intercooler לדליפות, בדוק Turbo לחופשיות סיבוב.\n\n3. מנוע רועד בסרק (Rough Idle)\n   סיבה: Injector אחד או יותר פגומים, לחץ Common Rail נמוך.\n   בדיקה: עם תוכנת Doosan Engine Diagnostics — בצע Cylinder Balance Test.\n\n4. Glow Plugs (נרות להט) ב-DX35/DX62\n   תסמין: קשה להתנעה בקור.\n   בדיקה: מד נגד/אוהמטר — כל Plug צריך 0.5–2 אוהם. אינסוף = שבור.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,D-Series,DPF,EGR",
+      "equipment": "DX300,DX380,DL380,DL420",
+      "symptom": "תקלות מנוע D-Series",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_engine_dseries_001_2",
+    "text": "5. EGR Valve תקוע פתוח (DX300 Stage IV)\n   תסמין: עשן לבן-אפור, צריכת דלק גבוהה, הספק נמוך.\n   פתרון: פרק ונקה EGR Valve עם ממס פחמן (Carbon Cleaner). אם שחוק — החלף.\n\nתחזוקה:\nשמן מנוע D-Series: VDS-4.5 — החלפה כל 500 שעות.\nמסנן שמן: החלפה עם שמן. V-belts: בדיקת מתח ושחיקה כל 500 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,D-Series,DPF,EGR",
+      "equipment": "DX300,DX380,DL380,DL420",
+      "symptom": "תקלות מנוע D-Series",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_swing_motor_001_0",
+    "text": "מנוע סיבוב (Swing Motor) — DX300 / DX340 / DX380 — אבחון מעמיק\n\nמנוע הסיבוב ב-DX300 מסוג Piston Motor עם גיר Swing Reduction.\n\n1. סיבוב חד צדדי (Swings Better One Side)\n   בדיקה: חבר מד לחץ לנקודות A ו-B של Swing Motor (Clockwise / Counter-CW).\n   לחץ נומינלי: ~260–280 bar בשני הכיוונים.\n   פתרון: כוונן Swing Relief Valves בנפרד לשני הכיוונים.\n\n2. סיבוב 'מקפץ' (Jerky Swing)\n   סיבה: שסתומי Make-Up (Anti-Void Valves) פגומים.\n   תפקיד Make-Up Valve: מלא חלל שנוצר בעצירת סיבוב מהירה.\n   פתרון: נקה Make-Up Valve Check Ball.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,Swing Motor",
+      "equipment": "DX300,DX340,DX380",
+      "symptom": "תקלות מנוע סיבוב",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_swing_motor_001_1",
+    "text": "3. Swing Brake לא עובד (No Parking Brake)\n   ב-DX300 בלם החנייה של הסיבוב הוא Spring Apply, Hydraulic Release.\n   תסמין: הכלי מסתובב בנסיעה בשיפוע.\n   בדיקה: לחץ Pilot Release ל-Brake = 35 bar. בדוק שלחץ Pilot תקין.\n   פתרון: החלף Swing Parking Brake Valve.\n\n4. שמן Swing Gear Box דולף\n   שמן: SAE 90 EP Gear Oil. החלפה: כל 2000 שעות.\n   סכנה: שמן נמוך = שחיקת גלגלי Planet בגיר הפחתה.\n\n5. רעש גריסה מה-Swing Ring Gear\n   Swing Ring Gear = טבעת שיניים חיצונית מתחת לבית.\n   שימון: גריז מיוחד (Open Gear Grease) כל 250 שעות דרך נקב הגריז.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,Swing Motor",
+      "equipment": "DX300,DX340,DX380",
+      "symptom": "תקלות מנוע סיבוב",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "bobcat_skid_steer_fault_codes_001_0",
+    "text": "קודי תקלה (B-Codes) בסקיד סטיר בובקט — S570 / S650 / S770 / T650 / T770\n\nבובקט שייכת לדוסאן (Doosan Bobcat) מאז 2007. מערכת האבחון משתמשת ב-B-Codes.\n\nגישה לקודי שגיאה:\n1. כנס לתא המפעיל, סגור את הדלת.\n2. הורד את Safety Bar (מוט הבטיחות).\n3. הפעל מתג הצתה ל-ON (ללא הפעלת מנוע).\n4. הקש שלוש פעמות על כפתור Mode.\n5. קודי B יוצגו בלוח הדיגיטלי.\n\nקודי B נפוצים:\nB-2-1 — תקלת חיישן מיקום זרוע (Lift Arm Position Sensor)\n   פתרון: בדוק חיישן מיקום זרוע (Potentiometer) — ממוקם בציר הזרוע.\n\nB-3-1 — תקלת חיישן מיקום Bob-Tach (Attachment Coupler Sensor)\n   פתרון: בדוק מיקרוסוויץ' ב-Bob-Tach, נקה מלכלוך.\n\nB-4-2 — תקלת מנוע הידראולי ימין (Right Drive Motor Fault)\n   תסמין: כלי נוסע שמאלה בלבד, עיגול בנסיעה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "קודי שגיאה,B-Codes",
+      "equipment": "S570,S650,S770,T650,T770",
+      "symptom": "קודי תקלה בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_skid_steer_fault_codes_001_1",
+    "text": "B-5-1 — תקלת מנוע מאוורר (Fan Motor Fault)\n   פתרון: בדוק מנוע מאוורר מנוע, בדוק רלאי מאוורר.\n\nB-6-3 — תקלת חיישן טמפרטורת הידראוליקה גבוהה מדי\n   פתרון: נקה Oil Cooler, בדוק מפלס שמן הידראולי.\n\nB-7-1 — תקלת BCS (Bobcat Control System) — CAN Communication Error\n   פתרון: בדוק תקינות כבל CAN בין בקרים. בדוק 120 אוהם בין CAN-H ל-CAN-L.\n\nאיפוס קודים: לאחר תיקון — כבה לחלוטין, המתן 30 שניות, הפעל.",
+    "metadata": {
+      "source": "seed",
+      "topic": "קודי שגיאה,B-Codes",
+      "equipment": "S570,S650,S770,T650,T770",
+      "symptom": "קודי תקלה בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_skid_steer_drive_001_0",
+    "text": "מנועי הנעה הידרוסטטיים בסקיד סטיר בובקט — תקלות ואבחון\n\nדגמים: S570, S650, S770, T650 (מסילות), T770 (מסילות)\nמערכת ההנעה: Hydrostatic Drive — משאבת Tandem Hydrostatic Pump + שני מנועי Drive Motor\n\n1. כלי נוסע עקום (Pulls to One Side)\n   פתרון: ב-S650 — כנס לתפריט Operator Mode וכייל מחדש יחסי ג'ויסטיק/נסיעה.\n   פתרון אחר: בדוק שמנוע ימין ושמאל מייצרים ספיקה שווה. בדוק שסתומי Charge Relief (250 bar).\n\n2. כלי לא נוסע בכלל (No Drive)\n   בדוק: לחץ Charge Pressure = 27–30 bar. אם נמוך = Charge Pump פגומה.\n   בדוק: Safety Interlock — מוט הבטיחות חייב להיות למטה!\n   בדוק: קוד B-4-2 / B-4-3 (תקלת מנוע נסיעה).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הנעה הידרוסטטית,מסילות",
+      "equipment": "S570,S650,S770,T650,T770",
+      "symptom": "תקלות נסיעה סקיד סטיר",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_skid_steer_drive_001_1",
+    "text": "3. נסיעה איטית / חסר כוח (Sluggish Drive)\n   בדיקה: מד לחץ בנקודת Work Port של המשאבה — צריך ~420 bar בעומס מלא.\n   פתרון: בדוק Case Drain Flow — זרימת שמן גבוהה דרך Case Drain = שחיקת פיסטונים.\n\n4. מסילות T650/T770 — מתח מסילה\n   מסילות גומי (Rubber Tracks) דורשות מתח של ~50–80 mm רפיון.\n   כוונון: ב-T650 — נקב גריז ב-Idler Tensioner. מלא גריז עד קבלת מתח נכון.\n   מסילה רפויה = נפילת מסילה בפניות חדות.\n\n5. Heat Build-Up בנסיעה ממושכת\n   נקה את ה-Hydraulic Oil Cooler מקש ואבק.\n   בדוק מפלס שמן הידראולי. ב-S770 קיבולת = 33 ליטר.\n   שנה שמן הידראולי כל 1000 שעות (AW 46 Hydraulic Oil).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הנעה הידרוסטטית,מסילות",
+      "equipment": "S570,S650,S770,T650,T770",
+      "symptom": "תקלות נסיעה סקיד סטיר",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_lift_arm_001_0",
+    "text": "זרוע הרמה (Lift Arm) בסקיד סטיר בובקט — תקלות ותחזוקה\n\nדגמים: S570, S650, S770, T650, T770\nסוג זרוע: Vertical Lift (הרמה אנכית) — S570/S650/T650. Radius Lift — S770/T770.\n\n1. זרוע עולה לאט (Slow Lift)\n   בדיקה: לחץ Relief של מעגל הרמה — נומינלי 230–260 bar.\n   בדיקה: מסנן הידראולי — אם סתום = ירידת ספיקה.\n\n2. זרוע יורדת לאחר הרמה (Arm Drifts Down)\n   סיבה: אטמי גלינדר הרמה שחוקים (Lift Cylinder Seals).\n   בדיקה: הרם זרוע לגובה מקסימלי, כבה מנוע — מדוד ירידה. יותר מ-15mm בשעה = החלף אטמים.\n   סיבה אחרת: שסתום Anti-Drift (Hold Valve) דולף.\n\n3. רעש 'פטיש' בעת הגעה לגובה מקסימלי\n   ב-S650 — Load Sensing Relief Valve מכוון גבוה מדי.\n   פתרון: כוונן Lift Relief Valve ל-240 bar.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע הרמה,Bob-Tach",
+      "equipment": "S570,S650,S770,T650,T770",
+      "symptom": "תקלות זרוע הרמה סקיד סטיר",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_lift_arm_001_1",
+    "text": "4. כשל ב-Float Mode\n   Float Mode = זרוע צפה ומתאימה לפני השטח.\n   ב-S770: Float לא עובד — בדוק שסתום Float Control, בדוק כבל/חיבור לכפתור בג'ויסטיק.\n\n5. Lift Arm Pivot Pins שחוקים\n   תסמין: רעשן בבסיס הזרוע, תנועה לא יציבה.\n   שימון: כל 50 שעות עם Moly Grease (גריז מוליבדן).\n   סכנה: Pivot Pin שבור = קריסת זרוע!\n\n6. Bob-Tach לא נועל\n   Bob-Tach = מערכת החלפת אביזרים מהירה.\n   בדיקה: בדוק שסתום הידראולי של Bob-Tach Lock Cylinder.\n   בדוק Safety Lock Switch — מונע שחרור בלתי מכוון.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרוע הרמה,Bob-Tach",
+      "equipment": "S570,S650,S770,T650,T770",
+      "symptom": "תקלות זרוע הרמה סקיד סטיר",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_mini_excavator_001_0",
+    "text": "מחפרוני מיני בובקט — E35 / E50 / E85 — תקלות נפוצות\n\nמאפיינים:\n• E35: מנוע Kubota D1803 (18.1 kW), Zero Tail Swing\n• E50: מנוע Kubota V2607 (28.9 kW), Reduced Tail Swing\n• E85: מנוע Doosan D24 (43.2 kW), Conventional Swing\n\n1. E35 — מנוע Kubota לא עולה\n   בדוק: Fuel Shutoff Solenoid — ב-E35 ממוקם על גבי משאבת הדלק.\n   בדוק: Safety Bar חייב להיות מורד.\n   בדוק: מסנן דלק — Kubota רגיש לדלק מזוהם.\n\n2. E50 — חוסר כוח בחפירה\n   בדוק: Main Relief Pressure ב-E50 = 310 bar.\n   ב-E50 עם שסתום AUX: ודא שה-AUX Flow לא 'גונב' ספיקה מהחפירה.\n   בדוק: מסנן Pilot (Pilot Filter) כל 500 שעות.\n\n3. E85 — Swing איטי לצד אחד\n   בדוק: Swing Relief Pressure כל 250–280 bar (אחיד בשני הכיוונים).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע",
+      "equipment": "E35,E50,E85",
+      "symptom": "תקלות מיני מחפרון בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_mini_excavator_001_1",
+    "text": "4. E35/E50 — רטט Dozer Blade בנסיעה\n   סיבה: שסתום Blade Hold (Anti-Drift) לא חוסם את הגלינדר.\n   פתרון: נקה/החלף Blade Hold Valve.\n\n5. E85 — AUX Hydraulics (לפטיש/גריפר) חלשים\n   בדוק: AUX Flow Setting — ב-E85 ניתן לכוונן ספיקה AUX בלוח הבקרה.\n   בדוק: AUX Relief Pressure — 210 bar.\n\nGrease Points חובה — כל 50 שעות:\nE35: Boom Cylinder Base, Boom Pivot, Stick Pin, Bucket Pin, Dozer Blade Pins.\nE50/E85: נוסף Swing Bearing — גריז כל 250 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע",
+      "equipment": "E35,E50,E85",
+      "symptom": "תקלות מיני מחפרון בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "doosan_travel_system_001_0",
+    "text": "מערכת נסיעה (Travel System) — DX300 / DX380 — אבחון מתקדם\n\nמערכת הנסיעה כוללת: Travel Motor + Planetary Gear + Final Drive + Sprocket + Track.\n\nלחצים נומינליים:\n• Travel High Pressure (Work): 420 bar\n• Travel Pilot Pressure: 35–38 bar\n• Case Drain Pressure: פחות מ-3 bar\n\n1. כלי לא נוסע אחד צד (One Side No Travel)\n   בדיקה שלב א: בדוק Travel Pilot Pressure — חייב להגיע לשסתום הנסיעה הרלוונטי.\n   בדיקה שלב ב: חבר מד לחץ לנקודת Work Port של Travel Motor (A/B Port).\n   אם לחץ A/B נמוך = שסתום Travel Counterbalance Valve חסום.\n   פתרון: פרק ונקה את ה-Counterbalance Valve (Travel Brake Valve).",
+    "metadata": {
+      "source": "seed",
+      "topic": "נסיעה,Travel System",
+      "equipment": "DX300,DX380",
+      "symptom": "תקלות מערכת נסיעה מחפרון",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_travel_system_001_1",
+    "text": "2. כלי נוסע איטי (Slow Travel Both Sides)\n   בדיקה: High/Low Speed Mode — בדוק שלחצן Speed (Tortoise/Rabbit) עובד.\n   ב-High Speed: Travel Motor משנה Displacement לקטן = מהיר יותר.\n   קוד שגיאה: E0502 = תקלת חיישן Swash Plate (Displacement Control).\n\n3. Counterbalance Valve תקוע (ב-DX300)\n   תסמין: כלי 'בורח' בשיפוע למטה = Counterbalance לא חוסם.\n   תסמין הפוך: כלי לא נוסע = Counterbalance תקוע סגור.\n   פתרון: פרק, נקה, החלף O-rings בשסתום.\n\n4. Case Drain חם ומוגבר\n   אם ספיקת Case Drain גבוהה מ-8 L/min = שחיקת פיסטונים ב-Motor.\n   פתרון: מדוד ספיקה בצינור Case Drain עם Flow Meter.",
+    "metadata": {
+      "source": "seed",
+      "topic": "נסיעה,Travel System",
+      "equipment": "DX300,DX380",
+      "symptom": "תקלות מערכת נסיעה מחפרון",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_travel_system_001_2",
+    "text": "5. Track Adjustment (כוונון מתח זחל) ב-DX300\n   מתח נכון: 30–40mm רפיון בין Idler לזחל במרכז.\n   שחרור מתח: פרק בורג Grease Relief לשחרור גריז.",
+    "metadata": {
+      "source": "seed",
+      "topic": "נסיעה,Travel System",
+      "equipment": "DX300,DX380",
+      "symptom": "תקלות מערכת נסיעה מחפרון",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_wheel_loader_maintenance_001_0",
+    "text": "לוח תחזוקה — מעמיסי גלגלים דוסאן DL300 / DL380 / DL420\n\nתחזוקה יומית (לפני כניסה לעבודה):\n• רמת שמן מנוע — מוט בליעה בין MIN ל-MAX\n• רמת קירור מנוע — בצנצנת הרחבה\n• שמן הידראולי — Sight Glass על גבי הטנק\n• שמן תיבת הילוכים ZF — Dipstick עם מנוע סרק\n• לחץ צמיגים: L3 = 3.5 bar קדמי, 3.2 bar אחורי\n\nתחזוקה כל 250 שעות:\n• החלף שמן מנוע ופילטר שמן (15W-40 ACEA E7 בדרך כלל)\n• החלף מסנן דלק ראשי + Water Separator\n• בדוק מסנן אוויר — נקה או החלף\n• שמן כל נקודות הגריז: זרוע, מפרקי היגוי, צירי כוונון\n\nתחזוקה כל 500 שעות:\n• החלף פילטר הידראולי (Return Filter + Suction Strainer)\n• בדוק שמן ZF Transmission — אם שחור/נשרף, החלף מוקדם",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,לוח שירות",
+      "equipment": "DL300,DL380,DL420",
+      "symptom": "לוח תחזוקה מעמיס גלגלים",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_wheel_loader_maintenance_001_1",
+    "text": "תחזוקה כל 1000 שעות:\n• החלף שמן הידראולי (AW 46 Hydraulic Oil)\n• החלף שמן ZF Transmission (ZF Ecofluid M / LifeGuard Fluid 6)\n• החלף שמן צירים (Axle Oil — SAE 80W-90 GL-5)\n\nתחזוקה כל 2000 שעות:\n• החלף שמן ציר קדמי ואחורי\n• בדוק Turbocharger — ניקוי ובדיקת חופשיות ציר\n\nתחזוקה מיוחדת — DPF (DL380/DL420 Stage V):\n• Regeneration אוטומטית: כל 8–12 שעות עבודה\n• אם מנורת DPF דולקת: בצע Parked Regen\n• החלף DPF כל 6000 שעות עבודה ב-DL420",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,לוח שירות",
+      "equipment": "DL300,DL380,DL420",
+      "symptom": "לוח תחזוקה מעמיס גלגלים",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "bobcat_skid_steer_chain_belt_001_0",
+    "text": "מערכת שרשראות הנעה פנימית (Drive Chain) — S570 / S650 — תחזוקה ותקלות\n\nבדגמי S570 ו-S650 (סקיד סטיר גלגלים), מנועי ההנעה ההידרוסטטיים מניעים גלגלים דרך שרשראות פנימיות.\nמיקום: השרשראות ממוקמות בתוך ה-Chassis בשני הצדדים — גישה דרך דלת צד.\n\n1. בדיקת מתח שרשרת (Chain Tension)\n   לחץ על השרשרת במרכז — רפיון מקסימלי: 12–18 mm.\n   שרשרת רפויה מדי: גורמת לרעש וחיכוך בתוך תא ה-Chassis.\n   כוונון: שחרר ברגי ה-Idler Sprocket, הזזה + הדק.\n\n2. תסמינים לשרשרת שחוקה/קרועה\n   רעש 'חריקה' מצד אחד של הכלי בנסיעה.\n   כלי נוסע עקום ללא סיבה הידראולית.\n   פתאום — צד אחד לא נוסע בכלל (שרשרת קרועה).",
+    "metadata": {
+      "source": "seed",
+      "topic": "שרשרת הנעה,מסילות",
+      "equipment": "S570,S650,T650,T770",
+      "symptom": "תקלות שרשרת הנעה סקיד סטיר",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_skid_steer_chain_belt_001_1",
+    "text": "3. שימון שרשרת (Chain Lubrication)\n   שמן שרשרת (Chain Lube Spray — Dry Type) כל 250 שעות.\n   אל תשתמש בגריז סמיך — מצטבר לכלוך ומחיש שחיקה.\n\n4. Sprocket שחוק\n   תסמין: שרשרת 'קופצת' על ה-Sprocket, רעש בלתי רגיל.\n   בדיקה: בדוק שיניים של Sprocket — שיניים 'מחודדות' = שחוקות = החלף.\n   המלצה: החלף שרשרת ו-Sprocket ביחד תמיד.\n\n5. שיפוצי ציר גלגל (Wheel Hub Seal)\n   תסמין: שמן זולג מאחורי גלגל.\n   סיבה: אטם ציר (Hub Seal) שחוק — שמן הידרוסטטי דולף לתוך ה-Chassis = סכנה!\n   פתרון: פרק גלגל, החלף Hub Seal.",
+    "metadata": {
+      "source": "seed",
+      "topic": "שרשרת הנעה,מסילות",
+      "equipment": "S570,S650,T650,T770",
+      "symptom": "תקלות שרשרת הנעה סקיד סטיר",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "doosan_excavator_maintenance_schedule_001_0",
+    "text": "לוח תחזוקה מפורט — מחפרוני דוסאן/דוולון DX300 / DX340 / DX380\n\nתחזוקה לפני כל משמרת (יומי):\n• בדוק שמן מנוע (Doosan D-Series) — Dipstick\n• בדוק מפלס קירור מנוע — Reservoir\n• בדוק שמן הידראולי — Sight Glass בטנק (טמפ' קרה)\n• נקה Water Separator / Fuel Pre-Filter\n• בדוק מסנן אוויר — אינדיקטור ירוק = תקין\n• בדוק מתח זחלים ומצב Sprocket\n• שמן Grease Points יומיים: Bucket Pin, Stick Pin, Boom Pin\n\nתחזוקה כל 50 שעות:\n• גריז כל Boom Cylinder Rod Pins, Stick Cylinder Pins, Bucket Cylinder Pins\n• גריז Idler Pins\n• בדוק Track Shoes — הדק ברגים רופפים (Torque: 500 Nm ב-DX300)",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,לוח שירות",
+      "equipment": "DX300,DX340,DX380",
+      "symptom": "לוח תחזוקה מחפרון דוסאן",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_excavator_maintenance_schedule_001_1",
+    "text": "תחזוקה כל 250 שעות:\n• החלף שמן מנוע + פילטר שמן (Doosan Spec: 15W-40 CK-4)\n• החלף מסנן דלק ראשי\n• גריז Swing Bearing (Grease: Mobil XHP 222 או שווה ערך)\n• בדוק רדיאטור ו-Oil Cooler — נקה\n\nתחזוקה כל 500 שעות:\n• החלף פילטר הידראולי ראשי (Return Filter) — חלק Doosan 400404-00241\n• החלף פילטר Pilot (10 מיקרון)\n• בדוק Fuel Injectors עם Doosan DDT (Balance Test)\n\nתחזוקה כל 1000 שעות:\n• החלף שמן הידראולי (ISO VG 46 או VG 68 לפי סביבה)\n• החלף שמן Swing Gear Box (SAE 90 EP)\n• בדוק Final Drive Oil — שני הצדדים (SAE 80W-90 GL-4)\n\nתחזוקה כל 2000 שעות:\n• החלף שמן Final Drive (שני הצדדים)\n• החלף Suction Strainer (מסנן שאיבה של טנק)\n• בדוק Engine Valve Clearance",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,לוח שירות",
+      "equipment": "DX300,DX340,DX380",
+      "symptom": "לוח תחזוקה מחפרון דוסאן",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "bobcat_mini_excavator_maintenance_001_0",
+    "text": "תחזוקה מניעתית — מחפרוני מיני בובקט E35 / E50 / E85\n\nE35 (מנוע Kubota D1803):\n• שמן מנוע: Kubota Super UDT2 או 15W-40 CK-4\n• החלפת שמן: כל 200 שעות\n• מסנן אוויר: בדוק כל 50 שעות, החלף כל 250 שעות\n• קירור: Kubota Super Coolant — החלף כל 1000 שעות\n• גריז: Boom Pin, Stick Pin, Bucket Pin, Blade Pins כל 50 שעות\n\nE50 (מנוע Kubota V2607):\n• שמן מנוע: 15W-40 API CK-4 — החלף כל 250 שעות\n• Fuel Filter ראשי: כל 250 שעות\n• Pilot Filter: כל 500 שעות\n• שמן הידראולי: ISO VG 46 — החלף כל 1000 שעות\n• Swing Bearing: גריז כל 250 שעות\n\nE85 (מנוע Doosan D24):\n• שמן מנוע: 15W-40 ACEA E7/E9 — כל 250 שעות\n• DPF: E85 Stage V — Regeneration אוטומטית\n• Final Drive: שמן SAE 80W-90 — החלף כל 1000 שעות",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,גריז,שמנים",
+      "equipment": "E35,E50,E85",
+      "symptom": "לוח תחזוקה מחפרון מיני בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_mini_excavator_maintenance_001_1",
+    "text": "נקודות גריז כלל הדגמים (NLGI #2 Lithium Complex Grease):\n1. Boom Foot Pin (2 נקבים)\n2. Boom Cylinder Base Pin\n3. Boom Cylinder Rod Pin\n4. Arm (Stick) Pivot Pin\n5. Arm Cylinder Base + Rod Pins\n6. Bucket Pin + Linkage Pins\n7. Dozer Blade Cylinder Pin (E35/E50)\n8. Swing Bearing (E50/E85)",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה,גריז,שמנים",
+      "equipment": "E35,E50,E85",
+      "symptom": "לוח תחזוקה מחפרון מיני בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "doosan_wheel_loader_hydraulic_001_0",
+    "text": "מערכת הידראוליקה — מעמיסי גלגלים DL300 / DL380 / DL420 — תקלות ואבחון\n\nמערכת הידראוליקה במעמיס גלגלים דוסאן כוללת:\n• משאבה הידראולית Gear Pump / Piston Pump (Load Sensing בדגמי DL380/DL420)\n• בלוק שסתומים ראשי (Main Control Valve)\n• גלינדרי הרמה (Lift Cylinders) — 2 גלינדרים בשני צידי הזרוע\n• גלינדר הטיה (Tilt Cylinder)\n• מערכת היגוי (Orbitrol Steering)\n\n1. דלי לא מרים (No Lift)\n   בדיקה: בדוק לחץ Lift Circuit — DL380 = 240 bar נומינלי.\n   פתרון: כוונן Lift Relief Valve. אם לא עוזר — פרק ונקה Main Control Valve.\n\n2. הדלי לא נוטה (No Tilt)\n   בדיקה: בדוק Tilt Circuit Pressure — 220 bar.\n   בדיקה: בדוק Tilt Spool במסדרת השסתומים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מעמיס",
+      "equipment": "DL300,DL380,DL420",
+      "symptom": "תקלות הידראוליקה מעמיס גלגלים",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "doosan_wheel_loader_hydraulic_001_1",
+    "text": "3. שמן הידראולי גולש מהטנק בעת עבודה\n   סיבה: מסנן חזרה (Return Filter) סתום — שמן עוקף דרך By-Pass.\n   בדיקה: אינדיקטור Return Filter על לוח — אם אדום = החלף.\n   פתרון: החלף Return Filter (ב-DL420 = Doosan 400404-00283).\n\n4. היגוי כבד בקצוות (Steering Stiff at Full Lock)\n   ב-DL300: Steering Relief = 175 bar.\n   פתרון: כוונן Steering Relief Valve. בדוק גם Orbitrol Steering Unit לשחיקה.\n\n5. זרוע 'רועדת' בהרמה\n   ב-DL380 עם Load Sensing: תנודת לחץ = Pressure Oscillation.\n   פתרון: כוונן LS Damping Valve בגוף המשאבה (דורש טכנאי מוסמך).",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מעמיס",
+      "equipment": "DL300,DL380,DL420",
+      "symptom": "תקלות הידראוליקה מעמיס גלגלים",
+      "brand": "Doosan"
+    }
+  },
+  {
+    "id": "bobcat_electrical_system_001_0",
+    "text": "מערכת חשמל ואלקטרוניקה — בובקט S650 / S770 / T770 — אבחון\n\nמערכת הבקרה האלקטרונית של בובקט מבוססת על BCS (Bobcat Control System) — מחברת:\n• ECM (Engine Control Module) — בקר המנוע\n• MCM (Machine Control Module) — בקר המכונה\n• DDM (Display / Instrument Module) — לוח מכשירים\n\n1. מנוע לא מתניע (No Start) — S650\n   בדוק מתח סוללה: מינימום 12.4V.\n   בדוק Safety Interlock System: דלת סגורה? Safety Bar למטה? Seat Belt (ב-S770)?\n   בדוק קוד שגיאה: B-1-1 = Safety Interlock Open.\n   בדוק ממסר ראשי (Main Relay) ואת ה-Fusible Link.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,אלקטרוניקה,BCS",
+      "equipment": "S650,S770,T770",
+      "symptom": "תקלות חשמל בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_electrical_system_001_1",
+    "text": "2. לוח מכשירים כבה תוך כדי עבודה\n   סיבה: קוד B-7-1 = CAN Communication Loss.\n   בדוק כבל CAN בין MCM ל-DDM.\n   בדוק מחברים — ניקוי עם Electronics Contact Cleaner.\n   בדוק הארקה (Ground Straps) בין Chassis למנוע.\n\n3. מנוע עולה אך ACS לא עובד\n   ACS = הורדת סרק אוטומטית כאשר ג'ויסטיקים ב-Neutral 5 שניות.\n   בדיקה: בדוק חיישן מיקום Joystick (Hall Effect Sensor).\n   פתרון: כייל מחדש Joystick עם תוכנת Bobcat Service Analyzer.\n\n4. נורת Charge Battery דולקת\n   בדוק מתח טעינה: מולטימטר בין קטבי סוללה עם מנוע דולק = 13.8–14.4V.\n   בדוק רצועת אלטרנטור (Drive Belt).",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,אלקטרוניקה,BCS",
+      "equipment": "S650,S770,T770",
+      "symptom": "תקלות חשמל בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "bobcat_electrical_system_001_2",
+    "text": "5. מפסק בטיחות מושב (Seat Bar / Restraint Bar Switch)\n   תסמין: ג'ויסטיקים לא מגיבים גם כשמוט הבטיחות למטה.\n   בדוק: מיקרוסוויץ' של Safety Bar — מכוסה בלכלוך ולא נלחץ עד הסוף.\n   ב-T770: Seat Belt Switch נוסף — בדוק כי חגור.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,אלקטרוניקה,BCS",
+      "equipment": "S650,S770,T770",
+      "symptom": "תקלות חשמל בובקט",
+      "brand": "Bobcat"
+    }
+  },
+  {
+    "id": "volvo_excavator_hydraulic_001_0",
+    "text": "תקלות הידראוליות נפוצות במחפרוני וולוו EC300/EC350/EC380\n\nמחפרוני הסדרה EC300 עד EC380 של וולוו (Volvo Construction Equipment) מצוידים במערכת הידראולית לחץ-משתנה (Load Sensing Hydraulic System) עם משאבת פיסטון (Piston Pump) מסוג A8VO.\n\n1. לחץ מערכת נמוך (Low System Pressure)\n   תסמינים: כלי חלש, תנועות איטיות, מנוע עמוס.\n   גורמים:\n   - שסתום Relief ראשי (Main Relief Valve) שחוק. לחץ תפעולי EC350 = 350 בר.\n   - משאבת Pilot (Pilot Pump) אינה מייצרת 35 בר — בדוק עם מד לחץ בנקודת בדיקה (TP1).\n   - צינור יניקה (Suction Hose) פגום — גורם לקאוויטציה (Cavitation) ונזק למשאבה.\n   בדיקה: חבר VCADS Pro, קרא פרמטרים של לחץ מערכת בזמן אמת.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "EC300,EC350,EC380",
+      "symptom": "לחץ נמוך,שמן חם",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_excavator_hydraulic_001_1",
+    "text": "2. שמן הידראולי חם מדי (Oil Overheating)\n   גבול אזהרה: 90°C, גבול כיבוי: 100°C.\n   גורמים: מקרר שמן (Oil Cooler) סתום — נקה עם מים בלחץ נמוך מהצד הנגדי.\n   בדוק עם VCADS את טמפרטורת שמן בפרמטר MID 141 - SPN 3508.\n\n3. Arm/Boom איטי בצד אחד בלבד\n   גורם: שסתום כניסה (Load Check Valve) תקוע בבלוק השסתומים הראשי (MCV).\n   פתרון: פרק MCV, נקה ובדוק כדורי Check Valve, החלף O-rings ושסתומים שחוקים.\n\nהערה: תמיד השתמש בשמן הידראולי המאושר — Volvo Hydraulic Oil VG46 או VG68 בהתאם לאקלים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "EC300,EC350,EC380",
+      "symptom": "לחץ נמוך,שמן חם",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_vcads_diagnostic_001_0",
+    "text": "מערכת אבחון VCADS Pro - מחפרוני וולוו ומכשירי צמה\n\nVCADS Pro (Volvo Component and Diagnostic System) היא תוכנת האבחון הרשמית של וולוו לכלי עבודה.\n\nחיבור למכשיר:\n1. הכנס מחבר OBD/Deutsch 9-pin לשקע האבחון (ליד מושב המפעיל).\n2. פתח VCADS Pro במחשב נייד.\n3. בחר את סוג הכלי (Machine Type) — לדוגמה EC350E.\n4. בחר MID (Message Identifier) הרלוונטי:\n   - MID 140 = בקר מנוע (Engine Control Unit)\n   - MID 141 = בקר הידראוליקה (Hydraulic Control Unit)\n   - MID 187 = בקר שידור/גיר (Transmission Control Unit)\n   - MID 253 = בקר מכונה (Machine Control Unit)",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון VCADS",
+      "equipment": "EC300,EC350,EC380,L90,L110",
+      "symptom": "אבחון כללי",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_vcads_diagnostic_001_1",
+    "text": "קריאת קודי שגיאה — FMI (Failure Mode Identifier):\n- FMI 0 = ערך גבוה מדי (Above Normal Range)\n- FMI 1 = ערך נמוך מדי (Below Normal Range)\n- FMI 3 = מעגל פתוח/מתח גבוה (Voltage Above Normal)\n- FMI 4 = קצר לאדמה/מתח נמוך (Voltage Below Normal)\n- FMI 5 = מעגל פתוח (Open Circuit)\n- FMI 12 = רכיב פגום (Bad Intelligent Device)\n\nSPN (Suspect Parameter Number) נפוצים:\n- SPN 100 = לחץ שמן מנוע\n- SPN 110 = טמפרטורת קירור\n- SPN 3508 = טמפרטורת שמן הידראולי\n- SPN 168 FMI 1 = מתח סוללה נמוך — הסיבה הנפוצה ביותר לקודים מרובים בבת אחת",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון VCADS",
+      "equipment": "EC300,EC350,EC380,L90,L110",
+      "symptom": "אבחון כללי",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_engine_d_series_001_0",
+    "text": "מנועי סדרת D של וולוו - תקלות ואבחון\n\nמחפרוני וולוו EC300-EC380 מצוידים במנוע D8K (8 ליטר) או D13K (13 ליטר) עם הזרקה ישירה (Common Rail Injection) ועמידה בתקן פליטה Stage V (אירופה) / Tier 4 Final (ארה\"ב).\n\nמאפייני מנוע D8K במחפרון EC350E:\n- הספק: 270 כ\"ס (201 קוט\"ש)\n- מומנט מרבי: 1380 ניוטון-מטר ב-1200 סל\"ד\n- Common Rail Pressure: 1800 בר בעומס מלא\n\n1. מנוע לא עולה — קוד FMI 12 ב-MID 140\n   גורם: מזרק (Injector) פגום או SCR לא מאותחל.\n   פתרון: הרץ Active Test להפעלת כל מזרק בנפרד. מזרק שלא מגיב = החלף.\n\n2. עשן כחול מהפלטה\n   גורם: שמן מנוע נשרף — אטמי שסתומים שחוקים, טורבו דולף שמן.\n   קוד אפשרי: SPN 2791 FMI 16 (EGR Valve).",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע D-Series",
+      "equipment": "EC300,EC350,EC380",
+      "symptom": "תקלות מנוע,DPF,AdBlue",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_engine_d_series_001_1",
+    "text": "3. DPF (Diesel Particulate Filter) סתום\n   קוד: SPN 3251 — לחץ דיפרנציאלי ב-DPF גבוה.\n   פתרון: בצע Forced Regeneration דרך VCADS אם זמן עבודה מאפשר.\n   אם לא יצליח — יש להוציא DPF לניקוי מקצועי.\n\n4. DEF/AdBlue נמוך (Low Urea Level)\n   קוד: MID 140 SPN 1761 FMI 1.\n   תסמין: הודעה בצג, לאחר 10 שעות — Derate חמור.\n   פתרון: מלא מיכל AdBlue עם נוזל ISO 22241-1.\n\nתחזוקה מנוע D-Series:\n- שמן מנוע: VDS-4.5 — החלפה כל 500 שעות\n- Coolant: Volvo Coolant VCS2 — החלפה כל 2 שנים",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע D-Series",
+      "equipment": "EC300,EC350,EC380",
+      "symptom": "תקלות מנוע,DPF,AdBlue",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_wheel_loader_l90_l110_001_0",
+    "text": "מטעינות גלגלים וולוו L90/L110/L120 - תקלות שידור וציר\n\nמטעינות הגלגלים L90H, L110H ו-L120H של וולוו מצוידות בתיבת הילוכים אוטומטית מסוג Volvo Powershift (MATRIS) עם ממשק CAN Bus לבקר TCU (MID 187).\n\n1. קופסת גיר לא עוברת הילוך (Transmission Won't Shift)\n   קוד: MID 187 SID 54 FMI 7 (Clutch Slip Detected).\n   גורם: בלאי Clutch Pack, לחץ הידראולי נמוך בקופסת הגיר.\n   בדיקה דרך VCADS: קרא MATRIS Fault Log.\n   פתרון: בדוק רמת שמן גיר (ATF). לחץ מינימלי בפנים: 14 בר.\n\n2. רעש חזק בנסיעה קדימה בהילוך 1\n   גורם: בלאי שיניים ב-Forward Low Clutch.\n   בדיקה: בצע Stall Test דרך VCADS — RPM בנקודת Stall גבוה מ-1750 = בעיה בגיר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "שידור,ציר",
+      "equipment": "L90,L110,L120",
+      "symptom": "בעיות גיר,נסיעה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_wheel_loader_l90_l110_001_1",
+    "text": "3. הכלי לא נוסע כלל (No Drive)\n   בדוק: מנוף בחירת כיוון (FNR Lever) — שלח אות ל-TCU (בדוק ב-VCADS תחת MID 187 Parameter P1).\n   בדוק: Parking Brake Solenoid — אם לא משתחרר = כלי נעול.\n\n4. נעילת דיפרנציאל לא עובדת\n   קוד: MID 187 SPN 1421 FMI 5.\n   פתרון: בדוק סולנואיד, בדוק לחץ הידראולי על ציר.\n\nשמן ציר L90/L110: Volvo Axle Oil 80W-90 GL-5. החלפה כל 2000 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "שידור,ציר",
+      "equipment": "L90,L110,L120",
+      "symptom": "בעיות גיר,נסיעה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_mini_excavator_ec27_ec55_001_0",
+    "text": "מיני-מחפרון וולוו EC27 ו-EC55 - תקלות נפוצות ותחזוקה\n\nמאפיינים:\n- EC27C: משקל 2.7 טון, מנוע 17.5 כ\"ס (Yanmar), עומק חפירה 3.0 מטר\n- EC55D: משקל 5.5 טון, מנוע 40 כ\"ס (Volvo D1.8), עומק חפירה 4.1 מטר\n\n1. מנוע EC27 עולה ונכבה (Stalling)\n   גורם: מסנן דלק סתום — מסנן זעיר ב-EC27 נסתם מהר.\n   פתרון: החלף מסנן דלק כל 250 שעות (לא 500 כמו כלים גדולים).\n\n2. EC55 - Boom לא מגיע לגובה מלא\n   גורם: לחץ Relief נמוך בבלוק שסתומים (Control Valve Block).\n   בדיקה: חבר מד לחץ לנקודת בדיקה Boom Cylinder Port — לחץ צריך להיות 230 בר.\n   פתרון: כוון Relief Valve של Boom.\n\n3. EC27 - סיבוב (Swing) לא עובד\n   גורם: Swing Motor קטן (Orbital Motor) — רגיש לשמן מלוכלך.\n   פתרון: החלף שמן הידראולי, נקה פילטר Return Line.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מיני-מחפרון",
+      "equipment": "EC27,EC55",
+      "symptom": "תקלות מיני-מחפרון",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_mini_excavator_ec27_ec55_001_1",
+    "text": "תחזוקה מיוחדת למיני-מחפרונים:\n- שמן מנוע: כל 250 שעות (לא 500)\n- Rubber Track Tension: בדוק כל 50 שעות. מתח נכון: 30-40 ממ רפיון\n- Final Drive Oil: כל 1000 שעות — SAE 80W-90",
+    "metadata": {
+      "source": "seed",
+      "topic": "מיני-מחפרון",
+      "equipment": "EC27,EC55",
+      "symptom": "תקלות מיני-מחפרון",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_paver_p5320_p6820_001_0",
+    "text": "מפלסי כביש וולוו P5320/P6820 - תקלות מערכת פיזור\n\nמפלסי הכביש (Paver) P5320 ו-P6820 של וולוו משמשים לסלילת כביש אספלט.\nמאפייני P6820: רוחב סלילה: 2.55-8.0 מטר. מנוע: Volvo D6 — 129 כ\"ס.\n\n1. Screed (לוח פיזור) לא מתחמם\n   תסמין: אספלט לא נמרח אחיד, פני שטח מחוספסים.\n   בדיקה: מדוד התנגדות (Resistance) של כל Electric Heating Element — חוט שרוף = אינסוף אוהם.\n   ערך תקין: ~8–15 אוהם.\n   קוד VCADS: MID 253 SPN 5246 FMI 3 = מעגל פתוח בלוח חימום.\n\n2. Auger עוצר בעבודה\n   גורם: עומס יתר כאשר ערמת אספלט גבוהה מדי, או Auger Motor Pressure Relief נמוך.\n   בדיקה: לחץ על Auger צריך להיות 250-280 בר.\n   פתרון: כוון Relief Valve, וודא הזנה אחידה מהמשאית.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מפלס כביש,Screed",
+      "equipment": "P5320,P6820",
+      "symptom": "בעיות פיזור אספלט",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_paver_p5320_p6820_001_1",
+    "text": "3. Conveyor רץ מצד אחד בלבד\n   גורם: שסתום כיוונון הידראולי (Flow Control Valve) לקונבייר פגום.\n   פתרון: החלף Flow Control Valve, בדוק Conveyor Motor לדליפות.\n\n4. Screed לא מגיע לגובה אחיד (Crown Control)\n   גורם: Slope Sensor כלול במערכת Niveltronic Plus פגום.\n   קוד: MID 253 SPN 1079 FMI 2 = Slope Sensor Signal Erratic.\n   פתרון: כייל מחדש דרך VCADS, אם לא עוזר — החלף חיישן.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מפלס כביש,Screed",
+      "equipment": "P5320,P6820",
+      "symptom": "בעיות פיזור אספלט",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_compactor_sd110_dd120_001_0",
+    "text": "מדחסי וולוו SD110 ו-DD120 - תקלות רטט ומנגנון כביש\n\nSD110 (מדחס יחיד) ו-DD120 (מדחס כפול).\nמאפייני DD120: משקל 12 טון, כוח רטט 250 kN, תדר רטט 28-35 Hz, מנוע Volvo D4 — 95 כ\"ס.\n\n1. ללא רטט (No Vibration) ב-SD110\n   גורמים:\n   - Eccentric Shaft פגום.\n   - מוטור הרטט (Vibration Motor) לא מסתובב — בדוק לחץ הידראולי: צריך 280 בר.\n   - Vibration Valve (שסתום רטט) תקוע סגור.\n   קוד VCADS: MID 141 SPN 5017 FMI 7 = Vibration Motor Speed Low.\n\n2. DD120 רוטט חזק מדי בתדר גבוה\n   גורם: Amplitude נמוך לא נבחר נכון עבור שטח רגיש.\n   פתרון: עבור ל-Low Amplitude Mode על הלוח.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מדחס,רטט",
+      "equipment": "SD110,DD120",
+      "symptom": "תקלות רטט,נסיעה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_compactor_sd110_dd120_001_1",
+    "text": "3. הכלי לא נוסע (Travel Failure)\n   גורם: Hydrostatic Drive Pump (משאבת HST) פגומה או Charge Pressure נמוך.\n   בדיקה: Charge Pressure צריך להיות 24-28 בר.\n   פתרון: בדוק Charge Pump, פילטר HST, בדוק דליפות בצינורות High Pressure.\n\n4. מד דחיסה (CMV) לא מדויק\n   גורם: Accelerometer (חיישן תאוצה) ב-Drum מלוכלך או רופף.\n   פתרון: נקה Accelerometer, הדק ברגים, כייל מחדש.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מדחס,רטט",
+      "equipment": "SD110,DD120",
+      "symptom": "תקלות רטט,נסיעה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_compact_loader_mct85_001_0",
+    "text": "מעמיס קומפקטי וולוו MCT85 (Compact Track Loader) - תקלות ותחזוקה\n\nמאפיינים: משקל 4,960 ק\"ג, הספק הרמה 1,065 ק\"ג, מנוע Volvo D2.6 Tier 4 Final — 74 כ\"ס.\n\n1. MCT85 לא נוסע לאחד הצדדים\n   גורם: Hydrostatic Pump (HST Pump) או Motor פגום לצד אחד.\n   בדיקה: בדוק Charge Pressure — צריך להיות 26-30 בר.\n   קוד: MID 253 SPN 1716 FMI 4 = Left Drive Motor Pressure Low.\n\n2. זרוע הרמה (Lift Arm) לא עולה עד לגובה מלא\n   גורם: Lift Arm Cylinder Seals שחוקים, או Relief Valve Lift Circuit נמוך.\n   בדיקה: לחץ צריך להיות 230 בר.\n   פתרון: החלף חותמות גלינדר (Cylinder Seal Kit).",
+    "metadata": {
+      "source": "seed",
+      "topic": "מעמיס קומפקטי,HST",
+      "equipment": "MCT85",
+      "symptom": "בעיות נסיעה,רמה,אביזרים",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_compact_loader_mct85_001_1",
+    "text": "3. מלחציים (Attachment) לא מגיבים\n   קוד: MID 253 SPN 3720 FMI 5 = Auxiliary Solenoid Open Circuit.\n   פתרון: בדוק חיבורי חוט לסולנואיד, החלף Solenoid אם פגום.\n\n4. רצועת גומי (Rubber Track) נופלת\n   בדיקה: מתח נכון — 30 ממ שקיעה בנקודת אמצע הרצועה.\n   פתרון: מלא גריז ל-Track Adjuster Grease Fitting עד למתח הנכון.\n\nתחזוקה MCT85:\n- שמן מנוע: D2.6 — כל 250 שעות\n- פילטר הידראולי: כל 500 שעות\n- Chain Case Oil (לכל צד): SAE 30 — כל 1000 שעות",
+    "metadata": {
+      "source": "seed",
+      "topic": "מעמיס קומפקטי,HST",
+      "equipment": "MCT85",
+      "symptom": "בעיות נסיעה,רמה,אביזרים",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_can_bus_electrical_001_0",
+    "text": "תקשורת CAN Bus ובקרים אלקטרוניים - וולוו EC/L Series\n\nמכשירי וולוו משתמשים ברשת CAN Bus לתקשורת בין בקרים. רשת ה-CAN פועלת ב-250kbps או 500kbps.\n\nבקרים ראשיים ב-EC350E:\n- ECU (MID 140) = בקר מנוע\n- HCU (MID 141) = בקר הידראוליקה\n- MCU (MID 253) = בקר מכונה (HMI)\n- ICU (MID 163) = בקר מכשירים\n\n1. קודים מרובים בו-זמנית (Multiple Fault Codes)\n   גורם: תקלת CAN Bus ולא כשל בכל הרכיבים יחד.\n   אבחון:\n   - בדוק מתח סוללה: חייב להיות 24V–27V בזמן הפעלה.\n   - בדוק נתיכים (Fuses) של ה-CAN Bus — לרוב F5 ו-F7 בקופסת נתיכים ראשית.\n   - בדוק עמידות (Termination Resistors) — צריך להיות 60 אוהם בין CAN-H ל-CAN-L.",
+    "metadata": {
+      "source": "seed",
+      "topic": "CAN Bus,חשמל,בקרים",
+      "equipment": "EC300,EC350,EC380,L90,L110",
+      "symptom": "קודי שגיאה מרובים,תקשורת",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_can_bus_electrical_001_1",
+    "text": "2. BUS OFF — בקר מנותק מהרשת\n   קוד: MID 140 SID 231 FMI 12 = CAN Bus Communication Failure.\n   גורם: קצר (Short Circuit) בקו CAN, בקר ECU פגום.\n   פתרון: בדוק כבל CAN לנזק פיזי, בדוק חיבורים לקורוזיה.\n\n3. מסך HMI (צג מפעיל) כבוי\n   גורם: MCU לא מקבל חשמל, או כבל ECU-HMI פגום.\n   בדיקה: וודא נתיך MCU (בדרך כלל F12 15A).\n\nעצה לשטח: אם אחרי ניתוק/חיבור סוללה הקודים נעלמים — זה אינדיקציה לבעיה זמנית ב-CAN.",
+    "metadata": {
+      "source": "seed",
+      "topic": "CAN Bus,חשמל,בקרים",
+      "equipment": "EC300,EC350,EC380,L90,L110",
+      "symptom": "קודי שגיאה מרובים,תקשורת",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_excavator_swing_travel_001_0",
+    "text": "מנגנון סיבוב ונסיעה - וולוו EC350/EC380\n\nסיבוב EC350/EC380:\n- מנוע הידראולי סיבוב (Swing Motor): Piston Type — לחץ מקסימום 280 בר\n- גיר סיבוב (Swing Reduction Gear Box): יחס הפחתה 1:17\n- שמן גיר סיבוב: GL-4 80W בנפח 2.8 ליטר — החלפה כל 2000 שעות\n- Swing Bearing: שימון כל 500 שעות עם גריז Volvo Extreme Pressure\n\n1. סיבוב חד-כיווני (Swing Only One Direction)\n   קוד: MID 141 SPN 5021 FMI 7 = Swing Motor Speed Abnormal.\n   פתרון: פרק ובדוק Counter-Balance Valve, החלף אם ניכרת שחיקה.\n\n2. Swing Brake לא משתחרר\n   בדיקה: בדוק מתח ב-Solenoid — צריך 24V.\n   קוד: MID 253 SPN 5025 FMI 5 = Swing Brake Solenoid Open.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה",
+      "equipment": "EC350,EC380",
+      "symptom": "בעיות סיבוב,נסיעה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_excavator_swing_travel_001_1",
+    "text": "נסיעה EC350:\n- Travel Motor: Piston Type, לחץ מקסימום 420 בר\n- Final Drive: 2-Speed (Low/High) — Hi-Lo Switch בכבינה\n- Travel Reduction Gear Box: שמן SAE 90 — 3.5 ליטר לצד — החלפה כל 2000 שעות\n\n3. כלי נוסע לצד אחד (Pulling To One Side)\n   קוד: MID 141 SPN 5032 FMI 1 = Right Travel Motor Speed Low.\n\n4. 2-Speed (Hi) לא עובד\n   גורם: Travel 2-Speed Solenoid פגום, או לחץ Pilot לא מספיק.\n   בדיקה: לחץ Pilot בהפעלת Hi צריך להיות 35 בר.\n   פתרון: החלף 2-Speed Solenoid Valve.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה",
+      "equipment": "EC350,EC380",
+      "symptom": "בעיות סיבוב,נסיעה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_fault_codes_mid_fmi_001_0",
+    "text": "מדריך קודי שגיאה - MID/FMI/SPN למכשירי וולוו\n\nMID 140 - בקר מנוע:\n- MID 140 SPN 100 FMI 1 = לחץ שמן מנוע נמוך. פעולה: כבה מנוע מיד, בדוק מפלס שמן.\n- MID 140 SPN 110 FMI 0 = טמפרטורת קירור גבוהה. פעולה: כבה מנוע, בדוק קירור.\n- MID 140 SPN 190 FMI 8 = אות חיישן RPM לא תקין. פעולה: בדוק חיישן מהירות סיבוב (CKP Sensor).\n- MID 140 SPN 641 FMI 5 = VGT (Turbo Variable Geometry) מעגל פתוח.\n- MID 140 SPN 1761 FMI 1 = מפלס AdBlue נמוך.\n- MID 140 SPN 3251 FMI 0 = לחץ דיפרנציאלי DPF גבוה — נדרשת רגנרציה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "קודי שגיאה,MID,FMI,SPN",
+      "equipment": "EC300,EC350,EC380,L90,L110,P5320,SD110,MCT85",
+      "symptom": "קודי שגיאה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_fault_codes_mid_fmi_001_1",
+    "text": "MID 141 - בקר הידראוליקה:\n- MID 141 SPN 3508 FMI 0 = שמן הידראולי חם. פעולה: הפחת עומס.\n- MID 141 SPN 5017 FMI 1 = מהירות נמוכה ב-Vibration Motor.\n- MID 141 SPN 1246 FMI 3 = חיישן לחץ Pump — מתח גבוה (Short to Power).\n\nMID 253 - בקר מכונה:\n- MID 253 SPN 5025 FMI 5 = Swing Brake Solenoid — מעגל פתוח.\n- MID 253 SPN 3720 FMI 5 = Auxiliary Solenoid — מעגל פתוח.\n- MID 253 SPN 1421 FMI 12 = Differential Lock — רכיב פגום.\n\nFMI נפוצים: 0=גבוה, 1=נמוך, 2=לא תקין, 3=קצר לחיובי, 4=קצר לאדמה, 5=מעגל פתוח, 7=כשל מכני, 12=רכיב פגום.\n\nהערה: SPN 168 FMI 1 (מתח סוללה נמוך) — הסיבה הנפוצה ביותר לקודי שגיאה מרובים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "קודי שגיאה,MID,FMI,SPN",
+      "equipment": "EC300,EC350,EC380,L90,L110,P5320,SD110,MCT85",
+      "symptom": "קודי שגיאה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_maintenance_schedule_ec350_001_0",
+    "text": "לוח תחזוקה מחפרון וולוו EC350E - לפי שעות\n\nתחזוקה יומית (Daily) — לפני כל משמרת:\n- בדוק מפלס שמן מנוע — מוט הבדיקה בין MIN ל-MAX\n- בדוק מפלס קירור — מיכל הרחבה\n- בדוק מפלס שמן הידראולי — Sight Glass מצד ימין\n- בדוק Water Separator — פרוק מים\n- בדוק מסנן אוויר — אינדיקטור אדום = החלף\n- שמן נקבי גריז: Boom Foot Pin, Boom Cylinder Pins, Arm Pins, Bucket Pins\n\nכל 250 שעות:\n- החלף שמן מנוע (Volvo VDS-4.5 15W-40) + פילטר שמן\n- החלף מסנן דלק ראשי + Pre-Filter\n- שמן Swing Bearing דרך Grease Fitting\n\nכל 500 שעות:\n- החלף פילטר הידראולי Return Line\n- החלף פילטר Pilot\n- בדוק Turbocharger — שמן ורפיון",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "EC350",
+      "symptom": "תחזוקה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_maintenance_schedule_ec350_001_1",
+    "text": "כל 1000 שעות:\n- בדוק Swing Gear Box Oil — החלף אם שחור\n- בדוק Track Shoes — שחיקה ממרכז השן\n- בדוק Final Drive Oil לכל צד\n\nכל 2000 שעות:\n- החלף שמן הידראולי (Volvo Hydraulic Oil VG46)\n- החלף שמן Swing Gear Box\n- החלף שמן Final Drive\n- בדוק Swing Bearing לרפיון — מקסימום 3 ממ רפיון",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "EC350",
+      "symptom": "תחזוקה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_ec300_hydraulic_pump_fault_001_0",
+    "text": "תקלות משאבה הידראולית - וולוו EC300/EC350/EC380\n\nהמשאבה ההידראולית (Main Hydraulic Pump) בסדרת EC300-EC380 היא משאבת פיסטון כפולה (Tandem Piston Pump) מסוג Kawasaki K3VL.\n\nספציפיקציות:\n- ספיקה מקסימום: 2 x 205 ליטר לדקה (EC380E)\n- לחץ שיא: 380 בר. לחץ עבודה: 350 בר\n- מנגנון: Load Sensing + Pressure Compensation\n\nאבחון משאבה עם VCADS Pro:\n1. כנס ל-MID 141, קרא Main Pump 1 Pressure ו-Main Pump 2 Pressure בזמן אמת.\n2. בעומס מלא: הלחץ צריך להגיע ל-340-350 בר.\n3. אם אחד מהם מראה פחות מ-280 בר בעומס — בעיה בחלק הספציפי.\n\n1. ספיקה נמוכה (Low Flow) — זרועות איטיות\n   גורם: בלאי פיסטונים (Pistons) ב-Cylinder Block.\n   ירידה של 20% מהנורמלי = משאבה בסוף חיים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "משאבה הידראולית",
+      "equipment": "EC300,EC350,EC380",
+      "symptom": "ספיקה נמוכה,קאוויטציה,דליפה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "volvo_ec300_hydraulic_pump_fault_001_1",
+    "text": "2. Cutoff Valve לא מגיב\n   קוד: MID 141 SPN 1246 FMI 4.\n   פתרון: החלף Regulator Solenoid.\n\n3. קאוויטציה חזקה (Cavitation Noise)\n   גורם: Suction Filter סתום, שמן נמוך, שמן קר מדי.\n   פתרון: נקה Suction Filter. הרץ מנוע 5 דקות ב-Low Idle לפני עבודה בקור.\n\n4. דליפה חיצונית ממשאבה\n   מיקום שכיח: Shaft Seal (אטם ציר המשאבה).\n   פתרון: החלף Shaft Seal Kit — עבודה של 4 שעות.\n   שמן: אם משאבה מאבדת יותר מ-100cc לשעה = החלפה דחופה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "משאבה הידראולית",
+      "equipment": "EC300,EC350,EC380",
+      "symptom": "ספיקה נמוכה,קאוויטציה,דליפה",
+      "brand": "Volvo"
+    }
+  },
+  {
+    "id": "cat_excavator_hydraulic_001_0",
+    "text": "CAT 320/330/336 - אובדן כוח הידראולי (Loss of Hydraulic Power)\n\nתסמינים: הזרועות זזות לאט, לחץ נמוך בלוח הבקרה, ירידה בביצועים בחפירה כבדה.\n\n1. בלאי במשאבות ה-Piston הראשיות (Main Piston Pump Wear)\n   מחפרוני CAT 320/330/336 מצוידים במשאבות כפולות עם Variable Displacement.\n   תסמין: לחץ עבודה מתחת ל-330 bar (תקני: 350–380 bar).\n   בדיקה: חבר מד לחץ (Pressure Gauge) לפורט הבדיקה P1/P2 בגוש השסתומים.\n   פתרון: אם ספיקה ירדה מעל 15% מהמפרט — החלף משאבה ראשית.\n\n2. שסתום Relief ראשי פגום (Main Relief Valve)\n   תסמין: לחץ נמוך באופן אחיד בכל תפקודי הזרוע.\n   CAT SIS מציין לחץ Relief עבור 320D: 34,300 kPa.\n   פתרון: נקה את הכדור (Ball) ומושב השסתום (Seat), החלף O-ring, כוון מחדש.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "CAT 320,CAT 330,CAT 336",
+      "symptom": "אובדן כוח הידראולי",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_hydraulic_001_1",
+    "text": "3. Pump Regulator לא מכוון\n   הרגולטור שולט ב-Displacement של המשאבה לפי דרישת העומס (Load Sensing).\n   תסמין: מנוע עמוס בחינם, לחץ מתנדנד.\n   בדיקה: בדוק קו ה-LS — לחץ צריך להיות 20–25 bar מתחת ללחץ המשאבה.\n\n4. שמן הידראולי מחומם יתר\n   מדי הטמפרטורה מציגים אזהרה מעל 95°C.\n   נקה את מקרר השמן (Oil Cooler) מאבק ולכלוך.\n\n5. פילטר הידראולי סתום\n   CAT ממליצה על החלפה כל 500 שעות או כשאינדיקטור הלחץ מוצג.\n   פילטר סתום גורם לעלייה בלחץ Differential מעל 69 kPa — החלף מיד.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "CAT 320,CAT 330,CAT 336",
+      "symptom": "אובדן כוח הידראולי",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_swing_002_0",
+    "text": "CAT 336 - תקלות מנגנון סיבוב (Swing System Faults)\n\nתסמינים: סיבוב איטי, קול חריקה מתחת לבית העליון, הכלי לא עוצר בחדות.\n\n1. שחיקת Swing Bearing (מיסב הסיבוב)\n   ה-Swing Bearing ב-CAT 336 הוא מיסב עם שיניים פנימיות (Internal Ring Gear).\n   בדיקה: מדוד את המרווח האנכי (Vertical Clearance) עם שעון מדידה (Dial Indicator).\n   CAT מגדיר מקסימום 3mm — מעל כן = החלפת Bearing חובה.\n   שימון: כל 250 שעות עם גריז CAT Bearing Grease 1 (NLGI 1).\n   נקבי הגריז: 4 נקבים סביב ה-Bearing — שמן עד שגריז זורם החוצה מהאטם.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנגנון סיבוב",
+      "equipment": "CAT 336",
+      "symptom": "סיבוב איטי וחריקה",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_swing_002_1",
+    "text": "2. גיר הסיבוב (Swing Gear Box) — שמן נמוך\n   CAT 336 נפח שמן גיר סיבוב: כ-4.0 ליטר (SAE 80W-90 GL-4).\n   תסמין: רעש גריסה חזק בזמן סיבוב, חום מוגבר.\n   בדיקה: פרק בורג בדיקה (Check Plug) — שמן צריך להגיע לקו.\n\n3. מנוע הסיבוב ההידראולי (Swing Motor) — בלאי פנימי\n   לחץ עבודה תקין ב-Swing Motor CAT 336: כ-280–310 bar.\n   תסמין: מנוע 'טייל' (Drift) לאחר שחרור הג'ויסטיק.\n   בדיקה: בדוק שסתום ה-Swing Brake — לחץ שחרור: 30–35 bar Pilot.\n   פתרון: החלף Swing Brake Valve אם לא עוצר תוך 2 שניות.\n\n4. שיניים שחוקות על Ring Gear\n   אם שיניים שבורות/שחוקות מעל 30% = החלפת Assembly.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנגנון סיבוב",
+      "equipment": "CAT 336",
+      "symptom": "סיבוב איטי וחריקה",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_mini_excavator_301_003_0",
+    "text": "CAT 301 / 303 / 308 מיני מחפרון - תקלות נפוצות\n\nמיני מחפרוני CAT 301.7/303/308E2 CR מצוידים במנועים קטנים (13–47 כ\"ס) ומערכת הידראוליקה Gear Pump.\n\n1. זרועות לא מגיבות / לחץ הידראולי אפס\n   ב-CAT 308E2 CR: משאבה הידראולית מסוג Gear Pump כפולה.\n   בדיקה ראשונה: רמת שמן הידראולי בצנצנת — ב-301/303 הצנצנת קטנה (כ-12–18 ליטר).\n   בדיקה שנייה: לחץ Pilot (הפקודות לשסתומים) — צריך 30 bar.\n   פתרון: בדוק את מתג ה-Safety Lock Lever — אם הנוף אינו ב-UNLOCK, המערכת חסומה.\n\n2. Blade (להב הדחפור) לא עולה ב-CAT 303/308\n   תסמין: להב עולה לאט מאוד או לא עולה.\n   בדיקה: לחץ הידראולי בכניסה לגלינדר Blade צריך להיות 200–250 bar.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע",
+      "equipment": "CAT 301,CAT 303,CAT 308",
+      "symptom": "אין תגובה בזרועות",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_mini_excavator_301_003_1",
+    "text": "3. מנוע קטן מתחמם מהר (Yanmar Engine Overheat)\n   CAT 301/303 מצוידים במנועי Yanmar (2TNV70/3TNV74).\n   מערכת קירור מינימלית — חשוב לנקות רדיאטור כל 100 שעות!\n\n4. מתח רצועת מיני מחפרון\n   CAT 301/303 עם רצועות גומי (Rubber Tracks).\n   מתח תקין: רפיון של 10–15mm במרכז הרצועה בין ה-Idler ל-Sprocket.\n   מתח נמוך מדי = רצועה נופלת. גבוה מדי = בלאי מהיר של Rollers.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,מנוע",
+      "equipment": "CAT 301,CAT 303,CAT 308",
+      "symptom": "אין תגובה בזרועות",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_wheel_loader_950_004_0",
+    "text": "CAT 950GC / 966M טעון גלגלים - בעיות בלמים ותיבת הילוכים\n\nטוענים CAT 950/966 מצוידים ב-Power Shift Transmission ובלמי Wet Disc (דיסקים בשמן).\n\n1. בלמים חלשים / לא בולמים (Brake Fade)\n   CAT 950/966 עם Wet Disc Brakes — הבלמים עובדים בשמן הגיר.\n   בדיקה: לחץ בלם צריך להיות 110–138 bar בזמן לחיצה מלאה.\n   גורם נפוץ: Brake Accumulators (מצברי לחץ) ריקים.\n   בדוק לחץ Pre-charge (חנקן, N₂): 55 bar.\n   פתרון: אם Accumulator מרוקן — החלף או מלא חנקן לפי מפרט CAT.",
+    "metadata": {
+      "source": "seed",
+      "topic": "בלמים,הנעה",
+      "equipment": "CAT 950,CAT 966",
+      "symptom": "בלמים חלשים ורעש גיר",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_wheel_loader_950_004_1",
+    "text": "2. החלקת Clutch בתיבת הילוכים (Transmission Clutch Slip)\n   תסמין: הכלי 'גולש' בהעמסה כבדה, הילוך ראשון לא מחזיק עלייה.\n   שמן תקני: CAT TO-4 בלבד! שמן אחר = נזק לדיסקים בתוך 100 שעות.\n   בדיקה CAT ET: בדוק לחץ Clutch בכל הילוך.\n   פתרון: נקז ומלא שמן Transmission (CAT TO-4), בדוק פילטר.\n\n3. רעש גיר / Torque Converter בעיה\n   תסמין: רעש שריקה מתא הגיר בהאצה, מהירות מוגבלת.\n   בדיקה: טמפרטורת שמן Torque Converter — מעל 120°C = בעיה.\n   פתרון: בדוק שסתום ה-Transmission Modulating Valve.\n\n4. Axle Oil — שמן גחון\n   CAT 950/966 עם Tandem Axle — שמן Final Drive נפרד מהגיר.\n   החלף שמן Final Drive כל 2000 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "בלמים,הנעה",
+      "equipment": "CAT 950,CAT 966",
+      "symptom": "בלמים חלשים ורעש גיר",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_wheel_loader_966_hydraulic_005_0",
+    "text": "CAT 966M/966H - כשל בעליית הזרוע בעומס (Lift Arm Failure Under Load)\n\nתסמין מרכזי: הזרוע עולה תקין בלי עומס, אבל 'מתקשה' או נעצרת בעומס מלא.\n\n1. לחץ Relief הזרוע נמוך (Boom Lift Relief Valve)\n   CAT 966M: לחץ Relief לעליית הזרוע: 34,500 kPa (345 bar).\n   בדיקה: חבר מד לחץ לפורט בגוש השסתומים.\n   פתרון: כוון את שסתום ה-Relief של זרוע ההרמה לערך מפרטי.\n\n2. משאבה ראשית — ירידת ספיקה\n   CAT 966 עם משאבת Piston משתנה (Variable Displacement Piston Pump).\n   בדיקה: Flow Test דרך CAT ET — בדוק Actual vs. Commanded Displacement.\n\n3. Pilot Operated Check Valve סתום\n   ניקוי: פרק שסתום, נקה כדור (Ball) ומושב, בדוק O-rings.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "CAT 966",
+      "symptom": "זרוע לא עולה בעומס",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_wheel_loader_966_hydraulic_005_1",
+    "text": "4. גלינדר זרוע — אטם פנימי בלוי (Lift Cylinder Internal Seal)\n   תסמין: הזרוע יורדת לאט תוך 10 דקות כאשר המנוע כבוי.\n   בדיקה: הרם לגובה מקסימום, כבה מנוע, המתן 10 דקות — ירידה מעל 50mm = דליפה פנימית.\n   פתרון: החלף ערכת אטמים (Seal Kit) לגלינדר ה-Boom.\n\n5. Bucket Positioner / Return-to-Dig בעיה\n   CAT 966 עם Return-to-Dig אוטומטי — אם הכף לא חוזרת לזווית חפירה = בדוק חיישן זווית.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "CAT 966",
+      "symptom": "זרוע לא עולה בעומס",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_paver_ap1055_006_0",
+    "text": "CAT AP1055 מרצף אספלט - תקלות מערכת הפיזור (Screed System)\n\nה-CAT AP1055 הוא מרצף עם Screed נמתחת (Extending Screed) ומערכת חימום חשמלית/גז.\n\n1. עובי שטיח לא אחיד (Mat Thickness Inconsistency)\n   גורמים:\n   א. Tow Point Cylinders לא מסונכרנים — בדוק לחץ בשני הצדדים (צריך זהה ±5 bar).\n   ב. Screed Attack Angle (זווית התקפה) לא נכון — כוון לפי הוראות CAT.\n   ג. רמת Auger לא שווה — חומר צריך להיות ב-2/3 גובה לוח Auger.\n\n2. Screed לא מתחממת (Screed Not Heating)\n   CAT AP1055 עם Electric Heating Elements.\n   בדיקה: מדוד התנגדות של כל Element — חוט שרוף = אינסוף אוהם.\n   ערך תקין: ~8–15 אוהם.\n   פתרון: החלף Heating Element הפגום, בדוק חיבורי חשמל ל-Screed.",
+    "metadata": {
+      "source": "seed",
+      "topic": "אספלט,מערכת הפיזור",
+      "equipment": "CAT AP1055",
+      "symptom": "רוחב שטיח לא אחיד",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_paver_ap1055_006_1",
+    "text": "3. Auger לא מסתובב\n   גורם א: מנוע הידראולי של Auger פגום.\n   גורם ב: שסתום ה-Auger תקוע סגור.\n   בדיקה: לחץ הידראולי ל-Auger Motor — צריך 200–250 bar בעומס.\n\n4. Conveyor (מסועי הזנה) לא מזין\n   בדיקה: בדוק חיישן גובה חומר (Material Level Sensor/Paddle Sensor) — ייתכן תקוע.\n   פתרון: נקה חיישן מגע, בדוק מנוע הידראולי של Conveyor.",
+    "metadata": {
+      "source": "seed",
+      "topic": "אספלט,מערכת הפיזור",
+      "equipment": "CAT AP1055",
+      "symptom": "רוחב שטיח לא אחיד",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_compactor_cs74_007_0",
+    "text": "CAT CS74 / CP74 מדחס - תקלות מערכת הרטט (Vibratory System)\n\nCAT CS74 הוא מדחס עם תוף חלק (Smooth Drum), CP74 עם תוף פד (Padded Drum).\nתדר רטט: 28–33 Hz, עוצמת G: ~390 kN.\n\n1. ויברציה לא פועלת (No Vibration)\n   גורמים:\n   א. מנוע ויברציה הידראולי (Vibration Motor) פגום — בדוק לחץ: צריך ~300–350 bar.\n   ב. שסתום בקרת ויברציה (Vibration Control Valve) תקוע סגור.\n   ג. Exciter Weight (משקולת אקסנטרית) שבורה — פרק Drum ובדוק.\n   בדיקה CAT ET: קוד שגיאה E2100 ומעלה = בעיית מערכת הרטט.\n\n2. ויברציה לא מספקת (Low Amplitude)\n   גורם: Eccentric Shaft Bearings בלויים.\n   פתרון: פרק Drum, בדוק ושמן מיסבי הציר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "רטט,הנעה",
+      "equipment": "CAT CS74,CAT CP74",
+      "symptom": "ויברציה לא עובדת",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_compactor_cs74_007_1",
+    "text": "3. Drum Drive לא מסתובב (No Drum Propulsion)\n   CAT CS74 עם Drum Motor נפרד להנעת התוף.\n   בדיקה: Hydrostatic Drive System — בדוק לחץ Charge (25–30 bar) בלולאת ה-Closed Loop.\n   גורם: Charge Pump פגום = אין הנעה.\n\n4. רוחב הדחסה לא אחיד\n   CAT CP74: פדים (Pads) שחוקים לא שווה.\n   בדוק כל Pad לשחיקה — עיין מפרט עובי מינימלי בהוראות CAT.\n\n5. מערכת קירור Drum (Drum Water System)\n   בעבודה באספלט — חשוב להפעיל מערכת רטבת ה-Drum.\n   בדוק ראשי התזה (Spray Nozzles) לסתימות — סתום = אספלט נדבק לתוף.",
+    "metadata": {
+      "source": "seed",
+      "topic": "רטט,הנעה",
+      "equipment": "CAT CS74,CAT CP74",
+      "symptom": "ויברציה לא עובדת",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_skid_steer_226d_008_0",
+    "text": "CAT 226D / 242D / 272D עגלת פינוי (Skid Steer) - תקלות היגוי והנעה\n\nSkid Steer מתנהג בהיגוי דיפרנציאלי — כל צד נע במהירות נפרדת.\n\n1. הכלי לא פונה / פונה לצד אחד בלבד\n   גורם א: תקלת Hydrostatic Drive באחד הצדדים.\n   CAT 226D/242D עם מנועי Piston Hydrostatic — בדוק כל מנוע בנפרד.\n   בדיקה: לחץ בלולאת ה-Drive (High Pressure Loop) צריך ~410 bar בעומס.\n   גורם ב: Joystick Controller (EH Control) — בעיית חיישן.\n   בדיקה: CAT ET — בדוק Joystick Position Sensor Values.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הנעה,היגוי",
+      "equipment": "CAT 226D,CAT 242D,CAT 272D",
+      "symptom": "כלי לא פונה,מהירות שונה בין הצדדים",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_skid_steer_226d_008_1",
+    "text": "2. מהירות שונה בין ימין לשמאל\n   CAT 272D עם Two-Speed Drive — בדוק מתג High/Low Speed.\n   גורם: Charge Pressure נמוך באחד מהמנועים.\n   בדיקה: לחץ Charge — צריך 25–35 bar.\n   פתרון: בדוק סנן Charge (Charge Filter) — סתום = לחץ Charge נופל.\n\n3. Parking Brake לא משתחרר\n   CAT Skid Steer — Parking Brake ספרינגי, נשחרר בלחץ הידראולי Pilot.\n   בדיקה: לחץ Pilot (Brake Release) — צריך 24–30 bar לשחרור.\n   פתרון: החלף Charge Pump אם לחץ Charge נמוך מ-20 bar.\n\n4. Lift Arm לא עולה\n   CAT 272D — לחץ עבודה לזרוע: ~250 bar. בדיקה: שסתום ה-Relief לזרוע.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הנעה,היגוי",
+      "equipment": "CAT 226D,CAT 242D,CAT 272D",
+      "symptom": "כלי לא פונה,מהירות שונה בין הצדדים",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_skid_steer_226d_008_2",
+    "text": "5. Auxiliary Hydraulics לא עובד\n   CAT 272D עם High Flow Auxiliary (90+ l/min).\n   גורם: High Flow Solenoid Valve פגום.\n   בדיקה: CAT ET — בדוק פקודות ל-Auxiliary Solenoid, מדוד 12–24V על הסולנואיד.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הנעה,היגוי",
+      "equipment": "CAT 226D,CAT 242D,CAT 272D",
+      "symptom": "כלי לא פונה,מהירות שונה בין הצדדים",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_engine_320_009_0",
+    "text": "CAT 320D2/330D2 - תקלות מערכת Tier 4 / DEF (AdBlue)\n\nCAT 320D2 ו-330D2 עם מנוע C7.1/C9.3 עם מערכת Aftertreatment (SCR + DPF).\n\n1. אזהרת DEF נמוכה — Inducement (תגבול הדרגתי)\n   CAT 320D2: כאשר DEF נמוך מ-10% — מופיע אזהרה בלוח.\n   כאשר ריק — מנוע מוגבל ל-25% כוח (Inducement Derate).\n   פתרון מיידי: מלא DEF (ISO 22241, 32.5% אוריאה) לפי קו MAX.\n   שימו לב: אין להשתמש במים רגילים! נזק מיידי ל-DEF Injector.\n\n2. DEF Injector סתום / פגום\n   תסמין: קוד שגיאה CA3714 (DEF Injection Fault) ב-CAT ET.\n   גורם: DEF התגבש (Crystallization) בזמן חוסר שימוש.\n   פתרון: הפעל Purge Cycle דרך CAT ET (מנקה את ה-Injector אוטומטית).\n   אם לא עוזר: פרק Injector, נקה במים חמים בלבד.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,DEF,AdBlue",
+      "equipment": "CAT 320,CAT 330",
+      "symptom": "קוד שגיאה DEF ומנוע מוגבל",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_engine_320_009_1",
+    "text": "3. DPF מלא — Regeneration נדרש\n   תסמין: נורת DPF דולקת, קוד CA3702, ביצועים מוגבלים.\n   פתרון: בצע Stationary Regeneration ידנית דרך CAT ET.\n   אזהרה: אל תבצע Regen ליד חומרים דליקים! טמפרטורת פלטה עולה מעל 600°C.\n\n4. DEF Quality Fault\n   קוד CA3713 — DEF מזוהם, מהול מדי, או ריכוז אוריאה שגוי.\n   בדוק: ריכוז אוריאה עם Refractometer — צריך להיות 32.5% ±1.5%.\n   פתרון: נקז מיכל DEF לחלוטין, שטוף במים מזוקקים, מלא DEF חדש ומאושר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,DEF,AdBlue",
+      "equipment": "CAT 320,CAT 330",
+      "symptom": "קוד שגיאה DEF ומנוע מוגבל",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_track_336_010_0",
+    "text": "CAT 336 - תקלות מערכת הנסיעה (Travel System) וזחלים\n\n1. הכלי לא נוסע לכיוון אחד (One-Sided Travel Fault)\n   CAT 336 עם שני Travel Motors נפרדים.\n   בדיקה: חבר מד לחץ ל-Test Ports של כל Travel Motor (A/B Ports).\n   לחץ תקין: ~420 bar בעומס מלא.\n   פתרון: בדוק Anti-Cavitation Valve ו-Counterbalance Valve.\n\n2. Counterbalance Valve (שסתום נגד גרביטציה) פגום\n   תסמין: הכלי 'מתגלגל' בהורדת מדרון ללא שליטה.\n   פתרון: החלף Counterbalance Valve Assembly.\n\n3. שחיקת Sprocket מואצת\n   CAT 336 Sprocket: בלאי תקין מעל 5000 שעות.\n   תסמין: שיניים 'דקות' יותר מ-50% מעובי מקורי.\n   פתרון: החלף Sprocket + Chains ביחד (לא אחד בלי השני!).",
+    "metadata": {
+      "source": "seed",
+      "topic": "זחלים,הנעה",
+      "equipment": "CAT 336",
+      "symptom": "נסיעה חד צדדית ובלאי זחל",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_track_336_010_1",
+    "text": "4. Track Shoe Bolts מתפשטים\n   CAT 336: הידוק בורגי נעלי זחל — 475 Nm (350 ft-lbs).\n   בדוק כל 250 שעות.\n\n5. Final Drive Oil Seal דולף\n   תסמין: שמן כהה על הזחל מאחורי Sprocket.\n   CAT 336 Final Drive: 7.5 ליטר SAE 80W-90.\n   פתרון: החלף Float Seal — עבודה של ~8 שעות.\n   אין לדחות! דליפה ממושכת = נזק ל-Carrier Roller Bearings.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זחלים,הנעה",
+      "equipment": "CAT 336",
+      "symptom": "נסיעה חד צדדית ובלאי זחל",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_wheel_loader_950_engine_011_0",
+    "text": "CAT 950GC / 966M - חוסר כוח מנוע ועשן שחור (Power Loss & Black Smoke)\n\nמנועי C7.1 (950GC) ו-C9.3 (966M) עם Turbocharger ומערכת Common Rail Injection.\n\n1. עשן שחור בעבודה כבדה (Black Smoke Under Load)\n   גורם א: מסנן אוויר (Air Filter) סתום — אינדיקטור מסנן אוויר בלוח: אם דולק, החלף מיד.\n   גורם ב: Turbocharger לא בונה לחץ.\n   בדיקה: Boost Pressure צריך להיות ~170–210 kPa עבור C7.1 בעומס.\n   גורם ג: Fuel Injector פגום — מזריק יתר דלק.\n   אבחון CAT ET: בדוק Balance Rates — חריגה מ-±4 mg/st = החלף.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,כוח,DEF",
+      "equipment": "CAT 950,CAT 966",
+      "symptom": "חוסר כוח בעלייה ועשן שחור",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_wheel_loader_950_engine_011_1",
+    "text": "2. חוסר כוח בעלייה (Lack of Power on Grade)\n   גורם א: EGR Valve (שסתום החזרת גזים) סתום פתוח.\n   בדיקה CAT ET: בדוק EGR Position Sensor, ניקוי EGR Valve בספריי מנקה.\n   גורם ב: VGT Turbocharger תקוע.\n   פתרון: CAT ET → Active Tests → בצע VGT Calibration.\n\n3. Aftercooler סתום (ATAAC)\n   תסמין: Intake Manifold Temperature גבוה מ-70°C.\n   פתרון: נקה Aftercooler Fins בלחץ אוויר (מהפנים החוצה).\n\n4. DPF Soot Level גבוה\n   CAT 950GC: אם DPF Soot Level מעל 100% (CAT ET) = Forced Regeneration.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,כוח,DEF",
+      "equipment": "CAT 950,CAT 966",
+      "symptom": "חוסר כוח בעלייה ועשן שחור",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_skid_steer_272d_hydraulic_012_0",
+    "text": "CAT 272D / 242D - תקלות מערכת Auxiliary Hydraulics לאביזרים\n\nCAT 272D עם High Flow Option (90 l/min) ו-Standard Flow (55 l/min).\nמיועד להפעלת פטישים (Hydraulic Breaker), מברגות (Auger), מלחציים (Grapple) ועוד.\n\n1. אביזר Hydraulic Breaker לא פועל\n   גורם א: מתג High Flow לא הופעל — בלוח CAT 272D יש לחצן 'High Flow'.\n   גורם ב: Auxiliary Control Valve (AUX Valve) פגום.\n   בדיקה: מדוד לחץ בחיבורי AUX (Flat-Face Couplers) — צריך ~250 bar בעומס.\n\n2. זרימה חלשה ל-Auger\n   גורם: GPM Setting לא מכוון נכון לאביזר.\n   CAT 272D: כוון ספיקת Auxiliary דרך CAT ET → Machine Parameters → AUX Flow.\n   ערך מומלץ: Auger = 50–70 l/min, Breaker = 80–90 l/min.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,אביזרים",
+      "equipment": "CAT 272D,CAT 242D",
+      "symptom": "אביזר הידראולי לא עובד,זרימה חלשה",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_skid_steer_272d_hydraulic_012_1",
+    "text": "3. Auxiliary חם מדי (Aux Hydraulics Overheating)\n   פתרון: בדוק ש-Back Pressure מה-Breaker (Return Line) אינו מעל 15 bar.\n\n4. Coupler לא מתנתק (Stuck Coupler)\n   גורם: לחץ שארית (Residual Pressure) בקווי AUX.\n   פתרון: לפני ניתוק — הפעל AUX לשנייה (לפרוק לחץ), ואז נתק Coupler.\n   שמן את O-rings של Couplers בגריז קל כל 250 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,אביזרים",
+      "equipment": "CAT 272D,CAT 242D",
+      "symptom": "אביזר הידראולי לא עובד,זרימה חלשה",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_boom_arm_330_013_0",
+    "text": "CAT 330 - דליפות גלינדרים וצניחת זרועות (Cylinder Drift & External Leaks)\n\n1. Boom (זרוע ראשית) צונחת לאחר כיבוי מנוע\n   תסמין: הנח זרוע בגובה מקסימום, כבה מנוע — זרוע יורדת מעל 100mm תוך 10 דקות.\n   גורם א: Load Check Valve (שסתום בדיקת עומס) פגום בגוש השסתומים.\n   פתרון: פרק גוש שסתומים, נקה/החלף Load Check Valve Ball + Spring.\n   גורם ב: אטמי גלינדר Boom (Cylinder Internal Seals) בלויים.\n   פתרון: Seal Kit לגלינדר Boom CAT 330 — כ-4–6 שעות עבודה.\n\n2. דליפת שמן חיצונית מגלינדר (External Cylinder Leak)\n   תסמין: שמן על גבעול הגלינדר (Rod), מחמיר בקור.\n   גורם: Wiper Seal ו-Rod Seal בלויים.\n   פתרון: פרק גלינדר, החלף Seal Kit מלא (Wiper + Rod + Piston Seals).",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרועות,גלינדרים",
+      "equipment": "CAT 330",
+      "symptom": "זרוע צונחת ודליפת שמן גלינדר",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_boom_arm_330_013_1",
+    "text": "3. Stick (זרוע שנייה) נופלת מהר\n   בדיקה: הגדר Stick ב-90° אופקי, כבה — אם נופל תוך 2 דקות = בעיה.\n   פתרון: נקה/החלף Load Check Valve ב-Stick Circuit.\n\n4. Bucket (כף) נע לבד\n   גורם: Regeneration Valve תקוע פתוח = לחץ לא שווה.\n   פתרון: בדוק Bucket Regeneration Circuit בגוש השסתומים.\n\n5. דליפת O-ring בחיבורי צינורות הידראוליים\n   O-rings נפוצים בגלינדרי CAT 330: BOSS O-ring (מסוג SAE 6000).\n   שמן O-ring חדש בשמן הידראולי לפני הידוק.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זרועות,גלינדרים",
+      "equipment": "CAT 330",
+      "symptom": "זרוע צונחת ודליפת שמן גלינדר",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_compactor_cs74_engine_014_0",
+    "text": "CAT CS74 / CP74 מדחס - כיבוי מנוע בעבודה ורעידות חריגות\n\nCAT CS74 מצוייד במנוע C3.3B (74 כ\"ס, Tier 4 Final), מערכת רטט הידראולית.\n\n1. מנוע נכבה פתאום בעבודה (Engine Stall Under Load)\n   גורם א: מסנן דלק סתום — שני מסנני דלק: Primary ו-Secondary.\n   גורם ב: מים בדלק (Water in Fuel) — Water Separator מלא.\n   בדיקה: בדוק Water Separator ב-Primary Filter — נקה מים מדי שבוע.\n   גורם ג: Hydraulic Load גבוה מדי = מנוע 'חנוק'.\n\n2. רעידות חריגות בהנעה (Abnormal Body Vibration)\n   גורם א: Drum Drive Coupling שחוק.\n   גורם ב: Engine Mounts בלויים (ריפודי מנוע) — פרק, בדוק, החלף אם נסדקו.\n   גורם ג: Eccentric Shaft Imbalance — אם שבר Eccentric Weight.\n   תסמין: רעידה חריגה חדשה שהחלה פתאום.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,עצירות",
+      "equipment": "CAT CS74,CAT CP74",
+      "symptom": "מנוע נכבה בעבודה ורעידות חריגות",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_compactor_cs74_engine_014_1",
+    "text": "3. מנוע לא עולה בבוקר קר (Cold Start Issues)\n   CAT C3.3B עם Glow Plugs (נרות להט).\n   מדידה: אמפר-מטר על חוט ל-Glow Plug — צריך 15–20A לנר.\n   פתרון: החלף נרות להט שלא מחמם.\n\n4. עצירת חירום (Emergency Stop) אוטומטית\n   CAT CS74 הגנות אוטומטיות עוצרות מנוע:\n   - לחץ שמן מנוע נמוך (< 70 kPa)\n   - טמפרטורת מנוע גבוהה (> 107°C)\n   - רמת DEF נמוכה (< 5%)\n   בדיקה: חבר CAT ET, בדוק Event Codes — הקוד יגיד מה הפעיל העצירה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע,עצירות",
+      "equipment": "CAT CS74,CAT CP74",
+      "symptom": "מנוע נכבה בעבודה ורעידות חריגות",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_cab_electrical_015_0",
+    "text": "CAT 320/330/336 - תקלות לוח בקרה, CAN Bus וחשמל תא נהג\n\n1. מסך מוניטור CAT לא דולק\n   גורם א: נתיך (Fuse) מסך שרוף.\n   CAT 320D2 - קופסת נתיכים: בתא נהג, מכסה תחתון ימין.\n   גורם ב: חיבור מחבר (Harness Connector) למסך רופף.\n   פתרון: בדוק Deutsch Connector מאחורי המסך — נקה ושדך מחדש.\n\n2. קודי שגיאה CAN Bus מרובים\n   גורם: תקלת רשת CAN Bus בין ECM (Engine Control Module) ל-MCM (Machine Control Module).\n   אבחון: CAT ET → Communications → בדוק אילו מודולים 'Online'.\n   בדיקת עמידות CAN Bus בין CAN+ ל-CAN- — צריך 60 אוהם.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,תא נהג,CAN Bus",
+      "equipment": "CAT 320,CAT 330,CAT 336",
+      "symptom": "תצוגת לוח לא עובדת וקודי שגיאה מרובים",
+      "brand": "CAT"
+    }
+  },
+  {
+    "id": "cat_excavator_cab_electrical_015_1",
+    "text": "3. Joystick EH (Electrohydraulic) לא מגיב\n   CAT 320D2/330D2 עם Joystick חשמלי — אותות אנלוגיים ל-MCM.\n   בדיקה CAT ET: Machine Systems → Joystick → בדוק Signal Voltage (0.5–4.5V בתנועה).\n   פתרון: החלף Joystick Assembly.\n\n4. מצלמה אחורית (Rear View Camera) לא עובדת\n   גורם: כבל וידאו (Coax Cable) קצר בסיבוב התא.\n   פתרון: בדוק כבל מהמצלמה ל-Monitor, כולל נקודת המעבר ב-Swing Bearing Ring.\n\n5. Alternator לא טוען (Charging System Fault)\n   בדוק מתח סוללה: במנוע דולק — צריך 27.5–28.5V (מערכת 24V).\n   CAT 330D2: Alternator 24V 80A.\n   גורם נפוץ: רצועת Alternator (Serpentine Belt) החליקה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,תא נהג,CAN Bus",
+      "equipment": "CAT 320,CAT 330,CAT 336",
+      "symptom": "תצוגת לוח לא עובדת וקודי שגיאה מרובים",
+      "brand": "CAT"
+    }
   }
 ]
