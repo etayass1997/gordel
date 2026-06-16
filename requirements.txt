@@ -1,0 +1,8 @@
+flask
+flask-cors
+anthropic
+requests
+beautifulsoup4
+rank-bm25
+duckduckgo-search
+gunicorn

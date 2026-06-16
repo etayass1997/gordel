@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f0f0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="גורדל">
+<title>גורדל — סוכן כלי צמה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0f0f0f;
+  --s1:       #161616;
+  --s2:       #1e1e1e;
+  --s3:       #272727;
+  --border:   #2a2a2a;
+  --accent:   #f59e0b;
+  --accent2:  #d97706;
+  --adim:     rgba(245,158,11,0.15);
+  --aglow:    rgba(245,158,11,0.3);
+  --green:    #34d399;
+  --red:      #f87171;
+  --text:     #e8e4dc;
+  --dim:      #7a7068;
+  --muted:    #3a3530;
+  --r:        12px;
+  --rl:       18px;
+  --font:     'Heebo', sans-serif;
+  --safe-b:   env(safe-area-inset-bottom, 0px);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+html,body { height:100%; background:var(--bg); color:var(--text); font-family:var(--font); direction:rtl; overflow:hidden; }
+
+/* ── LAYOUT ── */
+.app { display:flex; flex-direction:column; height:100vh; }
+
+/* ── HEADER ── */
+.header {
+  background:var(--s1);
+  border-bottom:1px solid var(--border);
+  padding: 12px 16px 10px;
+  display:flex; align-items:center; gap:10px;
+  flex-shrink:0;
+}
+.header-icon { width:40px; height:40px; flex-shrink:0; }
+.header-title { font-size:22px; font-weight:800; color:var(--accent); letter-spacing:-0.5px; }
+.header-sub { font-size:11px; color:var(--dim); }
+.kb-badge {
+  margin-right:auto;
+  background:var(--adim);
+  border:1px solid var(--accent);
+  color:var(--accent);
+  font-size:11px; font-weight:600;
+  padding:3px 8px; border-radius:20px;
+}
+
+/* ── TABS NAV ── */
+.tab-nav {
+  background:var(--s1);
+  border-top:1px solid var(--border);
+  display:flex;
+  padding-bottom: var(--safe-b);
+  flex-shrink:0;
+}
+.tab-btn {
+  flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;
+  padding:10px 4px 8px;
+  background:none; border:none; cursor:pointer;
+  color:var(--dim); font-family:var(--font); font-size:11px; font-weight:500;
+  transition:color .2s;
+}
+.tab-btn .tab-icon { font-size:20px; transition:transform .2s; }
+.tab-btn.active { color:var(--accent); }
+.tab-btn.active .tab-icon { transform:scale(1.15); }
+
+/* ── SCREENS ── */
+.screen { flex:1; overflow-y:auto; display:none; flex-direction:column; }
+.screen.active { display:flex; }
+
+/* ─── TAB 1: TROUBLESHOOT ─── */
+.chat-messages {
+  flex:1; padding:16px; display:flex; flex-direction:column; gap:12px;
+  overflow-y:auto;
+}
+.msg {
+  max-width:92%; border-radius:var(--rl);
+  padding:12px 14px; font-size:14px; line-height:1.65;
+  animation:fadeIn .25s ease;
+}
+@keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+.msg.user {
+  align-self:flex-start;
+  background:var(--adim); border:1px solid rgba(245,158,11,.25);
+  color:var(--text);
+}
+.msg.bot {
+  align-self:flex-end;
+  background:var(--s2); border:1px solid var(--border);
+  color:var(--text);
+}
+.msg-source {
+  display:inline-block; margin-top:8px;
+  font-size:10px; color:var(--accent);
+  background:var(--adim); border-radius:6px; padding:2px 6px;
+}
+.msg strong { color:var(--accent); }
+.msg ul,.msg ol { padding-right:20px; margin:4px 0; }
+.msg li { margin-bottom:3px; }
+.msg p { margin-bottom:6px; }
+
+.chat-input-wrap {
+  padding:12px 16px 12px;
+  background:var(--s1); border-top:1px solid var(--border);
+  display:flex; gap:8px; flex-shrink:0;
+}
+.chat-input {
+  flex:1; background:var(--s2); border:1px solid var(--border);
+  border-radius:var(--r); padding:11px 14px;
+  color:var(--text); font-family:var(--font); font-size:14px;
+  resize:none; outline:none; max-height:120px;
+  transition:border-color .2s;
+}
+.chat-input:focus { border-color:var(--accent); }
+.chat-input::placeholder { color:var(--dim); }
+.send-btn {
+  width:44px; height:44px; border-radius:var(--r);
+  background:var(--accent); border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; flex-shrink:0; transition:background .2s, transform .1s;
+  align-self:flex-end;
+}
+.send-btn:active { transform:scale(.93); }
+.send-btn:disabled { background:var(--muted); cursor:not-allowed; }
+
+/* typing indicator */
+.typing { display:flex; gap:5px; align-items:center; padding:6px 0; }
+.typing span { width:7px; height:7px; border-radius:50%; background:var(--dim); animation:bounce .9s infinite; }
+.typing span:nth-child(2) { animation-delay:.15s; }
+.typing span:nth-child(3) { animation-delay:.3s; }
+@keyframes bounce { 0%,80%,100%{transform:scale(0.6)} 40%{transform:scale(1)} }
+
+/* ─── TAB 2: VISUALIZE ─── */
+.viz-wrap { padding:16px; display:flex; flex-direction:column; gap:14px; }
+.search-row { display:flex; gap:8px; }
+.search-input {
+  flex:1; background:var(--s2); border:1px solid var(--border);
+  border-radius:var(--r); padding:12px 14px;
+  color:var(--text); font-family:var(--font); font-size:14px; outline:none;
+  transition:border-color .2s;
+}
+.search-input:focus { border-color:var(--accent); }
+.search-input::placeholder { color:var(--dim); }
+.search-btn {
+  background:var(--accent); border:none; border-radius:var(--r);
+  color:#000; font-family:var(--font); font-size:14px; font-weight:700;
+  padding:0 18px; cursor:pointer; white-space:nowrap;
+  transition:background .2s, transform .1s;
+}
+.search-btn:active { transform:scale(.95); }
+.search-btn:disabled { background:var(--muted); color:var(--dim); cursor:not-allowed; }
+
+.quick-chips { display:flex; gap:8px; flex-wrap:wrap; }
+.chip {
+  background:var(--s2); border:1px solid var(--border);
+  border-radius:20px; padding:5px 12px;
+  font-size:12px; color:var(--dim); cursor:pointer;
+  transition:all .15s;
+}
+.chip:hover { border-color:var(--accent); color:var(--accent); }
+
+.img-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+.img-card {
+  border-radius:var(--r); overflow:hidden;
+  border:1px solid var(--border); background:var(--s2);
+  cursor:pointer; transition:border-color .2s;
+}
+.img-card:hover { border-color:var(--accent); }
+.img-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+.img-card-title { font-size:10px; color:var(--dim); padding:5px 8px; }
+
+.guide-box {
+  background:var(--s2); border:1px solid var(--border);
+  border-radius:var(--rl); padding:16px;
+  font-size:14px; line-height:1.7;
+}
+.guide-box strong { color:var(--accent); }
+.guide-box ul,.guide-box ol { padding-right:20px; margin:4px 0; }
+.guide-box li { margin-bottom:4px; }
+.guide-box p { margin-bottom:8px; }
+
+/* ─── TAB 3: MARKET ─── */
+.market-wrap { padding:16px; display:flex; flex-direction:column; gap:14px; }
+.market-card {
+  background:var(--s2); border:1px solid var(--border);
+  border-radius:var(--rl); padding:18px; display:flex; flex-direction:column; gap:10px;
+}
+.market-card-title { font-size:16px; font-weight:700; color:var(--accent); }
+.market-card-desc { font-size:13px; color:var(--dim); line-height:1.6; }
+.market-btn {
+  background:var(--accent); border:none; border-radius:var(--r);
+  color:#000; font-family:var(--font); font-size:14px; font-weight:700;
+  padding:12px; cursor:pointer; text-align:center;
+  transition:background .2s;
+  text-decoration:none; display:block;
+}
+.market-btn:hover { background:var(--accent2); }
+.market-price-form { display:flex; flex-direction:column; gap:10px; }
+.market-input {
+  background:var(--s3); border:1px solid var(--border);
+  border-radius:var(--r); padding:11px 14px;
+  color:var(--text); font-family:var(--font); font-size:14px; outline:none;
+}
+.market-result {
+  background:var(--s3); border:1px solid var(--border);
+  border-radius:var(--r); padding:14px;
+  font-size:13px; line-height:1.7; display:none;
+}
+.market-result.visible { display:block; }
+.market-result strong { color:var(--accent); }
+
+/* ─── KB SETTINGS MODAL ─── */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,.75);
+  display:none; align-items:flex-end; z-index:100;
+  animation:fadeIn .2s;
+}
+.modal-overlay.open { display:flex; }
+.modal {
+  width:100%; background:var(--s1); border-radius:var(--rl) var(--rl) 0 0;
+  border-top:1px solid var(--border); padding:20px 16px;
+  padding-bottom: calc(20px + var(--safe-b));
+  display:flex; flex-direction:column; gap:14px;
+  animation:slideUp .25s ease;
+}
+@keyframes slideUp { from{transform:translateY(40px)} to{transform:none} }
+.modal-title { font-size:16px; font-weight:700; }
+.modal-close {
+  position:absolute; top:16px; left:16px;
+  background:var(--s3); border:none; border-radius:50%;
+  width:32px; height:32px; font-size:18px; cursor:pointer; color:var(--dim);
+}
+.modal-row { display:flex; gap:8px; }
+.modal-input {
+  flex:1; background:var(--s2); border:1px solid var(--border);
+  border-radius:var(--r); padding:11px 14px;
+  color:var(--text); font-family:var(--font); font-size:14px; outline:none;
+  transition:border-color .2s;
+}
+.modal-input:focus { border-color:var(--accent); }
+.modal-btn {
+  background:var(--accent); border:none; border-radius:var(--r);
+  color:#000; font-weight:700; font-family:var(--font); font-size:14px;
+  padding:0 16px; cursor:pointer; white-space:nowrap;
+}
+.modal-status { font-size:13px; color:var(--green); }
+.modal-error { font-size:13px; color:var(--red); }
+
+/* ─── LOADING SPINNER ─── */
+.spin {
+  width:32px; height:32px; border:3px solid var(--border);
+  border-top-color:var(--accent); border-radius:50%;
+  animation:spin .7s linear infinite; margin:20px auto;
+}
+@keyframes spin { to{transform:rotate(360deg)} }
+
+/* ─── EMPTY STATE ─── */
+.empty {
+  flex:1; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:10px; padding:30px; text-align:center;
+}
+.empty-icon { font-size:52px; opacity:.6; }
+.empty-title { font-size:17px; font-weight:700; color:var(--dim); }
+.empty-sub { font-size:13px; color:var(--muted); line-height:1.5; }
+
+/* scrollbar */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--s3); border-radius:4px; }
+
+/* lightbox */
+.lightbox {
+  position:fixed; inset:0; background:rgba(0,0,0,.92);
+  display:none; align-items:center; justify-content:center;
+  z-index:200; cursor:pointer;
+}
+.lightbox.open { display:flex; }
+.lightbox img { max-width:95vw; max-height:90vh; border-radius:var(--r); object-fit:contain; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <svg class="header-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="60" height="60" rx="14" fill="#1e1e1e"/>
+      <!-- tracks -->
+      <rect x="4" y="42" width="38" height="10" rx="5" fill="#3a3530"/>
+      <circle cx="9" cy="47" r="5" fill="#2a2520"/>
+      <circle cx="37" cy="47" r="5" fill="#2a2520"/>
+      <circle cx="22" cy="47" r="3" fill="#2a2520"/>
+      <!-- body -->
+      <rect x="8" y="28" width="28" height="16" rx="3" fill="#f59e0b"/>
+      <!-- cab -->
+      <rect x="10" y="18" width="18" height="14" rx="3" fill="#f59e0b"/>
+      <!-- window -->
+      <rect x="12" y="20" width="8" height="8" rx="2" fill="#1e3a5f"/>
+      <rect x="12" y="20" width="8" height="1" fill="rgba(255,255,255,0.2)"/>
+      <!-- boom -->
+      <line x1="24" y1="22" x2="48" y2="8" stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round"/>
+      <!-- stick -->
+      <line x1="48" y1="8" x2="55" y2="22" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+      <!-- bucket -->
+      <path d="M52 20 L58 26 L54 34 L47 30 Z" fill="#b45309" stroke="#f59e0b" stroke-width="1"/>
+      <line x1="47" y1="34" x2="52" y2="37" stroke="#b45309" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="header-title">גורדל</div>
+      <div class="header-sub">סוכן כלי צמה טכני</div>
+    </div>
+    <div class="kb-badge" id="kbBadge">KB: טוען…</div>
+    <button class="modal-btn" onclick="openKbModal()" style="margin-right:4px; border-radius:8px; padding:0 10px; height:32px; font-size:12px;">⚙️ KB</button>
+  </div>
+
+  <!-- SCREENS -->
+
+  <!-- TAB 1: TROUBLESHOOT -->
+  <div class="screen active" id="screen-chat">
+    <div class="chat-messages" id="chatMessages">
+      <div class="empty" id="chatEmpty">
+        <div class="empty-icon">🔧</div>
+        <div class="empty-title">שאל אותי על כל תקלה</div>
+        <div class="empty-sub">תאר את הבעיה בטבעי — לדוגמה:<br>
+          "המחפרון רועד כשאני מזיז את הכף"<br>
+          "המנוע מחמם יתר אחרי שעה"</div>
+      </div>
+    </div>
+    <div class="chat-input-wrap">
+      <textarea class="chat-input" id="chatInput" placeholder="תאר את התקלה…" rows="1"
+        onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+
+  <!-- TAB 2: VISUALIZE -->
+  <div class="screen" id="screen-viz">
+    <div class="viz-wrap">
+      <div class="search-row">
+        <input class="search-input" id="vizInput" placeholder="חפש רכיב לדוגמה: Swing Bearing מחפרון"
+          onkeydown="if(event.key==='Enter') runViz()">
+        <button class="search-btn" id="vizBtn" onclick="runViz()">חפש</button>
+      </div>
+      <div class="quick-chips">
+        <div class="chip" onclick="quickViz('Bucket Tooth pin replacement excavator')">שן כף + Pin</div>
+        <div class="chip" onclick="quickViz('Hydraulic cylinder seal kit excavator')">חותמות גלינדר</div>
+        <div class="chip" onclick="quickViz('Swing bearing replacement excavator')">Swing Bearing</div>
+        <div class="chip" onclick="quickViz('Track tension idler adjustment excavator')">מתח זחלים</div>
+        <div class="chip" onclick="quickViz('Final drive oil change excavator')">שמן Final Drive</div>
+        <div class="chip" onclick="quickViz('Fuel filter replacement diesel excavator')">מסנן דלק</div>
+      </div>
+      <div id="vizLoading" style="display:none"><div class="spin"></div></div>
+      <div class="img-grid" id="imgGrid" style="display:none"></div>
+      <div class="guide-box" id="guideBox" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- TAB 3: MARKET -->
+  <div class="screen" id="screen-market">
+    <div class="market-wrap">
+
+      <div class="market-card">
+        <div class="market-title" style="font-size:16px;font-weight:700;color:var(--accent)">📊 סקר שוק כלי צמה</div>
+        <div class="market-card-desc">בצע סקר שוק על כלי צמה — מחירי מכירה, מחירי קנייה, ומגמות שוק עדכניות. שימוש זה מיועד לבדיקות תקופתיות (כל מספר חודשים).</div>
+        <button class="market-btn" onclick="openMarketSurvey()">פתח סוכן סקר שוק →</button>
+      </div>
+
+      <div class="market-card">
+        <div class="market-title" style="font-size:16px;font-weight:700;color:var(--text)">🏷️ הערכת שווי מהירה</div>
+        <div class="market-card-desc">הכנס פרטי הכלי לקבלת הערכת שווי שוק משוערת</div>
+        <div class="market-price-form">
+          <input class="market-input" id="mEquipment" placeholder="סוג כלי — לדוגמה: מחפרון קטרפילר 320D">
+          <input class="market-input" id="mYear" placeholder="שנת ייצור" type="number" min="1990" max="2025">
+          <input class="market-input" id="mHours" placeholder="שעות מד (Engine Hours)" type="number">
+          <button class="market-btn" onclick="runMarketEval()">הערך שווי</button>
+        </div>
+        <div class="market-result" id="marketResult"></div>
+      </div>
+
+      <div class="market-card">
+        <div style="font-size:14px;font-weight:600;color:var(--dim)">מתי לבצע סקר שוק?</div>
+        <div class="market-card-desc">
+          • לפני רכישת כלי חדש/משומש<br>
+          • לפני מכירת ציוד<br>
+          • בדיקה תקופתית כל 3–6 חודשים<br>
+          • לפני תחילת פרויקט גדול
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB NAV -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('chat', this)">
+      <span class="tab-icon">🔧</span>
+      תקלות
+    </button>
+    <button class="tab-btn" onclick="switchTab('viz', this)">
+      <span class="tab-icon">🔍</span>
+      ויזואליזציה
+    </button>
+    <button class="tab-btn" onclick="switchTab('market', this)">
+      <span class="tab-icon">📊</span>
+      שוק
+    </button>
+  </div>
+</div>
+
+<!-- KB MODAL -->
+<div class="modal-overlay" id="kbModal" onclick="closeKbModal(event)">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" onclick="closeKbModal()">✕</button>
+    <div class="modal-title">⚙️ ניהול בסיס ידע</div>
+    <div style="font-size:13px;color:var(--dim)">הוסף כתובות URL עם מידע טכני על כלי צמה — המערכת תסרוק ותאכלס אוטומטית.</div>
+    <div class="modal-row">
+      <input class="modal-input" id="kbUrl" placeholder="https://...">
+      <button class="modal-btn" onclick="addToKb()">הוסף</button>
+    </div>
+    <div id="kbStatus"></div>
+    <div style="font-size:12px;color:var(--dim)">מקורות מומלצים: Komatsu Service Docs, CAT Service Magazine, Hitachi Tech</div>
+    <button class="modal-btn" onclick="seedKb()" style="background:var(--s3);color:var(--accent);border:1px solid var(--accent);">
+      ↻ אכלס ידע בסיסי מחדש
+    </button>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// ── TABS ──
+function switchTab(name, btn) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── KB BADGE ──
+async function loadKbStats() {
+  try {
+    const r = await fetch('/api/kb/stats');
+    const d = await r.json();
+    document.getElementById('kbBadge').textContent = `KB: ${d.count} רשומות`;
+  } catch(e) {
+    document.getElementById('kbBadge').textContent = 'KB: שגיאה';
+  }
+}
+
+// ── CHAT ──
+let chatBusy = false;
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendChat();
+  }
+}
+
+async function sendChat() {
+  if (chatBusy) return;
+  const input = document.getElementById('chatInput');
+  const q = input.value.trim();
+  if (!q) return;
+
+  document.getElementById('chatEmpty')?.remove();
+  chatBusy = true;
+  document.getElementById('sendBtn').disabled = true;
+  input.value = '';
+  input.style.height = 'auto';
+
+  appendMsg(q, 'user');
+
+  const typingEl = appendTyping();
+
+  try {
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({question: q})
+    });
+    const d = await r.json();
+    typingEl.remove();
+    if (d.error) {
+      appendMsg('שגיאה: ' + d.error, 'bot');
+    } else {
+      appendMsg(d.answer, 'bot', d.kb_used);
+    }
+  } catch(e) {
+    typingEl.remove();
+    appendMsg('שגיאת תקשורת עם השרת', 'bot');
+  }
+
+  chatBusy = false;
+  document.getElementById('sendBtn').disabled = false;
+  input.focus();
+}
+
+function appendMsg(text, role, kbUsed) {
+  const container = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  div.innerHTML = formatText(text);
+  if (kbUsed) {
+    const badge = document.createElement('div');
+    badge.className = 'msg-source';
+    badge.textContent = '📚 מבסיס הידע';
+    div.appendChild(badge);
+  }
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+  return div;
+}
+
+function appendTyping() {
+  const container = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'msg bot';
+  div.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+  return div;
+}
+
+// ── VISUALIZE ──
+async function runViz(query) {
+  const q = query || document.getElementById('vizInput').value.trim();
+  if (!q) return;
+  document.getElementById('vizInput').value = q;
+  document.getElementById('vizBtn').disabled = true;
+  document.getElementById('vizLoading').style.display = 'block';
+  document.getElementById('imgGrid').style.display = 'none';
+  document.getElementById('guideBox').style.display = 'none';
+
+  try {
+    const r = await fetch('/api/visualize', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({query: q})
+    });
+    const d = await r.json();
+    document.getElementById('vizLoading').style.display = 'none';
+
+    if (d.images && d.images.length) {
+      const grid = document.getElementById('imgGrid');
+      grid.innerHTML = '';
+      d.images.forEach(img => {
+        const card = document.createElement('div');
+        card.className = 'img-card';
+        card.innerHTML = `<img src="${img.url}" alt="${img.title}" onerror="this.parentElement.style.display='none'"
+          onclick="openLightbox('${img.url.replace(/'/g,"&#39;")}')">
+          <div class="img-card-title">${img.title}</div>`;
+        grid.appendChild(card);
+      });
+      grid.style.display = 'grid';
+    }
+
+    if (d.guide) {
+      const box = document.getElementById('guideBox');
+      box.innerHTML = formatText(d.guide);
+      box.style.display = 'block';
+    }
+  } catch(e) {
+    document.getElementById('vizLoading').style.display = 'none';
+    document.getElementById('guideBox').innerHTML = 'שגיאה בחיפוש. נסה שוב.';
+    document.getElementById('guideBox').style.display = 'block';
+  }
+
+  document.getElementById('vizBtn').disabled = false;
+}
+
+function quickViz(q) {
+  document.getElementById('vizInput').value = q;
+  runViz(q);
+}
+
+// ── MARKET ──
+function openMarketSurvey() {
+  window.open('http://localhost:5000', '_blank');
+}
+
+async function runMarketEval() {
+  const eq = document.getElementById('mEquipment').value.trim();
+  const yr = document.getElementById('mYear').value;
+  const hr = document.getElementById('mHours').value;
+  if (!eq) return alert('נא להזין סוג כלי');
+
+  const result = document.getElementById('marketResult');
+  result.innerHTML = '<div class="spin" style="margin:10px auto"></div>';
+  result.classList.add('visible');
+
+  try {
+    const prompt = `הערך שווי שוק משוער לכלי הבא: ${eq}, שנת ${yr || 'לא ידוע'}, ${hr ? hr + ' שעות מד' : 'ללא מד שעות'}.
+ספק: (1) טווח מחירים משוער בשוק הישראלי, (2) גורמים המשפיעים על הערך, (3) המלצה — לקנות/למכור.`;
+
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({question: prompt})
+    });
+    const d = await r.json();
+    result.innerHTML = formatText(d.answer);
+  } catch(e) {
+    result.innerHTML = 'שגיאת חיבור לשרת.';
+  }
+}
+
+// ── KB MODAL ──
+function openKbModal() {
+  document.getElementById('kbModal').classList.add('open');
+}
+function closeKbModal(e) {
+  if (!e || e.target === document.getElementById('kbModal')) {
+    document.getElementById('kbModal').classList.remove('open');
+  }
+}
+
+async function addToKb() {
+  const url = document.getElementById('kbUrl').value.trim();
+  if (!url) return;
+  const status = document.getElementById('kbStatus');
+  status.className = '';
+  status.textContent = 'סורק…';
+
+  try {
+    const r = await fetch('/api/kb/add', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({url})
+    });
+    const d = await r.json();
+    if (d.success) {
+      status.className = 'modal-status';
+      status.textContent = `✅ נוסף: "${d.title}" (${d.chars} תווים)`;
+      document.getElementById('kbUrl').value = '';
+      loadKbStats();
+    } else {
+      status.className = 'modal-error';
+      status.textContent = '❌ שגיאה: ' + d.error;
+    }
+  } catch(e) {
+    status.className = 'modal-error';
+    status.textContent = '❌ שגיאת רשת';
+  }
+}
+
+async function seedKb() {
+  const status = document.getElementById('kbStatus');
+  status.className = '';
+  status.textContent = 'מאכלס…';
+  try {
+    const r = await fetch('/api/kb/seed', {method:'POST'});
+    const d = await r.json();
+    status.className = 'modal-status';
+    status.textContent = `✅ הוזנו ${d.seeded} רשומות`;
+    loadKbStats();
+  } catch(e) {
+    status.className = 'modal-error';
+    status.textContent = '❌ שגיאה';
+  }
+}
+
+// ── LIGHTBOX ──
+function openLightbox(url) {
+  document.getElementById('lightboxImg').src = url;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+// ── FORMAT TEXT ──
+function formatText(text) {
+  return text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/^#{1,3} (.+)$/gm,'<strong>$1</strong>')
+    .replace(/^• (.+)$/gm,'<li>$1</li>')
+    .replace(/^(\d+)\. (.+)$/gm,'<li>$2</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g, m => `<ul>${m}</ul>`)
+    .replace(/\n{2,}/g,'</p><p>')
+    .replace(/\n/g,'<br>')
+    .replace(/^(.)/,'<p>$1')
+    .replace(/(.)$/,'$1</p>');
+}
+
+// ── INIT ──
+loadKbStats();
+setInterval(loadKbStats, 30000);
+</script>
+</body>
+</html>
