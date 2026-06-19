@@ -121,8 +121,31 @@ html,body { height:100%; background:var(--bg); color:var(--text); font-family:va
 .chat-input-wrap {
   padding:12px 16px 12px;
   background:var(--s1); border-top:1px solid var(--border);
-  display:flex; gap:8px; flex-shrink:0;
+  display:flex; flex-direction:column; gap:8px; flex-shrink:0;
 }
+.chat-input-row { display:flex; gap:8px; }
+.attach-btn {
+  width:44px; height:44px; border-radius:var(--r);
+  background:var(--s2); border:1px solid var(--border); cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  font-size:19px; flex-shrink:0; color:var(--dim);
+  transition:border-color .2s, color .2s, transform .1s;
+  align-self:flex-end;
+}
+.attach-btn:active { transform:scale(.93); }
+.attach-btn.has-image { border-color:var(--accent); color:var(--accent); }
+.img-preview-row { display:flex; gap:8px; }
+.img-preview-chip {
+  position:relative; width:64px; height:64px; border-radius:var(--r);
+  overflow:hidden; border:1px solid var(--border);
+}
+.img-preview-chip img { width:100%; height:100%; object-fit:cover; display:block; }
+.img-preview-remove {
+  position:absolute; top:2px; left:2px; width:20px; height:20px;
+  border-radius:50%; background:rgba(0,0,0,.7); color:#fff; border:none;
+  font-size:13px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.msg-img { max-width:100%; border-radius:var(--r); margin-bottom:8px; display:block; }
 .chat-input {
   flex:1; background:var(--s2); border:1px solid var(--border);
   border-radius:var(--r); padding:11px 14px;
@@ -343,13 +366,19 @@ html,body { height:100%; background:var(--bg); color:var(--text); font-family:va
         <div class="empty-title">שאל אותי על כל תקלה</div>
         <div class="empty-sub">תאר את הבעיה בטבעי — לדוגמה:<br>
           "המחפרון רועד כשאני מזיז את הכף"<br>
-          "המנוע מחמם יתר אחרי שעה"</div>
+          "המנוע מחמם יתר אחרי שעה"<br><br>
+          📷 אפשר גם לצלם ולשלוח תמונה — קופסת פיוזים, נורית אזהרה, או רכיב פגום</div>
       </div>
     </div>
     <div class="chat-input-wrap">
-      <textarea class="chat-input" id="chatInput" placeholder="תאר את התקלה…" rows="1"
-        onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-      <button class="send-btn" id="sendBtn" onclick="sendChat()">➤</button>
+      <div class="img-preview-row" id="imgPreviewRow" style="display:none"></div>
+      <div class="chat-input-row">
+        <input type="file" id="chatImageInput" accept="image/*" capture="environment" style="display:none" onchange="onImageSelected(event)">
+        <button class="attach-btn" id="attachBtn" onclick="document.getElementById('chatImageInput').click()" title="צרף תמונה">📷</button>
+        <textarea class="chat-input" id="chatInput" placeholder="תאר את התקלה… (או צרף תמונה)" rows="1"
+          onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+        <button class="send-btn" id="sendBtn" onclick="sendChat()">➤</button>
+      </div>
     </div>
   </div>
 
@@ -472,6 +501,7 @@ async function loadKbStats() {
 
 // ── CHAT ──
 let chatBusy = false;
+let pendingImage = null; // dataURL string
 
 function autoResize(el) {
   el.style.height = 'auto';
@@ -485,19 +515,78 @@ function handleKey(e) {
   }
 }
 
+function onImageSelected(e) {
+  const file = e.target.files[0];
+  e.target.value = '';
+  if (!file) return;
+  resizeImageFile(file).then(dataUrl => {
+    pendingImage = dataUrl;
+    renderImagePreview();
+  }).catch(() => alert('שגיאה בטעינת התמונה'));
+}
+
+function resizeImageFile(file, maxDim = 1568, quality = 0.85) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const reader = new FileReader();
+    reader.onload = () => { img.src = reader.result; };
+    reader.onerror = reject;
+    img.onload = () => {
+      let { width, height } = img;
+      if (width > maxDim || height > maxDim) {
+        const scale = maxDim / Math.max(width, height);
+        width = Math.round(width * scale);
+        height = Math.round(height * scale);
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+      resolve(canvas.toDataURL('image/jpeg', quality));
+    };
+    img.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function renderImagePreview() {
+  const row = document.getElementById('imgPreviewRow');
+  const attachBtn = document.getElementById('attachBtn');
+  if (!pendingImage) {
+    row.style.display = 'none';
+    row.innerHTML = '';
+    attachBtn.classList.remove('has-image');
+    return;
+  }
+  row.innerHTML = `<div class="img-preview-chip">
+    <img src="${pendingImage}">
+    <button class="img-preview-remove" onclick="removePendingImage()">✕</button>
+  </div>`;
+  row.style.display = 'flex';
+  attachBtn.classList.add('has-image');
+}
+
+function removePendingImage() {
+  pendingImage = null;
+  renderImagePreview();
+}
+
 async function sendChat() {
   if (chatBusy) return;
   const input = document.getElementById('chatInput');
   const q = input.value.trim();
-  if (!q) return;
+  if (!q && !pendingImage) return;
 
   document.getElementById('chatEmpty')?.remove();
   chatBusy = true;
   document.getElementById('sendBtn').disabled = true;
   input.value = '';
   input.style.height = 'auto';
+  const imageToSend = pendingImage;
+  pendingImage = null;
+  renderImagePreview();
 
-  appendMsg(q, 'user');
+  appendMsg(q, 'user', false, imageToSend);
 
   const typingEl = appendTyping();
 
@@ -505,7 +594,7 @@ async function sendChat() {
     const r = await fetch('/api/chat', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({question: q})
+      body: JSON.stringify({question: q, image: imageToSend || ''})
     });
     const d = await r.json();
     typingEl.remove();
@@ -524,11 +613,16 @@ async function sendChat() {
   input.focus();
 }
 
-function appendMsg(text, role, kbUsed) {
+function appendMsg(text, role, kbUsed, imageUrl) {
   const container = document.getElementById('chatMessages');
   const div = document.createElement('div');
   div.className = `msg ${role}`;
-  div.innerHTML = formatText(text);
+  let html = '';
+  if (imageUrl) {
+    html += `<img class="msg-img" src="${imageUrl}">`;
+  }
+  html += formatText(text || '');
+  div.innerHTML = html;
   if (kbUsed) {
     const badge = document.createElement('div');
     badge.className = 'msg-source';
