@@ -2039,5 +2039,687 @@
       "symptom": "תצוגת לוח לא עובדת וקודי שגיאה מרובים",
       "brand": "CAT"
     }
+  },
+  {
+    "id": "liebherr_excavator_hydraulic_r920_r926_001_0",
+    "text": "ליבהר R920 / R926 / R936 - תקלות הידראוליקה ואובדן לחץ\n\nמחפרוני ליבהר סדרת R9 מצוידים במערכת Positive Control Hydraulics עם משאבות פיסטון כפולות.\n\n1. אובדן כוח הידראולי כללי (General Hydraulic Power Loss)\n   ספציפיקציות: לחץ מערכת R926 = 350 בר, Pilot Pressure = 40 בר.\n   בדיקה ראשונה: חבר מד לחץ לנקודת בדיקה MP1/MP2 ליד גוש השסתומים הראשי.\n   גורם נפוץ: רגולטור המשאבה (Pump Regulator) — בדוק פתח הכוונה בפיזי.\n   כלי אבחון: LiDat (Liebherr Data System) — קרא Plant Parameter 'Pump Pressure 1'.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "R920,R926,R936",
+      "symptom": "אובדן לחץ הידראולי",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_excavator_hydraulic_r920_r926_001_1",
+    "text": "2. בלוק שסתומים ראשי (Main Control Valve) תקוע\n   ליבהר R926 עם MCV electorhydraulic — השסתומים נשלטים ב-Pilot pressure.\n   גורם: אבק/זיהום שמן תוקע Spool.\n   פתרון: הוסף מגנט Drain Line, נקה פילטר Return בכל 250 שעות, החלף שמן הידראולי.\n\n3. קאוויטציה במשאבה (Pump Cavitation)\n   תסמין: רעש 'לחיצה' בהזנקה, במיוחד בקור.\n   גורם: Suction Strainer סתום, ויסקוזיטה שמן גבוהה בקור.\n   שמן מאושר ליבהר: Liebherr Hydraulic Oil HEES 46 או שמן מינרלי HLP 46.\n   פתרון: הרץ Low Idle 5 דקות לפני עומס מלא בטמפרטורות נמוכות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "R920,R926,R936",
+      "symptom": "אובדן לחץ הידראולי",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_excavator_hydraulic_r920_r926_001_2",
+    "text": "4. Arm/Boom איטיים בצד שמאל בלבד\n   גורם: Load Check Valve תקוע בגוש שסתומים ימין.\n   R926 עם שני MCV נפרדים (ימין ושמאל).\n   פתרון: פרק ה-MCV הרלוונטי, נקה Check Ball + Spring, החלף O-rings.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה",
+      "equipment": "R920,R926,R936",
+      "symptom": "אובדן לחץ הידראולי",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_excavator_engine_r926_r950_002_0",
+    "text": "ליבהר R926 / R950 - מנועי Liebherr D934 / D946 ותקלות מנוע\n\nליבהר מייצרת מנועים עצמאית — סדרת D934 (6 צילינדרים, 9 ליטר) ו-D946 (6 צילינדרים, 12 ליטר).\n\nמאפייני מנוע D934 ב-R926:\n- הספק: 190 כ\"ס (140 קוט\"ש)\n- מומנט: 980 ניוטון-מטר\n- Common Rail Injection, Stage V / Tier 4 Final\n\n1. עשן שחור + חוסר כוח\n   גורם א: Turbocharger VTG תקוע — Vanes לא נעות.\n   בדיקה: LiDat → Engine Parameters → Turbo Boost Pressure.\n   לחץ תקין בעומס: 200–230 kPa.\n   פתרון: נקה VTG Actuator ו-Vanes בתרסיס מנקה, בדוק Actuator Rod.\n\n2. DEF/AdBlue Fault (SCR System)\n   קוד LiDat: Engine ECU → DTC P20EE = Reducing Agent Quality.\n   פתרון: נקז מיכל DEF, שטוף, מלא ISO 22241-1. בדוק DEF Quality Sensor.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע D934,D946",
+      "equipment": "R926,R950",
+      "symptom": "חוסר כוח,עשן שחור,DPF",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_excavator_engine_r926_r950_002_1",
+    "text": "3. DPF Regeneration לא מצליח\n   קוד: DTC P2453 = DPF Differential Pressure High.\n   פתרון: בצע Stationary Regen דרך LiDat → Service → DPF Regeneration.\n   אם נכשל 3 פעמים — יש להוציא DPF לניקוי מקצועי (Thermal Cleaning).\n\n4. קירור יתר בקור (Engine Not Reaching Temperature)\n   גורם: Thermostat תקוע פתוח.\n   טמפרטורת מנוע תקינה: 80–95°C.\n   פתרון: החלף Thermostat — מאוד נפוץ בישראל בחורף.\n\n5. רעש 'נקישה' מהמנוע בהזנקה\n   גורם: Hydraulic Tappets (דפדפות הידראוליות) לא מתמלאות.\n   פתרון: החלף שמן מנוע Liebherr SAE 15W-40 ACEA E9, הפעל Low Idle 2 דק' לפני עומס.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע D934,D946",
+      "equipment": "R926,R950",
+      "symptom": "חוסר כוח,עשן שחור,DPF",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_crane_ltm1100_003_0",
+    "text": "ליבהר LTM 1100-5.2 עגורן נייד - תקלות מערכת הרמה והגדרת עומס\n\nה-LTM 1100-5.2 הוא עגורן נייד (Mobile Crane) בעל יכולת הרמה של 100 טון, זרוע טלסקופית 60 מטר.\n\n1. LICCON מחשב שגיאת עומס (Load Limit Exceeded)\n   LICCON (Liebherr Computer CONtrol) הוא מחשב הגנת העומס הראשי.\n   קוד: E1001 = גלאי עומס (Load Moment Indicator) עולה על 100%.\n   פעולה חובה: הנח עומס מיד! בדוק טבלת עומסים (Load Chart) לתנאי השמיש.\n   גורם נפוץ: רדיוס עבודה (Outreach) גדול מהמוגדר בתצורה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "עגורן נייד,LICCON",
+      "equipment": "LTM1100,LTM1060,LTM1080",
+      "symptom": "שגיאת עומס,זרוע לא מתארכת",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_crane_ltm1100_003_1",
+    "text": "2. LICCON קוד E2100 - כשל מדידת זווית הזרוע (Boom Angle Sensor Fault)\n   גורם: חיישן זווית (Angle Sensor) מלוכלך/פגום בבסיס הזרוע.\n   בדיקה: LICCON → Service Mode → Calibration → Boom Angle.\n   פתרון: נקה חיישן, כייל מחדש. אם שגוי — החלף Sensor HA2.\n\n3. הזרוע הטלסקופית לא מתארכת (Boom Extension Failure)\n   גורם א: לחץ הידראולי נמוך לגלינדר הטלסקופי (< 280 בר).\n   גורם ב: כבל סינכרון (Synchronization Cable) קרוע.\n   בדיקה: פרק כיסוי צד Boom, בדוק מצב הכבל ועקרות Sheaves.",
+    "metadata": {
+      "source": "seed",
+      "topic": "עגורן נייד,LICCON",
+      "equipment": "LTM1100,LTM1060,LTM1080",
+      "symptom": "שגיאת עומס,זרוע לא מתארכת",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_crane_ltm1100_003_2",
+    "text": "4. רגלי תמיכה (Outriggers) לא נפרסים\n   גורם: שסתום הידראולי של Outrigger תקוע, או חיישן גבול (Limit Switch) פגום.\n   LTM 1100 עם בקרת Outrigger LICCON — בדוק LED סטטוס כל רגל.\n   בדיקה: LICCON → Outrigger Control → Status Display.\n\n5. קוד LICCON E5000 - כשל תקשורת CAN\n   בדוק חיבורי CAN Bus בלוח החשמל הראשי (Main Electrical Cabinet).\n   בדיקת עמידות: 60 אוהם בין CAN-H ל-CAN-L.",
+    "metadata": {
+      "source": "seed",
+      "topic": "עגורן נייד,LICCON",
+      "equipment": "LTM1100,LTM1060,LTM1080",
+      "symptom": "שגיאת עומס,זרוע לא מתארכת",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_wheel_loader_l538_l542_004_0",
+    "text": "ליבהר L538 / L542 / L550 מטענים גלגלים - תקלות שידור וזרועות\n\nמטעיני הגלגלים L538/L542 של ליבהר מצוידים בתיבת הילוכים הידרוסטטית (Hydrostatic Transmission)\nומנוע Liebherr D934 בהספק 120–145 כ\"ס.\n\n1. מהירות נסיעה מוגבלת (Reduced Travel Speed)\n   מטעיני ליבהר עם HST (Hydrostatic Transmission) — הנעה ישירה דרך Hydrostatic Pump + Motor.\n   גורם: Charge Pressure נמוך מתחת ל-22 בר.\n   בדיקה: פורט בדיקה Charge Pressure ליד ה-HST Pump.\n   פתרון: בדוק Charge Filter, צינור Suction, אטמי Charge Pump.\n\n2. מטען לא עולה בעומס מלא\n   L542: לחץ Relief לעליית הזרוע = 260 בר.\n   גורם: Relief Valve Lift Cylinder לא מכוון נכון.\n   כוון בברגי כיוון (Adjustment Screw) ב-MCV — עלייה של 20 בר לכל סיבוב מלא.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מטען גלגלים,HST",
+      "equipment": "L538,L542,L550",
+      "symptom": "מהירות מוגבלת,זרוע לא עולה",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_wheel_loader_l538_l542_004_1",
+    "text": "3. Kickdown לא עובד\n   ליבהר L538/L542 עם מתג Kickdown על דוושת Gas — עובר ל-Torque Converter Mode בלחיצה.\n   גורם: מתג Kickdown פגום, או פרמטר TCU לא מוגדר.\n   בדיקה: LiDat → Transmission → Kickdown Switch Status.\n\n4. 'ניתוק' פתאומי בנסיעה (Sudden Loss of Drive)\n   גורם: חיישן טמפרטורת שמן HST עולה מעל 105°C — System Cutout.\n   פתרון: הפסק עבודה, קרר מנוע, בדוק מקרר שמן HST (Oil Cooler).\n\n5. רעש 'נקישה' מגשר הקדמי\n   גורם: בלאי Cross Pin ב-Differential.\n   שמן גשר: Liebherr Axle Oil SAE 90 GL-5.\n   בדוק מפלס שמן ב-Drain Plug — החלף כל 2000 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מטען גלגלים,HST",
+      "equipment": "L538,L542,L550",
+      "symptom": "מהירות מוגבלת,זרוע לא עולה",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_lidat_diagnostic_005_0",
+    "text": "מערכת אבחון LiDat וLiDAT Web - ליבהר\n\nLiDat (Liebherr Data Transmission System) היא מערכת הטלמטיקה והאבחון של ליבהר.\nLiDAT Web מאפשר מעקב מרחוק על מצב הכלי, שעות עבודה וקודי שגיאה.\n\nחיבור מקומי:\n1. חבר ממשק USB-to-CAN (Liebherr Service Adapter) לשקע Deutsch 9-pin.\n2. פתח תוכנת LiDat Service Tool.\n3. בחר Machine Type ו-Serial Number.\n4. גש ל-Diagnostic → Fault Codes.\n\nקטגוריות קודי שגיאה (DTC) נפוצים:\n- Engine ECU: P0087 = לחץ Rail נמוך, P0401 = EGR Low Flow\n- Hydraulic ECU: H0001 = לחץ מערכת נמוך, H0042 = טמפרטורת שמן גבוהה\n- Transmission ECU: T0011 = Clutch Slip, T0021 = Shift Error\n- Machine ECU: M0031 = Joystick Fault, M0055 = CAN Timeout",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון LiDat",
+      "equipment": "R920,R926,R950,L538,L542,LTM1100",
+      "symptom": "קודי שגיאה,אבחון כללי",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_lidat_diagnostic_005_1",
+    "text": "Active Tests דרך LiDat:\n- הפעל/כבה כל סולנואיד בנפרד לאבחון\n- קרא ערכי חיישנים בזמן אמת (Live Data)\n- בצע כיולי חיישנים (Calibration)\n- אפס קודי שגיאה לאחר תיקון\n\nמה לעשות עם קודי שגיאה מרובים בו-זמנית:\n1. בדוק מתח סוללה — חייב להיות 24V–27.5V.\n2. בדוק SPN 168 (Battery Voltage) — כל קוד שנגרם ממתח נמוך ייעלם לאחר טעינת סוללה.\n3. קרא ה-Freeze Frame Data — מה היה מצב הכלי בזמן השגיאה.",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון LiDat",
+      "equipment": "R920,R926,R950,L538,L542,LTM1100",
+      "symptom": "קודי שגיאה,אבחון כללי",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_excavator_track_swing_r936_006_0",
+    "text": "ליבהר R936 - מערכת נסיעה, זחלים וסיבוב\n\n1. Final Drive Oil Leak (דליפת שמן Drive הסופי)\n   R936 עם Float Seal על כל Final Drive.\n   נפח שמן: SAE 80W-90 GL-4 — 5.5 ליטר לצד.\n   תסמין: שמן כהה על Sprocket ואזור זחל.\n   פתרון: החלף Float Seal — פרק Sprocket, נקה, החלף O-rings + Seal.\n\n2. Travel לצד אחד בלבד\n   גורם: Anti-Cavitation Valve בצד אחד פגום, גורם ל-Cavitation ב-Motor.\n   בדיקה: לחץ High Pressure ב-Travel Motor — צריך 380–420 בר בעומס.\n   פתרון: החלף Anti-Cavitation Check Valve.\n\n3. Swing Bearing שחוק (Swing Ring Gear Wear)\n   R936: בדוק רפיון אנכי כל 1000 שעות עם Dial Gauge.\n   מקסימום מותר: 2.5 מ\"מ.\n   שימון: כל 250 שעות, 8 נקבי גריז — גריז Liebherr EP2 (NLGI 2).",
+    "metadata": {
+      "source": "seed",
+      "topic": "זחלים,סיבוב,נסיעה",
+      "equipment": "R936,R926",
+      "symptom": "דליפת שמן Drive,נסיעה חד-צדדית,סיבוב איטי",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_excavator_track_swing_r936_006_1",
+    "text": "4. Swing (סיבוב) איטי\n   R936: לחץ Swing Motor = 280 בר.\n   גורם: Swing Relief Valve לא מכוון נכון — כוון לפי LiDat H0015.\n   תסמין נוסף: אם סיבוב 'קופץ' — בדוק Swing Brake Valve.",
+    "metadata": {
+      "source": "seed",
+      "topic": "זחלים,סיבוב,נסיעה",
+      "equipment": "R936,R926",
+      "symptom": "דליפת שמן Drive,נסיעה חד-צדדית,סיבוב איטי",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_maintenance_schedule_007_0",
+    "text": "לוח תחזוקה מחפרון ליבהר R926 - לפי שעות עבודה\n\nתחזוקה יומית — לפני משמרת:\n- בדוק מפלס שמן מנוע D934 (בין MIN ל-MAX)\n- בדוק נוזל קירור (בין COLD ל-HOT)\n- בדוק מפלס שמן הידראולי — Sight Glass בצד ימין של המיכל\n- בדוק Water Separator (מיכל שקוף על מסנן הדלק)\n- שמן נקבי גריז: 10 נקבים ב-Boom, Arm, Bucket — גריז EP2\n\nכל 250 שעות:\n- החלף שמן מנוע + פילטר (Liebherr SAE 15W-40 ACEA E9, 20 ליטר)\n- החלף מסנן דלק ראשי ומשני\n- שמן Swing Bearing — 8 נקבים\n- בדוק רמת שמן Final Drive שני הצדדים\n\nכל 500 שעות:\n- החלף פילטר Return Line הידראולי\n- החלף פילטר Pilot\n- בדוק תיפקוד LICCON / LiDat — קרא קודי שגיאה\n- בדוק Track Tension — רפיון 20-30 מ\"מ בין Idler ל-Carrier Roller",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "R926,R936,R920",
+      "symptom": "תחזוקה",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "liebherr_maintenance_schedule_007_1",
+    "text": "כל 1000 שעות:\n- החלף שמן Final Drive (SAE 80W-90 GL-4, 5.5 ליטר לצד)\n- בדוק Swing Bearing לרפיון אנכי\n- בדוק ובלם Track Shoe Bolts — 340 Nm\n- בדוק Turbocharger — שמן, רפיון ציר, נזילות\n\nכל 2000 שעות:\n- החלף שמן הידראולי מלא (Liebherr HEES 46, 220 ליטר)\n- בדוק Swing Reduction Gear Oil (GL-4 80W, 2.8 ליטר)\n- בדוק Cooling System — שטוף וניקוי קורות קירור",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "R926,R936,R920",
+      "symptom": "תחזוקה",
+      "brand": "Liebherr"
+    }
+  },
+  {
+    "id": "hitachi_excavator_hydraulic_zx200_zx330_001_0",
+    "text": "היטאצ'י ZX200 / ZX225 / ZX330 - תקלות הידראוליקה\n\nמחפרוני היטאצ'י סדרת ZX (Zaxis) מצוידים במשאבת פיסטון כפולה HPV145 (ZX225) או HPV210 (ZX330).\nמערכת ה-Negative Flow Control (NFC) — ייחודית להיטאצ'י — שולטת בספיקת המשאבה.\n\n1. אובדן כוח הידראולי — כלי איטי\n   לחץ מערכת ZX225: 34.3 MPa (343 בר). ZX330: 35 MPa (350 בר).\n   בדיקה: חבר מד לחץ לנקודת בדיקה G1 (Main Pump 1) ו-G2 (Main Pump 2).\n   גורם נפוץ: NFC Relief Valve לא מכוון — בדוק לחץ NFC: 3.0 MPa (30 בר) בעמדת ניוטרל.\n   פתרון: כוון NFC Relief Valve ב-Main Control Valve לפי נתוני היטאצ'י.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,NFC",
+      "equipment": "ZX200,ZX225,ZX330",
+      "symptom": "כלי איטי,שמן חם,לחץ נמוך",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_excavator_hydraulic_zx200_zx330_001_1",
+    "text": "2. Pump Horsepower Control לא פועל\n   ZX225/ZX330 עם מערכת בקרת כוח (Power Optimization) — מגביל משאבה לפי עומס מנוע.\n   גורם: חיישן לחץ Engine Pump Absorption פגום.\n   קוד: 04-5 (Pump Control Pressure Sensor) — בדוק דרך Dr. ZX.\n\n3. שמן הידראולי חם (Oil Overheating)\n   ZX225: גבול אזהרה 95°C. גבול כיבוי 105°C.\n   גורם: Oil Cooler סתום — נקה עם מים בלחץ נמוך, מהפנים החוצה.\n   בדיקה Dr. ZX: Monitor → Oil Temperature.\n\n4. Arm/Boom איטיים לאחד הצדדים\n   גורם: Travel Straight Spool ב-MCV מסונכרן — בדוק תנוחת Spool.\n   ZX330: פרק MCV, בדוק ונקה כל Spool לתנועה חופשית.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,NFC",
+      "equipment": "ZX200,ZX225,ZX330",
+      "symptom": "כלי איטי,שמן חם,לחץ נמוך",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_dr_zx_diagnostic_002_0",
+    "text": "מערכת אבחון Dr. ZX (Hitachi Diagnostic Tool) — מחפרוני היטאצ'י\n\nDr. ZX הוא כלי האבחון הרשמי של היטאצ'י לסדרת Zaxis.\nחיבור: ממשק USB→Ethernet לשקע Deutsch 9-pin ליד מושב הנהג.\n\nמבנה קטגוריות ב-Dr. ZX:\n- Monitor: צפייה בחיישנים בזמן אמת (שמן, לחץ, טמפרטורה, RPM)\n- Fault: קריאה ואיפוס קודי שגיאה DTC\n- Active Check: הפעלת סולנואידים ורכיבים לבדיקה\n- Adjustment: כיול חיישנים ופרמטרים",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון Dr. ZX",
+      "equipment": "ZX200,ZX225,ZX330,ZX350",
+      "symptom": "קודי שגיאה,אבחון",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_dr_zx_diagnostic_002_1",
+    "text": "קודי שגיאה נפוצים (DTC) בהיטאצ'י ZX:\n- 02-1: חיישן לחץ Pilot (Pilot Pressure Sensor Fault)\n- 02-3: חיישן זווית Boom (Boom Angle Sensor)\n- 03-2: טמפרטורת שמן הידראולי גבוהה\n- 04-1: חיישן לחץ Pump 1 פגום\n- 04-5: חיישן בקרת הורסאות משאבה\n- 08-1: מנוע — לחץ שמן נמוך\n- 08-3: מנוע — טמפרטורת קירור גבוהה\n- 12-1: תקשורת CAN Bus — Engine ECU לא מגיב\n- 15-1: Swing — Over Speed Detection\n\nקודים מרובים בו-זמנית:\nגורם שכיח: מתח סוללה נמוך (< 22V).\nבדיקה: Monitor → Electrical → Battery Voltage.\nאם מתח תקין — בדוק CAN Bus Termination Resistors (120 אוהם כל קצה, 60 אוהם ביחד).",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון Dr. ZX",
+      "equipment": "ZX200,ZX225,ZX330,ZX350",
+      "symptom": "קודי שגיאה,אבחון",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_excavator_engine_isuzu_003_0",
+    "text": "מנועי Isuzu AI-4JJ1 / 6HK1 במחפרוני היטאצ'י ZX\n\nהיטאצ'י משתמשת במנועי Isuzu:\n- ZX200/ZX225: Isuzu AI-4JJ1 (4 צילינדרים, 5.2 ליטר, 128 כ\"ס)\n- ZX330/ZX350: Isuzu AI-6HK1 (6 צילינדרים, 7.8 ליטר, 222 כ\"ס)\n- ZX490: Isuzu AJ-6WG1 (6 צילינדרים, 9.8 ליטר, 308 כ\"ס)\n\n1. מנוע לא מגיע ל-RPM מלא\n   גורם א: EGR Valve סתום/פגום — מחזיר יותר מדי גזים.\n   קוד Dr. ZX: DTC P0401 = EGR Flow Insufficient.\n   פתרון: נקה EGR Valve ו-EGR Cooler בספריי מנקה.\n   גורם ב: Throttle Control Actuator בעיה.\n   קוד: P2100 = Throttle Actuator Circuit Fault.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע Isuzu,DPF,AdBlue",
+      "equipment": "ZX225,ZX330,ZX350,ZX490",
+      "symptom": "חוסר כוח,עשן,DPF",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_excavator_engine_isuzu_003_1",
+    "text": "2. עשן לבן/כחול בהזנקה בקור\n   גורם: Glow Plugs (נרות להט) שחוקים ב-Isuzu 4JJ1.\n   בדיקה: מדוד אמפר לכל נר — תקין: 15–18A.\n   גורם נוסף: מחלפי חום (EGR Cooler) דולפים — שמן בצנצנת הקירור.\n\n3. DPF מלא — Regen נדרש (ZX225/ZX330 מסוף 2013)\n   נורת DPF כתומה = Regen אוטומטי מתבצע — אפשר להמשיך לעבוד.\n   נורת DPF אדומה מהבהבת = עצור ובצע Stationary Regen!\n   Dr. ZX: Active Check → DPF Forced Regeneration.\n   אזהרה: אל תבצע Regen ליד עשב/חומרים דליקים.\n\n4. AdBlue (SCR) Fault\n   קוד: DTC P20EE = SCR NOx Catalyst Efficiency.\n   גורם נפוץ: DEF Injector גובש (Crystallized).\n   פתרון: Purge Cycle דרך Dr. ZX, אם לא עוזר — פרק ונקה Injector במים חמים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע Isuzu,DPF,AdBlue",
+      "equipment": "ZX225,ZX330,ZX350,ZX490",
+      "symptom": "חוסר כוח,עשן,DPF",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_excavator_swing_travel_004_0",
+    "text": "היטאצ'י ZX330 / ZX350 - מערכת סיבוב ונסיעה\n\nסיבוב ZX330:\n- Swing Motor: Kawasaki MFC270 Piston Motor\n- לחץ סיבוב מקסימום: 28.4 MPa (284 בר)\n- שמן גיר סיבוב (Swing Reduction Gear): GL-4 80W — 2.8 ליטר\n- Swing Bearing: שימון כל 250 שעות — גריז EP2 NLGI-2\n\n1. סיבוב לא עוצר בחדות (Swing Drift)\n   גורם: Swing Brake Valve לא מחזיק.\n   בדיקה: הסר ג'ויסטיק ← אם הכלי ממשיך לסוב = Swing Brake Valve פגום.\n   פתרון: החלף Swing Brake Valve Assembly.\n\n2. קול חריקה בסיבוב\n   גורם: Swing Bearing יבש — לא שומן לזמן רב.\n   פתרון: שמן מיידי (9 נקבי גריז ב-ZX330), בדוק אם יש שחיקה גלויה על השיניים.\n\n3. Swing Gear Box שומן דולף\n   ZX330: Gear Box Seal תחתון — בדוק O-ring Drain Plug.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה",
+      "equipment": "ZX330,ZX350,ZX225",
+      "symptom": "סיבוב לא עוצר,כלי מתיישר בנסיעה",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_excavator_swing_travel_004_1",
+    "text": "נסיעה ZX330:\n- Travel Motor: Piston Type, לחץ מקסימום 40 MPa (400 בר)\n- Final Drive: 2-Speed, שמן SAE 80W-90 GL-4 — 3.8 ליטר לצד\n\n4. כלי 'מתיישר' לאחד הצדדים בנסיעה\n   גורם: Straight Travel Valve (שסתום נסיעה ישרה) פגום.\n   ZX330: שסתום נפרד ב-MCV שמסנכרן את שני Travel Motors.\n   פתרון: נקה Straight Travel Spool, בדוק O-rings.\n\n5. 2-Speed לא מחלף\n   גורם: Travel 2-Speed Solenoid פגום, או Pilot Pressure נמוך (< 30 בר).\n   בדיקה Dr. ZX: Active Check → 2-Speed Solenoid.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה",
+      "equipment": "ZX330,ZX350,ZX225",
+      "symptom": "סיבוב לא עוצר,כלי מתיישר בנסיעה",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_zx_electrical_can_005_0",
+    "text": "חשמל ו-CAN Bus — מחפרוני היטאצ'י ZX\n\nמחפרוני ZX (מ-2013) עם ארכיטקטורת CAN Bus מרובה:\n- CAN 1 (500 kbps): Engine ECU + Pump Controller\n- CAN 2 (250 kbps): Monitor + Swing/Travel Controllers\n- CAN 3 (250 kbps): AC System + Camera System\n\n1. מסך מוניטור כבוי (Monitor Display Off)\n   גורם א: נתיך F12 (15A) שרוף — לוח נתיכים מתחת למושב מימין.\n   גורם ב: Connector CN-1 (14-pin) מאחורי המסך רופף.\n   בדיקה: וודא 24V על Pin 1 (Power) של Connector.\n\n2. Joystick לא מגיב (EH Joystick Failure)\n   ZX225/ZX330 מ-2015 עם EH Joystick (חשמלי-הידראולי).\n   קוד Dr. ZX: 02-5 = Left Joystick Signal Fault.\n   בדיקה: Monitor → Active Check → Joystick — בדוק ערכי Hall Sensor (0.5–4.5V).\n   פתרון: החלף Joystick Assembly.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,CAN Bus,אבחון",
+      "equipment": "ZX200,ZX225,ZX330,ZX350",
+      "symptom": "מסך כבוי,Joystick לא מגיב,קודי שגיאה מרובים",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_zx_electrical_can_005_1",
+    "text": "3. Alternator לא טוען\n   ZX225/ZX330: 24V מערכת, Alternator 80A.\n   מתח תקין במנוע דולק: 27.5–28.5V.\n   גורם: V-Belt החליק — בדוק מתח רצועה ושחיקה.\n\n4. קודי CAN Bus מרובים בבת אחת\n   בדוק: Battery Voltage → מינימום 24V בהפעלה.\n   בדוק: Termination Resistors — 60 אוהם בין CAN-H ל-CAN-L.\n   שכיח: Harness Connector שנחתך/קורוד ליד Swing Bearing Area.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,CAN Bus,אבחון",
+      "equipment": "ZX200,ZX225,ZX330,ZX350",
+      "symptom": "מסך כבוי,Joystick לא מגיב,קודי שגיאה מרובים",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_maintenance_zx225_006_0",
+    "text": "לוח תחזוקה מחפרון היטאצ'י ZX225 - לפי שעות\n\nתחזוקה יומית — לפני משמרת:\n- בדוק מפלס שמן מנוע Isuzu 4JJ1 (מוט בין F ל-L)\n- בדוק מפלס קירור (בין LOW ל-FULL)\n- בדוק שמן הידראולי — Sight Glass על מיכל ימין אחורי\n- בדוק Water Separator — נקה אם יש מים\n- שמן נקבי גריז יומיים: Bucket Pins + Arm Pins (8 נקבים)\n\nכל 250 שעות:\n- החלף שמן מנוע (Isuzu 15W-40 CF-4, 18 ליטר) + פילטר שמן\n- החלף מסנן דלק ראשי\n- שמן Swing Bearing (9 נקבים) — גריז ZX EP2\n- שמן Boom, Arm, Bucket Foot Pins (קפסת גריז)\n\nכל 500 שעות:\n- החלף פילטר Return Line הידראולי\n- החלף Pre-Filter הידראולי (Suction Strainer)\n- בדוק Turbocharger (שמן, רפיון Shaft)",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "ZX225,ZX200",
+      "symptom": "תחזוקה",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_maintenance_zx225_006_1",
+    "text": "כל 1000 שעות:\n- בדוק ורענן שמן Final Drive (SAE 80W-90, 3.8 ליטר לצד)\n- בדוק Swing Gear Box Oil (GL-4 80W, 2.8 ליטר)\n- בדוק Track Shoe Bolts — הידוק 340 Nm\n\nכל 2000 שעות:\n- החלף שמן הידראולי (Hitachi Super Hydraulic Oil 46, 170 ליטר)\n- החלף שמן Final Drive שני הצדדים\n- בדוק Swing Bearing — רפיון אנכי מקסימום 3 מ\"מ\n- בדוק EGR Valve ו-EGR Cooler — נקה לכלוך",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "ZX225,ZX200",
+      "symptom": "תחזוקה",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_zx490_large_excavator_007_0",
+    "text": "היטאצ'י ZX490 / ZX530 מחפרונים גדולים - תקלות ייחודיות\n\nZX490 ו-ZX530 הם מחפרונים כבדים (49–53 טון) עם מנוע Isuzu AJ-6WG1 (308–320 כ\"ס).\n\n1. Pump 1 / Pump 2 ספיקה שונה\n   ZX490 עם 2 משאבות נפרדות — כל משאבה מפעילה מעגל נפרד.\n   אם Pump 1 חלשה: Boom + Travel Right איטיים.\n   אם Pump 2 חלשה: Arm + Swing + Travel Left איטיים.\n   בדיקה: Dr. ZX → Monitor → Main Pump Pressure 1 vs. 2.\n\n2. עלייה במשקל (Heavy Lift Mode) לא מופעל\n   ZX490 עם Power Boost (HP Mode) — לחצן על Joystick ימין.\n   Power Boost מעלה לחץ ל-38 MPa ל-8 שניות.\n   גורם כשל: Power Boost Solenoid פגום.\n   בדיקה: Dr. ZX → Active Check → Power Boost Solenoid.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מחפרון כבד,הידראוליקה",
+      "equipment": "ZX490,ZX530",
+      "symptom": "אסימטריה בין משאבות,כלי יורד במדרון",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "hitachi_zx490_large_excavator_007_1",
+    "text": "3. Travel Motor Counterbalance Valve — כלי יורד במדרון\n   ZX490: Counterbalance Valve מגביל ירידה חופשית במדרון.\n   תסמין: כלי 'רץ קדימה' בהורדת מדרון, ג'ויסטיק נעול.\n   פתרון: החלף Counterbalance Valve Assembly — זוג (שני הצדדים).\n\n4. Main Control Valve (MCV) זליגה פנימית\n   ZX530: Boom/Arm יורדים לאט גם כשג'ויסטיק ניוטרל.\n   בדיקה: הרם Boom לגובה מקסימום, כבה מנוע, מדוד ירידה תוך 10 דק'.\n   ירידה > 100 מ\"מ = Load Check Valve ב-MCV פגום.\n   פתרון: פרק MCV, נקה/החלף Load Check Valve.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מחפרון כבד,הידראוליקה",
+      "equipment": "ZX490,ZX530",
+      "symptom": "אסימטריה בין משאבות,כלי יורד במדרון",
+      "brand": "Hitachi"
+    }
+  },
+  {
+    "id": "manitou_telehandler_mlt630_mlt741_001_0",
+    "text": "מאניטו MLT630 / MLT741 / MLT845 טלסקופ רב-תכליתי - תקלות הרמה והיגוי\n\nטלסקופי מאניטו סדרת MLT (Multi-Loader Telescopic) הם מכונות רב-תכליתיות\nלחקלאות ובנייה. MLT741-120 PS: הרמה מקסימום 4.1 מ', 7 טון.\n\n1. זרוע לא עולה לגובה מלא תחת עומס\n   לחץ Relief הרמה MLT741: 230 בר.\n   גורם א: Relief Valve Lift Circuit לא מכוון נכון.\n   בדיקה: חבר מד לחץ לנקודת P1 (Lift Cylinder Supply) — השווה ל-Relief Setting.\n   גורם ב: Lift Cylinder Internal Seal Leak — בדוק צניחת זרוע תוך 5 דקות.\n\n2. זרוע צונחת בניוטרל (Boom Drift)\n   גורם: Load Holding Valve (LSV) פגום בגוש שסתומים.\n   MLT630/MLT741: LSV ממוקם ב-Control Valve Block.\n   פתרון: פרק LSV, נקה Ball + Seat, החלף O-rings ואטמים.",
+    "metadata": {
+      "source": "seed",
+      "topic": "טלסקופ,הרמה,היגוי",
+      "equipment": "MLT630,MLT741,MLT845",
+      "symptom": "זרוע לא עולה,זרוע צונחת,היגוי כבד",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_telehandler_mlt630_mlt741_001_1",
+    "text": "3. היגוי כבד / לא מגיב\n   MLT741 עם Hydrostatic Steering (EHPS).\n   גורם: Steering Priority Valve פגום — שמן לא מגיע לסירת היגוי.\n   בדיקה: לחץ היגוי תקין: 180–200 בר.\n   פתרון: בדוק Orbitrol (Steering Unit), בדוק Priority Valve Spool.\n\n4. כף לא מתכוננת (Attachment Not Tilting)\n   גורם: Bucket Tilt Cylinder Relief Valve לחץ נמוך.\n   לחץ תקין Tilt: 220 בר.\n   פתרון: כוון Relief Valve ב-Tilt Circuit.\n\n5. Outriggers לא יורדים (MLT הצוייד בחיצוניות)\n   גורם: Outrigger Solenoid Valve פגום.\n   בדיקה: מדוד 12V/24V על Solenoid בהפעלה.\n   פתרון: החלף Solenoid Coil.",
+    "metadata": {
+      "source": "seed",
+      "topic": "טלסקופ,הרמה,היגוי",
+      "equipment": "MLT630,MLT741,MLT845",
+      "symptom": "זרוע לא עולה,זרוע צונחת,היגוי כבד",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_telehandler_mt1840_mt2150_002_0",
+    "text": "מאניטו MT1840 / MT2150 טלסקופ בנייה - תקלות זרוע טלסקופית\n\nסדרת MT (Telescopic Handler for Construction) — MT1840: גובה הרמה 18 מ', 4 טון.\nMT2150: גובה הרמה 21 מ', 5 טון. מצוידים במנוע Deutz TCD 4.1.\n\n1. זרוע טלסקופית לא מתארכת (Boom Extension Failure)\n   MT1840/MT2150: מנגנון ארכה ב-Chain/Telescopic Cylinders.\n   גורם א: גלינדר Extend Cylinder פגום — אטמים שחוקים.\n   בדיקה: לחץ צריך להיות 200 בר בעת ארכה בעומס.\n   גורם ב: Slide Pad (ריפוד גלישה) שחוק — גורם לתקיעות הזרוע.\n   פתרון: פרק Boom, בדוק ו-החלף Slide Pads בכל שלב.",
+    "metadata": {
+      "source": "seed",
+      "topic": "טלסקופ,זרוע טלסקופית",
+      "equipment": "MT1840,MT2150,MT1440",
+      "symptom": "זרוע לא מתארכת,רעידה בגובה",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_telehandler_mt1840_mt2150_002_1",
+    "text": "2. Boom Section 2 לא נארכת אבל Section 1 כן\n   גורם: שרשרת ארכה (Extension Chain) Section 2 נשברת/מתרופפת.\n   בדיקה: פתח כיסוי צד Boom, בדוק שרשרת.\n   פתרון: החלף שרשרת (Extension Chain Kit) — תמיד זוג ביחד.\n\n3. זרוע רועדת בגובה גבוה\n   גורם נפוץ: Slide Pad שחוק בשלב הראשון — עודף 'פלאי' (Play) בחיבור.\n   פתרון: החלף Slide Pads שלב 1. המחפרון לא יציב גם עם בעיה קלה!\n\n4. Carriage (מנשא כף) לא שומר עמדה (Carriage Drift)\n   גורם: Side Shift Cylinder seal פגום.\n   פתרון: Seal Kit לגלינדר Side Shift.",
+    "metadata": {
+      "source": "seed",
+      "topic": "טלסקופ,זרוע טלסקופית",
+      "equipment": "MT1840,MT2150,MT1440",
+      "symptom": "זרוע לא מתארכת,רעידה בגובה",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_engine_deutz_perkins_003_0",
+    "text": "מנועי Deutz ו-Perkins בטלסקופי מאניטו - תקלות נפוצות\n\nמאניטו משתמשת בשני ספקי מנועים עיקריים:\n- Deutz TCD 3.6 / TCD 4.1: MLT630/741/845 ו-MT1440/MT1840\n- Perkins 854E-E34TA / 1204E: מדגמים ישנים יותר (לפני 2015)\n\nמנוע Deutz TCD 4.1 — מאפיינים:\n- 4 צילינדרים, 4.1 ליטר, 75–130 כ\"ס\n- Common Rail Injection\n- Stage V (אירופה) / Tier 4 Final (ארה\"ב)\n- מיוחד: מנוע מצונן אוויר (Air Cooled) בחלק מהגרסאות — ללא נוזל קירור!\n\n1. Deutz TCD מתחמם יתר על המידה\n   גרסאות מים: בדוק רדיאטור, מפלס קירור, Thermostat.\n   גרסאות אוויר (Deutz Air Cooled): בדוק Cooling Fins — חייבים להיות נקיות לחלוטין.\n   פתרון: נקה Fins בלחץ אוויר כל 100 שעות בתנאי אבק.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע Deutz,Perkins",
+      "equipment": "MLT741,MT1840,MT2150",
+      "symptom": "התחממות,חוסר כוח,מנוע נכבה",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_engine_deutz_perkins_003_1",
+    "text": "2. Deutz SERDIA / DEERFIELD — אבחון\n   כלי אבחון רשמי: SERDIA 2010 (USB→CAN).\n   קודי שגיאה נפוצים:\n   - P0087: Rail Pressure Too Low → בדוק מסנן דלק, Lift Pump\n   - P0191: Rail Pressure Sensor Fault\n   - P0401: EGR Flow Insufficient\n   - P2453: DPF Differential Pressure High → Regen נדרש\n\n3. Perkins 854E לא עולה\n   גורם שכיח: Air Lock בדלק (כניסת אוויר לצינורות).\n   פתרון: הפעל Primer Pump (משאבת פריימינג) ידנית עד שדלק זורם ללא בועות.\n\n4. מנוע נכבה תחת עומס\n   גורם: Hydraulic Load גדול מדי מחנק מנוע.\n   בדוק: Anti-Stall System — בקר Manitou מגביל הידראוליקה אם RPM יורד.\n   פתרון: בדוק פרמטר Anti-Stall ב-Manitou Diagnostic.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע Deutz,Perkins",
+      "equipment": "MLT741,MT1840,MT2150",
+      "symptom": "התחממות,חוסר כוח,מנוע נכבה",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_diagnostic_system_004_0",
+    "text": "מערכת אבחון Manitou — Manitou Diagnostic Tool (MDT)\n\nמאניטו מציעה כלי אבחון ייעודי: MDT (Manitou Diagnostic Tool), גרסאות עדכניות עם אפליקציית Manitou Diag.\n\nחיבור:\n1. חבר ממשק USB→CAN (Manitou Adapter) לשקע OBD/Deutsch ליד מושב המפעיל.\n2. פתח Manitou Diag, בחר Machine Model ו-S/N.\n3. כנס ל-Diagnostic → Faults לקריאת קודי DTC.\n\nבקרים עיקריים (ECU) במאניטו MLT/MT:\n- Engine ECU: קודי מנוע Deutz/Perkins\n- Transmission ECU: גיר ZF, קודי שידור\n- Hydraulic Controller: שסתומים, לחצים, טמפרטורות\n- Display/Monitor ECU: בקר תצוגה ולוח בקרה",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון MDT,Manitou Diag",
+      "equipment": "MLT630,MLT741,MT1840,MT2150",
+      "symptom": "קודי שגיאה,אבחון",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_diagnostic_system_004_1",
+    "text": "קודי שגיאה נפוצים מאניטו:\n- Fault 0001: Joystick Signal Out of Range\n- Fault 0010: Hydraulic Oil Temperature High (> 100°C)\n- Fault 0021: Load Moment Indicator — Overload Warning\n- Fault 0031: Transmission Oil Temperature High\n- Fault 0042: Rear Axle Angle Sensor Fault\n- Fault 0055: CAN Bus Communication Failure\n- Fault 0061: Engine ECU Not Responding\n\nActive Tests:\n- בדוק כל סולנואיד בנפרד\n- כייל חיישני זווית (Angle Sensors)\n- כייל Load Moment Indicator (LMI)\n- קרא Live Data: לחץ, ספיקה, טמפרטורה, RPM",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון MDT,Manitou Diag",
+      "equipment": "MLT630,MLT741,MT1840,MT2150",
+      "symptom": "קודי שגיאה,אבחון",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_transmission_zf_005_0",
+    "text": "תיבת הילוכים ZF במאניטו MLT/MT - תקלות שידור\n\nטלסקופי מאניטו מצוידים בתיבות הילוכים ZF Powershift (4WG-98 / 4WG-155).\n4 הילוכים קדימה + 3 אחורה, הנעה 4x4 קבועה.\n\n1. תיבת הילוכים לא מחלפת (Transmission Won't Shift)\n   קוד: Fault 0031 = Transmission Pressure Low.\n   לחץ Clutch תקין ZF: 14–18 בר.\n   גורם: שמן גיר נמוך, או Clutch Pack שחוק.\n   בדיקה: מד לחץ על Test Port P (ליד תיבת הגיר).\n   שמן מאושר: ZF Lifeguard Fluid 6 (ATF).\n\n2. 'בהלה' (Hunting) בין הילוכים 2 ל-3\n   גורם: Shift Solenoid ב-ZF לא מגיב בזמן.\n   קוד: ZF Fault E10 = Shift Valve Response Slow.\n   פתרון: החלף שמן גיר ופילטר, אם לא עוזר — החלף Solenoid.",
+    "metadata": {
+      "source": "seed",
+      "topic": "תיבת הילוכים ZF,שידור",
+      "equipment": "MLT630,MLT741,MLT845,MT1840",
+      "symptom": "לא מחלף הילוך,לא נוסע,נעילת ציר",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_transmission_zf_005_1",
+    "text": "3. כלי לא נוסע קדימה (No Forward Drive)\n   בדוק: מנוף FNR (Forward-Neutral-Reverse) — קוד Fault 0042 = Selector Signal Lost.\n   גורם: מגע מנוף FNR פגום, או חיבור חשמלי רופף.\n   פתרון: בדוק Connector Transmission TCU, מדוד אות FNR.\n\n4. Axle Lock (נעילת ציר) לא פועלת\n   מאניטו MLT עם Axle Lock (נעילת ציר אחורי לייצוב).\n   גורם: Axle Lock Solenoid פגום, קוד: Fault 0042.\n   בדיקה: MDT → Active Check → Rear Axle Lock Solenoid.\n\n5. Parking Brake לא משתחרר\n   מאניטו: Parking Brake ספרינגי, נשחרר בלחץ הידראולי.\n   גורם: Brake Release Solenoid פגום, או לחץ Pilot נמוך (< 25 בר).\n   פתרון: בדוק Solenoid, בדוק לחץ Pilot System.",
+    "metadata": {
+      "source": "seed",
+      "topic": "תיבת הילוכים ZF,שידור",
+      "equipment": "MLT630,MLT741,MLT845,MT1840",
+      "symptom": "לא מחלף הילוך,לא נוסע,נעילת ציר",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_lmi_safety_006_0",
+    "text": "מערכת LMI — Load Moment Indicator (מחשב עומסים) מאניטו\n\nה-LMI (Load Moment Indicator) הוא מחשב הגנת עומסים חובה בטלסקופי מאניטו.\nהמערכת מחשבת את רגע ההרמה בזמן אמת ועוצרת תנועות מסוכנות.\n\n1. LMI נכנסת ל-Alarm ועוצרת את הזרוע\n   תסמין: נורת אדומה + עצירה בתנועה.\n   גורם א: עומס בפועל גדול מהמותר — בדוק Load Chart.\n   גורם ב: כיול LMI שגוי — מאמין שהכלי נטוי מדי.\n   בדיקה: MDT → LMI Calibration → כייל מחדש.\n\n2. LMI מציגה ערכים שגויים\n   גורם: חיישן עומס (Load Cell) ב-Lifting Hook פגום.\n   קוד: Fault 0021 = Load Cell Signal Error.\n   פתרון: החלף Load Cell.",
+    "metadata": {
+      "source": "seed",
+      "topic": "LMI,מחשב עומסים,בטיחות",
+      "equipment": "MLT630,MLT741,MT1840,MT2150",
+      "symptom": "LMI עוצרת תנועה,ערכים שגויים",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_lmi_safety_006_1",
+    "text": "3. חיישן זווית זרוע (Boom Angle Sensor) שגוי\n   LMI מסתמך על זווית זרוע מדויקת לחישוב רגע.\n   קוד: Fault 0023 = Boom Angle Signal Out of Range.\n   כיול: MDT → Sensor Calibration → Boom Angle:\n   a. הנח Boom אופקי (0°), לחץ 'Set Zero'.\n   b. הרם Boom לזווית מקסימום, לחץ 'Set Max'.\n\n4. ביטול LMI זמני (Override) — מתי מותר?\n   מאניטו מאפשרת Override זמני לצורך עבודת תחזוקה בלבד.\n   אסור להשתמש ב-Override בעבודה רגילה — סכנת נפגשות!\n   Override: לחץ ממושך על כפתור LMI + כפתור הזרוע.",
+    "metadata": {
+      "source": "seed",
+      "topic": "LMI,מחשב עומסים,בטיחות",
+      "equipment": "MLT630,MLT741,MT1840,MT2150",
+      "symptom": "LMI עוצרת תנועה,ערכים שגויים",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_maintenance_mlt741_007_0",
+    "text": "לוח תחזוקה טלסקופ מאניטו MLT741 - לפי שעות\n\nתחזוקה יומית:\n- בדוק מפלס שמן מנוע Deutz TCD 4.1\n- בדוק מפלס נוזל קירור (בין MIN ל-MAX)\n- בדוק מפלס שמן הידראולי — Sight Glass על מיכל\n- בדוק רמת נוזל קירור בנגד קפאון (Anti-freeze) בחורף\n- שמן נקבי גריז: Boom Pivot Pin + Lift Cylinder Pins (4 נקבים)\n\nכל 250 שעות:\n- החלף שמן מנוע Deutz (10W-40 ACEA E6, 8 ליטר) + פילטר שמן\n- החלף מסנן דלק ראשי ומשני\n- שמן נקבי גריז: זרוע, Tilt Cylinder, Carriage Pins\n\nכל 500 שעות:\n- החלף פילטר Return Line הידראולי\n- בדוק ורענן שמן Transmission ZF (ZF Lifeguard Fluid 6)\n- בדוק LMI Calibration — ביצוע בדיקת כיול\n- בדוק מצב Slide Pads בזרוע — עובי מינימלי 3 מ\"מ",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "MLT741,MLT630,MLT845",
+      "symptom": "תחזוקה",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "manitou_maintenance_mlt741_007_1",
+    "text": "כל 1000 שעות:\n- החלף שמן Transmission ZF + פילטר גיר\n- בדוק ורענן שמן גשרים קדמי ואחורי (SAE 90 GL-5)\n- בדוק מצב שרשרות ארכה Boom — מתיחה ושחיקה\n- בדוק מצב Brake Pads\n\nכל 2000 שעות:\n- החלף שמן הידראולי מלא (46 VG Hydraulic Oil, 80 ליטר)\n- החלף שמן גשרים קדמי ואחורי\n- בדוק EGR Valve ו-DPF — נקה אם נדרש",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "MLT741,MLT630,MLT845",
+      "symptom": "תחזוקה",
+      "brand": "Manitou"
+    }
+  },
+  {
+    "id": "hyundai_excavator_hydraulic_r210_r220_001_0",
+    "text": "יונדאי R210LC-9 / R220LC-9 / R250LC-7 - תקלות הידראוליקה\n\nמחפרוני יונדאי סדרת R-9 מצוידים במשאבת פיסטון כפולה Kawasaki K3V112/K3V140\nעם מערכת Negative Flow Control (NFC) — דומה לשיטת היטאצ'י.\n\n1. אובדן כוח הידראולי — כלי איטי\n   לחץ מערכת R210LC-9: 34.3 MPa (343 בר).\n   לחץ Pilot: 3.9 MPa (39 בר).\n   בדיקה: חבר מד לחץ לנקודות G1/G2 (ליד Pump) ול-GP (Pilot).\n   גורם נפוץ: NFC Relief Valve לא מכוון — לחץ NFC ב-Neutral: 2.9 MPa (29 בר).\n   פתרון: כוון NFC Relief בגוש שסתומים ראשי (MCV).\n\n2. Boom / Arm חלשים מצד אחד\n   גורם: Load Check Valve תקוע ב-MCV.\n   R210: MCV עם 9 Spool נפרדים — פרק Spool הרלוונטי, נקה, החלף O-rings.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,NFC",
+      "equipment": "R210LC-9,R220LC-9,R250LC-7",
+      "symptom": "כלי איטי,שמן חם,לחץ נמוך",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_excavator_hydraulic_r210_r220_001_1",
+    "text": "3. שמן הידראולי מתחמם (Overheating)\n   R210: גבול אזהרה 95°C, גבול כיבוי 105°C.\n   גורם: Oil Cooler סתום, מאוורר Cooler לא מסתובב.\n   בדיקה Hi-Mate: Monitor → Oil Temp Sensor (Port T).\n   פתרון: נקה Oil Cooler, בדוק Fan Belt, בדוק Thermostat שמן.\n\n4. Pump Regulator לא שולט בספיקה\n   R220 עם Electronic Pump Control (EPC Solenoid).\n   קוד Hi-Mate: 0x1101 = EPC Solenoid Current Out of Range.\n   בדיקה: מדוד התנגדות EPC Solenoid — תקין: 5–7 אוהם.\n   פתרון: החלף EPC Solenoid, בדוק Harness לנזק.",
+    "metadata": {
+      "source": "seed",
+      "topic": "הידראוליקה,NFC",
+      "equipment": "R210LC-9,R220LC-9,R250LC-7",
+      "symptom": "כלי איטי,שמן חם,לחץ נמוך",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_himate_diagnostic_002_0",
+    "text": "מערכת אבחון Hi-Mate (Hyundai Intelligent Management & Assist Tool Engineering)\n\nHi-Mate היא תוכנת האבחון הרשמית של יונדאי לציוד בנייה (מחפרונים, טעונים).\nגרסה עדכנית: Hi-Mate v2.x — פועלת על Windows.\nחיבור: ממשק USB→CAN (Hyundai Service Adapter, Deutsch 9-pin).\n\nבקרים עיקריים שניתן לגשת אליהם:\n- ECM (Engine Control Module): קודי מנוע Cummins / Hyundai\n- HCU (Hydraulic Control Unit): שסתומים, לחצים\n- MCU (Machine Control Unit): שליטה כללית, Joystick\n- ICF (Instrument Cluster): מסך, חיישנים",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון Hi-Mate",
+      "equipment": "R210LC-9,R220LC-9,R300LC-9,HL760",
+      "symptom": "קודי שגיאה,אבחון",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_himate_diagnostic_002_1",
+    "text": "קודי שגיאה נפוצים (DTC):\n- 0x0101: Engine Oil Pressure Low — כבה מנוע מיד!\n- 0x0201: Engine Coolant Temperature High\n- 0x0301: Hydraulic Oil Temperature High\n- 0x0401: Battery Voltage Low (< 22V)\n- 0x0501: Pilot Pressure Sensor Fault\n- 0x1001: Swing Brake Solenoid Open Circuit\n- 0x1101: EPC Solenoid (Pump Control) Fault\n- 0x2001: CAN Bus Communication Error\n\nActive Tests דרך Hi-Mate:\n- הפעל/כבה כל Solenoid בנפרד\n- קרא Live Data: לחץ, טמפרטורה, RPM, אות Joystick\n- בצע Pump Calibration (כיול ספיקת משאבה)\n- אפס קודי שגיאה לאחר תיקון\n\nטיפ: קודים מרובים בו-זמנית — בדוק קודם קוד 0x0401 (מתח סוללה נמוך),\nשכן מתח נמוך גורם לקודים מדומים בכל המערכות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "אבחון Hi-Mate",
+      "equipment": "R210LC-9,R220LC-9,R300LC-9,HL760",
+      "symptom": "קודי שגיאה,אבחון",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_engine_cummins_qsb_003_0",
+    "text": "מנועי Cummins QSB6.7 / QSL9 במחפרוני יונדאי - תקלות נפוצות\n\nיונדאי משתמשת במנועי Cummins בחלק גדול מהמחפרונים:\n- R210LC-9 / R220LC-9: Cummins QSB6.7 (173 כ\"ס)\n- R300LC-9 / R320LC-9: Cummins QSL9 (231 כ\"ס)\n- R380LC-9: Cummins QSM11 (295 כ\"ס)\n\n1. מנוע לא מגיע ל-RPM מלא (Power Derate)\n   Cummins QSB6.7 עם SCR + DPF.\n   גורם א: DEF/AdBlue נמוך — Derate ב-10% ולאחר מכן 25%.\n   מלא DEF (ISO 22241, 32.5% אוריאה) — אין לדחות!\n   גורם ב: DPF Soot Level גבוה — נדרש Regen.\n   קוד Cummins: SPN 3251 FMI 0 = DPF Differential Pressure.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע Cummins QSB,QSL",
+      "equipment": "R210LC-9,R220LC-9,R300LC-9,R320LC-9",
+      "symptom": "חוסר כוח,עשן שחור,DPF,DEF",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_engine_cummins_qsb_003_1",
+    "text": "2. Cummins Insite — אבחון מנוע\n   Cummins Insite היא תוכנת האבחון של Cummins (נפרדת מ-Hi-Mate).\n   קודי נפוצים:\n   - SPN 100 FMI 1 = לחץ שמן מנוע נמוך\n   - SPN 110 FMI 0 = טמפרטורת קירור גבוהה\n   - SPN 641 FMI 7 = VGT Actuator Mechanical Fault\n   - SPN 1761 FMI 1 = DEF Level Low\n   - SPN 3031 FMI 0 = DEF Temperature High\n\n3. Cummins QSB6.7 עשן שחור + חוסר כוח\n   גורם א: VGT (Variable Geometry Turbo) תקוע.\n   בדיקה Insite: Turbo Boost Pressure בעומס — תקין: 180–220 kPa.\n   פתרון: Insite → Active Test → VGT Actuator Calibration.\n   גורם ב: EGR Valve סתום — נקה עם ספריי EGR Cleaner.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע Cummins QSB,QSL",
+      "equipment": "R210LC-9,R220LC-9,R300LC-9,R320LC-9",
+      "symptom": "חוסר כוח,עשן שחור,DPF,DEF",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_engine_cummins_qsb_003_2",
+    "text": "4. מנוע Cummins QSL9 רעש 'חבטה'\n   גורם: Injector Cup (קערת מזרק) בלוי — נפוץ ב-QSL9 מעל 8,000 שעות.\n   בדיקה: Insite → Cylinder Cutout Test — זהה מזרק עם Contribution נמוח.\n   פתרון: פרק ראש, החלף Injector Cups ו-O-rings.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מנוע Cummins QSB,QSL",
+      "equipment": "R210LC-9,R220LC-9,R300LC-9,R320LC-9",
+      "symptom": "חוסר כוח,עשן שחור,DPF,DEF",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_excavator_swing_travel_004_0",
+    "text": "יונדאי R220LC-9 / R300LC-9 - מערכת סיבוב (Swing) ונסיעה (Travel)\n\nסיבוב R220LC-9:\n- Swing Motor: Kawasaki MAG-170VP\n- לחץ Swing מקסימום: 28.0 MPa (280 בר)\n- שמן גיר סיבוב (Swing Reduction Gear): GL-4 80W — 2.6 ליטר\n- Swing Bearing: שימון כל 250 שעות — גריז EP2 NLGI-2, 8 נקבים\n\n1. סיבוב 'מתקשה' להתחיל (Swing Slow to Start)\n   גורם: Swing Parking Brake לא משתחרר מהר.\n   בדיקה: לחץ Pilot לשחרור Brake: 3.5 MPa (35 בר).\n   פתרון: בדוק Swing Brake Release Valve, נקה Orifice.\n\n2. סיבוב 'גולש' (Swing Drift After Stop)\n   גורם: Swing Motor Anti-Cavitation Valve פגום — שמן עוזב Motor לאחר עצירה.\n   פתרון: החלף Anti-Cavitation Check Valve ב-Swing Motor.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה,זחלים",
+      "equipment": "R220LC-9,R300LC-9,R210LC-9",
+      "symptom": "סיבוב גולש,כלי נוסע לצד,דליפת שמן Drive",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_excavator_swing_travel_004_1",
+    "text": "3. Swing Bearing חריקה\n   R220: 8 נקבי גריז — שמן כל 250 שעות בגריז EP2.\n   אם חריקה לאחר שימון — בדוק רפיון אנכי: מקסימום 3 מ\"מ עם Dial Gauge.\n\nנסיעה R300LC-9:\n- Travel Motor: Kawasaki MAG-170, לחץ מקסימום 40 MPa (400 בר)\n- Final Drive: 2-Speed, שמן SAE 80W-90 GL-4 — 4.0 ליטר לצד\n\n4. כלי נוסע לצד אחד (Pulling)\n   גורם: Straight Travel Valve ב-MCV לא מסנכרן את שני Motor.\n   R300: פרק MCV, בדוק Straight Travel Spool, נקה ושמן.\n\n5. Final Drive Oil Seal דולף\n   תסמין: שמן על הזחל מאחורי Sprocket.\n   פתרון: החלף Float Seal — פרק Hub, נקה, החלף O-ring + Float Seal Kit.",
+    "metadata": {
+      "source": "seed",
+      "topic": "סיבוב,נסיעה,זחלים",
+      "equipment": "R220LC-9,R300LC-9,R210LC-9",
+      "symptom": "סיבוב גולש,כלי נוסע לצד,דליפת שמן Drive",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_excavator_electrical_005_0",
+    "text": "יונדאי R210 / R220 / R300 - מערכות חשמל, CAN Bus ולוח בקרה\n\nמחפרוני יונדאי R-9 עם ארכיטקטורת CAN Bus:\n- CAN 1 (500 kbps): ECM (מנוע) + HCU (הידראוליקה)\n- CAN 2 (250 kbps): MCU + ICF (מסך) + Joystick\n\n1. מסך מוניטור (ICF) לא דולק\n   גורם א: נתיך F5 (15A) שרוף — קופסת נתיכים בתא נהג, מכסה שמאל.\n   גורם ב: Connector CN-ICF (16-pin) מאחורי המסך רופף.\n   בדיקה: מדוד 24V על Pin 1 (Power) ו-Pin 2 (Ground) של Connector.\n\n2. Joystick EH לא מגיב\n   R210/R220 מ-2012 עם Joystick חשמלי (Hall Sensor).\n   קוד Hi-Mate: 0x0901 = Left Joystick X-Axis Fault.\n   בדיקה: Hi-Mate → Live Data → Joystick Voltage (תקין: 0.5–4.5V).\n   פתרון: החלף Joystick Assembly (זוג, ימין ושמאל).",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,CAN Bus,Joystick",
+      "equipment": "R210LC-9,R220LC-9,R300LC-9",
+      "symptom": "מסך כבוי,Joystick לא מגיב,קודי שגיאה מרובים",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_excavator_electrical_005_1",
+    "text": "3. Alternator לא טוען\n   R210/R220: מערכת 24V, Alternator 80A.\n   מתח תקין במנוע דולק: 27.5–28.5V.\n   גורם נפוץ: V-Belt (רצועת Alternator) החליקה/נשברה.\n   בדיקה: Hi-Mate → Battery Voltage Monitor.\n\n4. קודי CAN Bus מרובים בבת אחת\n   גורם נפוץ: מתח סוללה נמוך (< 22V) — כל הבקרים מדווחים שגיאה.\n   בדיקה ראשונה: Hi-Mate → Fault 0x0401 (Battery Voltage).\n   בדיקה CAN: Termination Resistors בין CAN-H ל-CAN-L — צריך 60 אוהם.\n   מיקום Resistors: ליד ECM ב-Engine Bay וליד MCU בתא נהג.\n\n5. מצלמה אחורית לא עובדת\n   R220/R300: מצלמה אחורית סטנדרטית.\n   גורם: כבל Coaxial קצר באזור Swing Bearing (מסתובב).\n   פתרון: בדוק Slip Ring / Rotary Coupler בחלק התחתון של תא.",
+    "metadata": {
+      "source": "seed",
+      "topic": "חשמל,CAN Bus,Joystick",
+      "equipment": "R210LC-9,R220LC-9,R300LC-9",
+      "symptom": "מסך כבוי,Joystick לא מגיב,קודי שגיאה מרובים",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_wheel_loader_hl760_hl780_006_0",
+    "text": "יונדאי HL760 / HL780 מטעין גלגלים - תקלות שידור וזרועות\n\nמטעיני הגלגלים HL760-9 ו-HL780-9 של יונדאי.\nHL760-9: מנוע Cummins QSB6.7 (181 כ\"ס), עומס הפעלה: 5.3 טון.\nHL780-9: מנוע Cummins QSL9 (231 כ\"ס), עומס הפעלה: 7.4 טון.\n\nתיבת הילוכים: ZF 4WG-200 (HL760) / ZF 4WG-260 (HL780) — Powershift אוטומטי.\n\n1. תיבת גיר לא עוברת לגיר 3 / 4\n   קוד Hi-Mate: 0x1201 = ZF Transmission Shift Fault.\n   גורם: Clutch Solenoid שחוק, לחץ Clutch נמוך מ-14 בר.\n   שמן מאושר: ZF Lifeguard Fluid 6.\n   בדיקה: חבר מד לחץ ל-Port P ב-ZF — בדוק לחץ Clutch בכל הילוך.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מטען גלגלים,ZF,שידור",
+      "equipment": "HL760,HL780",
+      "symptom": "בעיות גיר,זרוע לא עולה,היגוי כבד",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_wheel_loader_hl760_hl780_006_1",
+    "text": "2. 'בהלה' בין הילוכים בנסיעה (Transmission Hunting)\n   גורם: Auto-Shift Sensor (מד מהירות גלגל) פגום — גיר לא יודע מתי לחלף.\n   קוד ZF: Fault E012 = Output Speed Sensor.\n   פתרון: בדוק חיישן מהירות Output Shaft — נקה/החלף.\n\n3. זרוע לא עולה בעומס מלא\n   HL760: לחץ Relief לעליית זרוע = 250 בר.\n   גורם: Relief Valve Lift Circuit לחץ נמוך.\n   בדיקה: חבר מד לחץ ל-Boom Cylinder Port A — בדוק בעליית עומס מלא.\n\n4. Steering כבד בסיבוב (Heavy Steering)\n   HL760/HL780 עם Hydrostatic Steering (Orbitrol).\n   גורם: Steering Priority Valve פגום — שמן הולך לזרוע ולא להיגוי.\n   בדיקה: לחץ היגוי תקין: 175–210 בר.\n   פתרון: נקה/החלף Steering Priority Valve Spool.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מטען גלגלים,ZF,שידור",
+      "equipment": "HL760,HL780",
+      "symptom": "בעיות גיר,זרוע לא עולה,היגוי כבד",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_wheel_loader_hl760_hl780_006_2",
+    "text": "5. Bucket (כף) לא מגיעה לזווית מלאה\n   גורם: Tilt Relief Valve נמוך, או Bucket Cylinder Internal Leak.\n   לחץ Tilt תקין HL760: 250 בר.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מטען גלגלים,ZF,שידור",
+      "equipment": "HL760,HL780",
+      "symptom": "בעיות גיר,זרוע לא עולה,היגוי כבד",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_r300_r380_large_excavator_007_0",
+    "text": "יונדאי R300LC-9 / R320LC-9 / R380LC-9 מחפרונים גדולים\n\nמחפרוני הסדרה הגדולה של יונדאי (30–38 טון) עם מנועי Cummins QSL9/QSM11.\n\n1. Pump 1 חלשה מ-Pump 2 (Pump Imbalance)\n   R300/R380 עם 2 משאבות נפרדות.\n   Pump 1 מפעילה: Boom + Right Travel.\n   Pump 2 מפעילה: Arm + Swing + Left Travel.\n   אם Boom + Right Travel איטיים = Pump 1 בעיה.\n   בדיקה: Hi-Mate → Live Data → Pump 1 vs. Pump 2 Pressure.\n\n2. Main Relief Valve שחוק\n   R300: Main Relief מוגדר ל-34.3 MPa (343 בר).\n   תסמין: לחץ לא עולה מעל 280 בר גם בעומס מלא.\n   כיוון: בורג כיוון Main Relief ב-MCV — כל סיבוב = כ-20 בר.\n   אזהרה: לאחר כיוון — תמיד בדוק לחץ עם Gauge לפני עבודה!",
+    "metadata": {
+      "source": "seed",
+      "topic": "מחפרון גדול,הידראוליקה",
+      "equipment": "R300LC-9,R320LC-9,R380LC-9",
+      "symptom": "אסימטריה משאבות,זרוע צונחת,כלי יורד במדרון",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_r300_r380_large_excavator_007_1",
+    "text": "3. Travel Counterbalance Valve — כלי יורד במדרון\n   R380: Counterbalance Valve מגביל זרימה בירידת מדרון.\n   תסמין: כלי מאיץ בירידה ללא שליטה.\n   פתרון: החלף Counterbalance Valve Assembly (זוג — שני הצדדים).\n\n4. Power Boost לא פועל\n   R300/R380 עם Power Boost (לחצן על Joystick) — מעלה לחץ ל-37 MPa ל-8 שניות.\n   קוד Hi-Mate: 0x1102 = Power Boost Solenoid Open Circuit.\n   בדיקה: מדוד התנגדות Solenoid — תקין: 7–9 אוהם.\n   פתרון: החלף Power Boost Solenoid.\n\n5. Boom Cylinder Internal Seal Leak\n   R380: גלינדר Boom קוטר גדול — בלאי אטם גורם לצניחת זרוע.\n   בדיקה: הרם Boom, כבה מנוע, המתן 10 דקות — ירידה > 100 מ\"מ = אטם פנימי.\n   פתרון: Seal Kit לגלינדר Boom R380 — עבודה של ~6 שעות.",
+    "metadata": {
+      "source": "seed",
+      "topic": "מחפרון גדול,הידראוליקה",
+      "equipment": "R300LC-9,R320LC-9,R380LC-9",
+      "symptom": "אסימטריה משאבות,זרוע צונחת,כלי יורד במדרון",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_maintenance_r220_008_0",
+    "text": "לוח תחזוקה מחפרון יונדאי R220LC-9 - לפי שעות עבודה\n\nתחזוקה יומית — לפני משמרת:\n- בדוק מפלס שמן מנוע Cummins QSB6.7 (בין L ל-H)\n- בדוק מפלס קירור — מיכל הרחבה (בין MIN ל-MAX)\n- בדוק שמן הידראולי — Sight Glass על מיכל (צד ימין)\n- בדוק Water Separator (מיכל שקוף על מסנן הדלק) — נקה מים\n- בדוק מפלס DEF/AdBlue — מיכל נפרד (צד שמאל)\n- שמן נקבי גריז יומיים: Bucket Pins (4) + Arm Pins (4) — גריז EP2\n\nכל 250 שעות:\n- החלף שמן מנוע Cummins (15W-40 CES20086, 18 ליטר) + פילטר שמן\n- החלף מסנן דלק ראשי (Primary Fuel Filter)\n- שמן Swing Bearing — 8 נקבי גריז EP2\n- שמן Boom Foot Pin, Arm Cylinder Pins, Bucket Cylinder Pins",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "R220LC-9,R210LC-9",
+      "symptom": "תחזוקה",
+      "brand": "Hyundai"
+    }
+  },
+  {
+    "id": "hyundai_maintenance_r220_008_1",
+    "text": "כל 500 שעות:\n- החלף פילטר Return Line הידראולי\n- החלף מסנן דלק משני (Secondary Fuel Filter)\n- בדוק Turbocharger — שמן, רפיון ציר (Shaft Play), נזילות\n- בדוק Track Tension — רפיון 20–30 מ\"מ\n\nכל 1000 שעות:\n- בדוק ורענן שמן Final Drive (SAE 80W-90 GL-4, 4.0 ליטר לצד)\n- בדוק שמן Swing Gear Box (GL-4 80W, 2.6 ליטר)\n- בדוק Track Shoe Bolts — הידוק 380 Nm\n- בדוק EGR Valve — נקה מלכלוך\n\nכל 2000 שעות:\n- החלף שמן הידראולי (Hyundai HVI 46, 170 ליטר)\n- החלף שמן Final Drive שני הצדדים\n- החלף שמן Swing Gear Box\n- בדוק Swing Bearing — רפיון אנכי מקסימום 3 מ\"מ\n- נקה DPF / בדוק צורך ב-Thermal Cleaning",
+    "metadata": {
+      "source": "seed",
+      "topic": "תחזוקה מניעתית",
+      "equipment": "R220LC-9,R210LC-9",
+      "symptom": "תחזוקה",
+      "brand": "Hyundai"
+    }
   }
 ]
