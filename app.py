@@ -13,11 +13,12 @@ def _load_api_key():
     key = os.environ.get('ANTHROPIC_API_KEY', '')
     if key:
         return key
-    env_path = r'C:\Users\User\עבודה\.env'
-    if os.path.exists(env_path):
-        for line in open(env_path, encoding='utf-8', errors='ignore').read().splitlines():
-            if line.startswith('ANTHROPIC_API_KEY='):
-                return line.split('=', 1)[1].strip()
+    for env_path in (os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env'),
+                     r'C:\Users\User\עבודה\.env'):
+        if os.path.exists(env_path):
+            for line in open(env_path, encoding='utf-8', errors='ignore').read().splitlines():
+                if line.startswith('ANTHROPIC_API_KEY='):
+                    return line.split('=', 1)[1].strip()
     raise RuntimeError('ANTHROPIC_API_KEY not found')
 
 API_KEY = _load_api_key()
@@ -131,8 +132,9 @@ def chat():
     content.append({'type': 'text', 'text': user_msg})
 
     response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1500,
+        model="claude-sonnet-5",
+        max_tokens=2000,
+        thinking={"type": "disabled"},
         system=SYSTEM_TROUBLESHOOT,
         messages=[{"role": "user", "content": content}]
     )
@@ -174,8 +176,9 @@ def visualize():
         prompt += f"מידע מהאינטרנט:\n{web_text[:2000]}"
 
     response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1500,
+        model="claude-sonnet-5",
+        max_tokens=2000,
+        thinking={"type": "disabled"},
         system=SYSTEM_VISUALIZE,
         messages=[{"role": "user", "content": prompt}]
     )
