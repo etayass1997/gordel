@@ -98,7 +98,7 @@ def _parse_image(data_url):
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
-    data = request.json
+    data = request.json or {}
     question = data.get('question', '').strip()
     image = data.get('image', '').strip()
     if not question and not image:
@@ -131,19 +131,22 @@ def chat():
 
     content.append({'type': 'text', 'text': user_msg})
 
-    response = client.messages.create(
-        model="claude-sonnet-5",
-        max_tokens=2000,
-        thinking={"type": "disabled"},
-        system=SYSTEM_TROUBLESHOOT,
-        messages=[{"role": "user", "content": content}]
-    )
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-5",
+            max_tokens=2000,
+            thinking={"type": "disabled"},
+            system=SYSTEM_TROUBLESHOOT,
+            messages=[{"role": "user", "content": content}]
+        )
+    except Exception as e:
+        return jsonify({'error': f'שגיאה בפנייה למודל: {e}'}), 502
     return jsonify({'answer': response.content[0].text, 'kb_used': bool(context)})
 
 
 @app.route('/api/visualize', methods=['POST'])
 def visualize():
-    data = request.json
+    data = request.json or {}
     query = data.get('query', '').strip()
     if not query:
         return jsonify({'error': 'שאילתה ריקה'}), 400
@@ -175,19 +178,22 @@ def visualize():
     if web_text:
         prompt += f"מידע מהאינטרנט:\n{web_text[:2000]}"
 
-    response = client.messages.create(
-        model="claude-sonnet-5",
-        max_tokens=2000,
-        thinking={"type": "disabled"},
-        system=SYSTEM_VISUALIZE,
-        messages=[{"role": "user", "content": prompt}]
-    )
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-5",
+            max_tokens=2000,
+            thinking={"type": "disabled"},
+            system=SYSTEM_VISUALIZE,
+            messages=[{"role": "user", "content": prompt}]
+        )
+    except Exception as e:
+        return jsonify({'error': f'שגיאה בפנייה למודל: {e}'}), 502
     return jsonify({'guide': response.content[0].text, 'images': images})
 
 
 @app.route('/api/kb/add', methods=['POST'])
 def add_to_kb():
-    data = request.json
+    data = request.json or {}
     url = data.get('url', '').strip()
     if not url:
         return jsonify({'error': 'כתובת URL ריקה'}), 400

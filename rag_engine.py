@@ -34,8 +34,8 @@ class RAGEngine:
             self._bm25 = None
 
     def add_document(self, text, metadata, doc_id):
-        # Remove old chunks with same base id
-        self.docs = [d for d in self.docs if not d['id'].startswith(doc_id)]
+        # Remove old chunks with same base id (chunk ids are "<doc_id>_<i>")
+        self.docs = [d for d in self.docs if d['id'].rsplit('_', 1)[0] != doc_id]
         for i, chunk in enumerate(self._chunk(text)):
             if len(chunk.strip()) < 20:
                 continue
