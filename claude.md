@@ -20,6 +20,7 @@ CAT, Kobelco, Hitachi, Komatsu, Volvo, Liebherr, JCB, Case, Doosan, Manitou
 | `rag_engine.py` | BM25 engine |
 | `seed_kb.py` | אתחול KB |
 | `add_*_kb.py` | הוספת ידע ליצרן ספציפי |
+| `add_general_systems_kb.py` | ידע כללי חוצה-יצרנים (מיזוג, בלמים, מצברים, צמיגים, DEF/SCR, טלמטיקה, חורף, שימון) |
 | `kb_data.json` | מאגר ידע מאוחד |
 | `scraper.py` | שאיבת מידע ליצרנים |
 
