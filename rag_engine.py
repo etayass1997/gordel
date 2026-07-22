@@ -18,8 +18,12 @@ class RAGEngine:
 
     def _load(self):
         if os.path.exists(DB_PATH):
-            with open(DB_PATH, encoding='utf-8') as f:
-                self.docs = json.load(f)
+            try:
+                with open(DB_PATH, encoding='utf-8') as f:
+                    self.docs = json.load(f)
+            except (json.JSONDecodeError, OSError) as e:
+                print(f"Warning: could not load {DB_PATH} ({e}); starting with empty KB")
+                self.docs = []
             self._rebuild()
 
     def _save(self):
