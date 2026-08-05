@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 import anthropic
 import ipaddress
 import os
 import re
+import secrets
 import socket
 from urllib.parse import urlparse
 
@@ -11,20 +12,46 @@ app = Flask(__name__)
 # API needs no cross-origin access. Enabling it would let any third-party site
 # call these endpoints from a visitor's browser and burn API quota/cost.
 
-def _load_api_key():
+def _load_env(name, default=''):
     # Try environment variable first, then a local .env file (dev convenience)
-    key = os.environ.get('ANTHROPIC_API_KEY', '')
-    if key:
-        return key
+    value = os.environ.get(name, '')
+    if value:
+        return value
     env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
     if os.path.exists(env_path):
         for line in open(env_path, encoding='utf-8', errors='ignore').read().splitlines():
-            if line.startswith('ANTHROPIC_API_KEY='):
+            if line.startswith(f'{name}='):
                 return line.split('=', 1)[1].strip()
-    raise RuntimeError('ANTHROPIC_API_KEY not found')
+    return default
+
+def _load_api_key():
+    key = _load_env('ANTHROPIC_API_KEY')
+    if not key:
+        raise RuntimeError('ANTHROPIC_API_KEY not found')
+    return key
 
 API_KEY = _load_api_key()
 client = anthropic.Anthropic(api_key=API_KEY)
+
+# Optional HTTP Basic Auth gate (set GORDEL_PASSWORD to enable). Without it,
+# the app is unauthenticated and, once exposed publicly, would let anyone
+# with the URL burn API quota on this account.
+AUTH_USER = _load_env('GORDEL_USER', 'gordel')
+AUTH_PASSWORD = _load_env('GORDEL_PASSWORD')
+
+
+@app.before_request
+def _require_auth():
+    if not AUTH_PASSWORD:
+        return
+    auth = request.authorization
+    valid = bool(auth) and secrets.compare_digest(auth.username or '', AUTH_USER) \
+        and secrets.compare_digest(auth.password or '', AUTH_PASSWORD)
+    if not valid:
+        return Response(
+            'Authentication required', 401,
+            {'WWW-Authenticate': 'Basic realm="Gordel"'}
+        )
 
 from rag_engine import RAGEngine
 rag = RAGEngine()
