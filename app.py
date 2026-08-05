@@ -1,24 +1,26 @@
 from flask import Flask, render_template, request, jsonify
-from flask_cors import CORS
 import anthropic
-import base64
+import ipaddress
 import os
 import re
+import socket
+from urllib.parse import urlparse
 
 app = Flask(__name__)
-CORS(app)
+# No CORS: the frontend is served by this same Flask app (same-origin), so the
+# API needs no cross-origin access. Enabling it would let any third-party site
+# call these endpoints from a visitor's browser and burn API quota/cost.
 
 def _load_api_key():
-    # Try environment variable first, then .env file
+    # Try environment variable first, then a local .env file (dev convenience)
     key = os.environ.get('ANTHROPIC_API_KEY', '')
     if key:
         return key
-    for env_path in (os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env'),
-                     r'C:\Users\User\עבודה\.env'):
-        if os.path.exists(env_path):
-            for line in open(env_path, encoding='utf-8', errors='ignore').read().splitlines():
-                if line.startswith('ANTHROPIC_API_KEY='):
-                    return line.split('=', 1)[1].strip()
+    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
+    if os.path.exists(env_path):
+        for line in open(env_path, encoding='utf-8', errors='ignore').read().splitlines():
+            if line.startswith('ANTHROPIC_API_KEY='):
+                return line.split('=', 1)[1].strip()
     raise RuntimeError('ANTHROPIC_API_KEY not found')
 
 API_KEY = _load_api_key()
@@ -83,6 +85,7 @@ def index():
 
 _DATA_URL_RE = re.compile(r'^data:(image/(?:jpeg|png|gif|webp));base64,(.+)$', re.DOTALL)
 _MAX_IMAGE_BYTES = 8 * 1024 * 1024  # 8MB raw image data
+_MAX_QUESTION_CHARS = 4000
 
 
 def _parse_image(data_url):
@@ -98,11 +101,13 @@ def _parse_image(data_url):
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
-    data = request.json or {}
-    question = data.get('question', '').strip()
-    image = data.get('image', '').strip()
+    data = request.get_json(silent=True) or {}
+    question = str(data.get('question', '')).strip()
+    image = str(data.get('image', '')).strip()
     if not question and not image:
         return jsonify({'error': 'שאלה ריקה'}), 400
+    if len(question) > _MAX_QUESTION_CHARS:
+        return jsonify({'error': f'שאלה ארוכה מדי (מקסימום {_MAX_QUESTION_CHARS} תווים)'}), 400
 
     content = []
     if image:
@@ -146,10 +151,12 @@ def chat():
 
 @app.route('/api/visualize', methods=['POST'])
 def visualize():
-    data = request.json or {}
-    query = data.get('query', '').strip()
+    data = request.get_json(silent=True) or {}
+    query = str(data.get('query', '')).strip()
     if not query:
         return jsonify({'error': 'שאילתה ריקה'}), 400
+    if len(query) > _MAX_QUESTION_CHARS:
+        return jsonify({'error': f'שאילתה ארוכה מדי (מקסימום {_MAX_QUESTION_CHARS} תווים)'}), 400
 
     _BROWSER_UA = (
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
@@ -191,12 +198,30 @@ def visualize():
     return jsonify({'guide': response.content[0].text, 'images': images})
 
 
+def _is_public_url(url):
+    """Reject non-http(s) schemes and URLs resolving to private/loopback/link-local
+    addresses, to prevent server-side request forgery via the KB-add endpoint."""
+    try:
+        parsed = urlparse(url)
+        if parsed.scheme not in ('http', 'https') or not parsed.hostname:
+            return False
+        for family, _, _, _, sockaddr in socket.getaddrinfo(parsed.hostname, None):
+            ip = ipaddress.ip_address(sockaddr[0])
+            if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved or ip.is_multicast:
+                return False
+        return True
+    except (ValueError, socket.gaierror):
+        return False
+
+
 @app.route('/api/kb/add', methods=['POST'])
 def add_to_kb():
-    data = request.json or {}
-    url = data.get('url', '').strip()
+    data = request.get_json(silent=True) or {}
+    url = str(data.get('url', '')).strip()
     if not url:
         return jsonify({'error': 'כתובת URL ריקה'}), 400
+    if not _is_public_url(url):
+        return jsonify({'error': 'כתובת URL לא חוקית או לא נגישה'}), 400
     try:
         from scraper import scrape_url
         text, title = scrape_url(url)

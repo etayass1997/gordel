@@ -667,11 +667,21 @@ async function runViz(query) {
       const grid = document.getElementById('imgGrid');
       grid.innerHTML = '';
       d.images.forEach(img => {
+        // Built with DOM APIs (not innerHTML string interpolation) so that
+        // img.url/img.title — third-party search-result data — can never be
+        // parsed as HTML/JS, regardless of their content.
         const card = document.createElement('div');
         card.className = 'img-card';
-        card.innerHTML = `<img src="${img.url}" alt="${img.title}" onerror="this.parentElement.style.display='none'"
-          onclick="openLightbox('${img.url.replace(/'/g,"&#39;")}')">
-          <div class="img-card-title">${img.title}</div>`;
+        const imgEl = document.createElement('img');
+        imgEl.src = img.url;
+        imgEl.alt = img.title || '';
+        imgEl.addEventListener('error', () => { card.style.display = 'none'; });
+        imgEl.addEventListener('click', () => openLightbox(img.url));
+        const titleEl = document.createElement('div');
+        titleEl.className = 'img-card-title';
+        titleEl.textContent = img.title || '';
+        card.appendChild(imgEl);
+        card.appendChild(titleEl);
         grid.appendChild(card);
       });
       grid.style.display = 'grid';
@@ -698,7 +708,9 @@ function quickViz(q) {
 
 // ── MARKET ──
 function openMarketSurvey() {
-  window.open('http://localhost:5000', '_blank');
+  // Standalone market-survey agent isn't deployed yet — avoid opening a dead
+  // localhost link in production. Use the quick evaluator below instead.
+  alert('סוכן סקר השוק המורחב עדיין לא זמין. אפשר להשתמש בהערכה המהירה למטה.');
 }
 
 async function runMarketEval() {
