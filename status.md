@@ -16,6 +16,7 @@
 ## שינויים אחרונים
 | תאריך | שינוי |
 |--------|-------|
+| 05/08/2026 | מוזג קומיט אבטחה מהשרת עם תיקון error-handling מקומי שלא היו מסונכרנים; נוסף HTTP Basic Auth אופציונלי (`GORDEL_USER`/`GORDEL_PASSWORD`) לקראת חשיפה ציבורית דרך Tailscale Funnel |
 | 22/07/2026 | סקירת קוד: תיקוני אבטחה (הסרת CORS פתוח, הגנת SSRF ב-`/api/kb/add`, XSS בתצוגת תמונות, טעינת JSON בטוחה בנתיבי ה-API), הסרת נתיב מקומי קשיח מ-`_load_api_key`, תיקון קישור "סקר שוק" שהצביע ל-localhost |
 | 28/06/2026 | הוספת Liebherr KB (`add_liebherr_kb.py`) |
 | 28/06/2026 | הוספת Hitachi KB (`add_hitachi_kb.py`) |
