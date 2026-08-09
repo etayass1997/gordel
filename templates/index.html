@@ -373,7 +373,7 @@ html,body { height:100%; background:var(--bg); color:var(--text); font-family:va
     <div class="chat-input-wrap">
       <div class="img-preview-row" id="imgPreviewRow" style="display:none"></div>
       <div class="chat-input-row">
-        <input type="file" id="chatImageInput" accept="image/*" capture="environment" style="display:none" onchange="onImageSelected(event)">
+        <input type="file" id="chatImageInput" accept="image/*" style="display:none" onchange="onImageSelected(event)">
         <button class="attach-btn" id="attachBtn" onclick="document.getElementById('chatImageInput').click()" title="צרף תמונה">📷</button>
         <textarea class="chat-input" id="chatInput" placeholder="תאר את התקלה… (או צרף תמונה)" rows="1"
           onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
