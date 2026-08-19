@@ -132,21 +132,16 @@ def chat():
     if len(question) > _MAX_QUESTION_CHARS:
         return jsonify({'error': f'שאלה ארוכה מדי (מקסימום {_MAX_QUESTION_CHARS} תווים)'}), 400
 
-    content = []
     if image:
         try:
-            media_type, b64data = _parse_image(image)
+            _parse_image(image)
         except ValueError as e:
             return jsonify({'error': str(e)}), 400
-        content.append({
-            'type': 'image',
-            'source': {'type': 'base64', 'media_type': media_type, 'data': b64data}
-        })
 
     search_text = question or 'נתח את התמונה המצורפת וזהה תקלה אפשרית'
     context = ''
     if rag.count() > 0:
-        results = rag.search(search_text, n=4)
+        results = rag.search(search_text, n=2)
         docs = results.get('documents', [[]])[0]
         if docs:
             context = '\n\n---\n\n'.join(docs)
@@ -157,10 +152,8 @@ def chat():
     else:
         user_msg += "\n\n(אין מידע ספציפי בבסיס הידע — ענה מהידע הכללי שלך)"
 
-    content.append({'type': 'text', 'text': user_msg})
-
     contexts = [
-        {'title': 'בסיס הידע של גורדל', 'source': 'gordel', 'content': doc}
+        {'title': 'בסיס הידע של גורדל', 'source': 'gordel', 'content': doc[:2500]}
         for doc in (docs if context else [])
     ]
     headers = {'X-API-Key': KNOWLEDGE_AGENT_API_KEY} if KNOWLEDGE_AGENT_API_KEY else {}
