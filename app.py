@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify, Response
-import anthropic
 import ipaddress
 import os
 import re
 import secrets
 import socket
+import requests
 from urllib.parse import urlparse
 
 app = Flask(__name__)
@@ -24,20 +24,13 @@ def _load_env(name, default=''):
                 return line.split('=', 1)[1].strip()
     return default
 
-def _load_api_key():
-    key = _load_env('ANTHROPIC_API_KEY')
-    if not key:
-        raise RuntimeError('ANTHROPIC_API_KEY not found')
-    return key
-
-API_KEY = _load_api_key()
-client = anthropic.Anthropic(api_key=API_KEY)
-
 # Optional HTTP Basic Auth gate (set GORDEL_PASSWORD to enable). Without it,
 # the app is unauthenticated and, once exposed publicly, would let anyone
 # with the URL burn API quota on this account.
 AUTH_USER = _load_env('GORDEL_USER', 'gordel')
 AUTH_PASSWORD = _load_env('GORDEL_PASSWORD')
+KNOWLEDGE_AGENT_URL = _load_env('KNOWLEDGE_AGENT_URL', 'http://127.0.0.1:5066').rstrip('/')
+KNOWLEDGE_AGENT_API_KEY = _load_env('KNOWLEDGE_AGENT_API_KEY')
 
 
 @app.before_request
@@ -163,17 +156,23 @@ def chat():
 
     content.append({'type': 'text', 'text': user_msg})
 
+    contexts = [
+        {'title': 'בסיס הידע של גורדל', 'source': 'gordel', 'content': doc}
+        for doc in (docs if context else [])
+    ]
+    headers = {'X-API-Key': KNOWLEDGE_AGENT_API_KEY} if KNOWLEDGE_AGENT_API_KEY else {}
     try:
-        response = client.messages.create(
-            model="claude-sonnet-5",
-            max_tokens=2000,
-            thinking={"type": "disabled"},
-            system=SYSTEM_TROUBLESHOOT,
-            messages=[{"role": "user", "content": content}]
+        upstream = requests.post(
+            f'{KNOWLEDGE_AGENT_URL}/api/agents/base/chat',
+            json={'question': search_text, 'contexts': contexts, 'image': image or None},
+            headers=headers, timeout=(5, 240)
         )
-    except Exception as e:
-        return jsonify({'error': f'שגיאה בפנייה למודל: {e}'}), 502
-    return jsonify({'answer': response.content[0].text, 'kb_used': bool(context)})
+        upstream.raise_for_status()
+        payload = upstream.json()
+        return jsonify({'answer': payload['answer'], 'kb_used': bool(context),
+                        'provider': 'knowledge-agent', 'model': payload.get('model')})
+    except (requests.RequestException, ValueError, KeyError) as e:
+        return jsonify({'error': f'שירות knowledge-agent אינו זמין: {e}'}), 502
 
 
 @app.route('/api/visualize', methods=['POST'])
@@ -208,21 +207,20 @@ def visualize():
     except Exception:
         pass
 
-    prompt = f"כיצד מחליפים: {query}\n\n"
-    if web_text:
-        prompt += f"מידע מהאינטרנט:\n{web_text[:2000]}"
-
+    contexts = ([{'title': 'מידע עזר מהאינטרנט', 'source': 'gordel-web',
+                  'content': web_text[:4000]}] if web_text else [])
+    headers = {'X-API-Key': KNOWLEDGE_AGENT_API_KEY} if KNOWLEDGE_AGENT_API_KEY else {}
     try:
-        response = client.messages.create(
-            model="claude-sonnet-5",
-            max_tokens=2000,
-            thinking={"type": "disabled"},
-            system=SYSTEM_VISUALIZE,
-            messages=[{"role": "user", "content": prompt}]
+        upstream = requests.post(
+            f'{KNOWLEDGE_AGENT_URL}/api/agents/base/chat',
+            json={'question': f'תן מדריך בטיחותי ומפורט להחלפת: {query}', 'contexts': contexts},
+            headers=headers, timeout=(5, 240)
         )
-    except Exception as e:
-        return jsonify({'error': f'שגיאה בפנייה למודל: {e}'}), 502
-    return jsonify({'guide': response.content[0].text, 'images': images})
+        upstream.raise_for_status()
+        guide = upstream.json()['answer']
+    except (requests.RequestException, ValueError, KeyError) as e:
+        return jsonify({'error': f'שירות knowledge-agent אינו זמין: {e}'}), 502
+    return jsonify({'guide': guide, 'images': images})
 
 
 def _is_public_url(url):
