@@ -7,6 +7,9 @@ import socket
 import requests
 from urllib.parse import urlparse
 
+# This service delegates all model work to knowledge-agent.
+os.environ.pop('ANTHROPIC_API_KEY', None)
+
 app = Flask(__name__)
 # No CORS: the frontend is served by this same Flask app (same-origin), so the
 # API needs no cross-origin access. Enabling it would let any third-party site
